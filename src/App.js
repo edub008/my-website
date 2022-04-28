@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+//
+// Personal Website Project
+// start date: 3/25/2022
+//
 
-function App() {
+import { ParallaxProvider } from 'react-scroll-parallax'
+import Hero from './components/Hero'
+import Journey from './components/Journey'
+import Interests from './components/Interests'
+import System from './components/System'
+import About from './components/About'
+import { AppStateContext } from './AppStateContext'
+import logo from './logo.svg'
+import './App.scss'
+
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{overflow:'hidden'}}>
+      <AppStateContext.Provider value={{test: 'placeholder'}}>
+        <ParallaxProvider>
+          <Hero />
+          <Journey />
+          <Interests />
+          <System />
+          <About />
+        </ParallaxProvider>
+      </AppStateContext.Provider>
     </div>
-  );
+  )
 }
-
-export default App;

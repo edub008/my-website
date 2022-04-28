@@ -1,0 +1,343 @@
+@import 'bulma/css/bulma.css';
+@import 'vars';
+
+html {
+  background-color: $dark;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.section-pad {
+  padding-bottom: 6rem !important;
+}
+
+.my-system-overlay {
+  background-color: rgba(0,0,0,.45) !important;
+  border-radius: 8px !important;
+}
+.my-interest-overlay {
+  background-color: rgba(50,50,50,.65) !important;
+  border-radius: 8px !important;
+}
+
+.my-system-gradient {
+  background-color: radial-gradient(circle, rgba(219,124,2,1) 0%, rgba(114,69,11,1) 23%, rgba(219,124,2,1) 56%, rgba(20,20,20,1) 91%);
+}
+
+.my-interests-gradient {
+  background-color: linear-gradient(180deg, rgba(80,2,219,1) 0%, rgba(20,20,20,1) 55%, rgba(80,2,219,1) 100%);
+}
+
+.my-system-text {
+  color: white;
+  text-shadow: 2px 2px #220000;
+}
+
+.fancy-title {
+  line-height: 0.5;
+  text-align: center;
+  color: $dark !important;
+  margin: 4rem 0.5rem 3rem 0.5rem !important;
+}
+.fancy-title-light {
+  line-height: 0.5;
+  text-align: center;
+  color: white !important;
+}
+.fancy-title span {
+  display: inline-block;
+  position: relative;  
+}
+.fancy-title span:before,
+.fancy-title span:after {
+  /*@extend .auto-margins-y;*/
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-radius: 4px !important;
+  border-bottom: 4px solid $dark;
+  border-top: 4px solid $dark;
+  top: 50% !important;
+  width: 10rem;
+}
+.fancy-title-light span:before,
+.fancy-title-light span:after {
+  /*@extend .auto-margins-y;*/
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-radius: 4px !important;
+  border-bottom: 4px solid white;
+  border-top: 4px solid white;
+  top: 50% !important;
+  width: 10rem;
+}
+
+.fancy-title span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.fancy-title span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.anim-fade-in {
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 2s; /* Firefox < 16 */
+      -ms-animation: fadein 2s; /* Internet Explorer */
+       -o-animation: fadein 2s; /* Opera < 12.1 */
+          animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.anim-color-pulse {
+  animation-name: stretch;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-play-state: running; 
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.5);
+    border-radius: 100%;
+  }
+
+  50% {
+    /* background-color: orange; */
+  }
+
+  100% {
+    transform: scale(2.0);
+  }
+}
+
+.anim-grow {
+  animation: grow 1.25s ease-in-out;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.inset-0 {
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.title.is-hero {
+  font-size: 12.5vmin;
+}
+
+.company-text {
+  color: #1a3bff !important;
+  text-shadow: 2px 2px #aaaaff !important;
+}
+
+.text-shadow-3d {
+  /* text-shadow: 2px 2px 4px #957dad; */
+
+  text-shadow: 1px 1px 1px #957dad,
+             1px 2px 1px #957dad,
+             1px 3px 1px #957dad,
+             1px 4px 1px #957dad,
+             1px 5px 1px #957dad,
+             1px 6px 1px #957dad,
+             1px 10px 5px rgba(16, 16, 16, 0.5),
+             1px 15px 10px rgba(16, 16, 16, 0.4),
+             1px 20px 30px rgba(16, 16, 16, 0.3),
+             1px 25px 50px rgba(16, 16, 16, 0.2);
+
+}
+
+.dashed-title {
+  @extend .text-shadow-3d;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+/*.dashed-title:before {
+  content: "";
+  color: black;
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: #fff;
+  right: 100%;
+  top: 50%;
+  position: absolute;
+}
+
+.dashed-title:after {
+  content: "";
+  color: black;
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: #fff;
+  left: 100%;
+  top: 50%;
+  position: absolute;
+}
+*/
+
+.job-title {
+  color: #fab03c;
+}
+
+////////////////////////////////////////////////////
+
+.is-absolute {
+  position: absolute !important;
+}
+
+.is-fullwidth {
+  width: 100% !important;
+}
+
+.is-fullheight {
+  height: 100vh !important;
+}
+
+.ml-0 {
+  margin-left: 0 !important;
+}
+.mr-0 {
+  margin-right: 0 !important;
+}
+.auto-margins-y {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+.auto-margins-x {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.career-section { 
+  background: white;
+}
+
+.career-link {
+  /* @extend .auto-margins-x; */
+  max-width: 50px;
+  max-height: 50px;
+  cursor: pointer;
+}
+
+.parallax-root {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.parallax-scroll {
+  position: absolute;
+  bottom: 5em;
+  left: 50%;
+  transform: translateX(-50%);
+  color: red;
+  font-weight: 500;
+}
+
+.parallax-container {
+  position: relative;
+  width: 25em;
+}
+
+
+////////////////////////////////////////////////////
+
+.swiper {
+  width: 50vw;
+  position: relative;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  background: rgba(0,0,0,0) !important;
+  /*background-color: $dark;*/
+}
+
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#particles-swiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.swiper-button-disabled {
+  display:none;   
+}
+.swiper-button-next, .swiper-button-prev {
+  @extend .anim-color-pulse;
+  color: $primary !important;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.swiper-interests {
+  margin: 0 !important;
+  /* height: 75vh !important; */
+}
+
+.my-interests-bkgd {
+  background-color: #282c34;
+}
+
+.has-text-centered {
+  text-align: center !important;
+  text-align: -moz-center !important;
+}
