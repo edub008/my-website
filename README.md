@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+You can view my live site at www.ergin-d.com
+
+![ergin-d.com](./hero.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
