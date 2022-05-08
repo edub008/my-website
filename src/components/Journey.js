@@ -17,10 +17,10 @@ const textCareerLink = "See my full career on"
 const jobsData = [
 	{
 		company: 'DeepMotion', 
-		title: 'Product Advisor & Director, since March 2019',
+		title: 'Product Director & Advisor, since March 2019',
 		logo: dm_logo,
 		link: "https://www.deepmotion.com",
-		descr: "I knew there was something special about DeepMotion when I joined and believed its potential to disrupt the 3D Animation industry was an even bigger opportunity than what DocuSign had with Digital Transaction Management.<br/><br/>Sure enough the dream has come true with DeepMotion's revolutionary service - <a href='https://www.deepmotion.com/animate-3d' target='_blank' rel='noopener noreferrer' >Animate 3D</a> - which lets you convert video clips into high fidelity 3D Animations (FBX/GLTF/BVH) using any web browser!<br/><br/>As Product Director at DeepMotion I've headed up the Product and Marketing teams and accomplished the following milestones (currently working as Product Advisor):<br/><ul><li>Lead overall Product and Marketing efforts for Animate 3D from Concept -> Development -> Test -> Beta -> 175K+ registered users as of March 2022</li><li>Integrated and launched web-based Animate 3D subscription plans (using Stripe)</li><li>Helped achieve exponential MRR growth through Web and SDK sales</li><li>Designed, implemented, and launched the Animate 3D front-end web app and DeepMotion company website (React.js + Node)</li><li>Lead DeepMotion's legal efforts to successfully register and obtain international Trademarks</li></ul>"
+		descr: "I knew there was something special about DeepMotion when I joined and believed its potential to disrupt the 3D Animation industry was an even bigger opportunity than what DocuSign had with Digital Transaction Management.<br/><br/>Sure enough the dream has come true with DeepMotion's revolutionary service - <a href='https://www.deepmotion.com/animate-3d' target='_blank' rel='noopener noreferrer' >Animate 3D</a> - which lets you convert video clips into high fidelity 3D Animations (FBX/GLTF/BVH) using any web browser!<br/><br/>As Product Director at DeepMotion I've headed up the Product and Marketing teams and accomplished the following milestones (transitioned to Product Advisor):<br/><ul><li>Lead overall Product and Marketing efforts for Animate 3D from Concept -> Development -> Test -> Beta -> 175K+ registered users as of March 2022</li><li>Integrated and launched web-based Animate 3D subscription plans (using Stripe)</li><li>Helped achieve exponential MRR growth through Web and SDK sales</li><li>Designed, implemented, and launched the Animate 3D front-end web app and DeepMotion company website (React.js + Node)</li><li>Lead DeepMotion's legal efforts to successfully register and obtain international Trademarks</li></ul>"
 	},
 	{
 		company: 'DocuSign', 
@@ -41,16 +41,22 @@ const jobsData = [
 		title: 'Software Engineer, from Oct 2005 - June 2009', 
 		logo: cd_logo,
 		link: "https://crystald.com/",
-		descr: "Working at Crystal Dynamics was one of my dream roles shortly after college where I worked as a Engineer / Gameplay Programmer for several multi-platinum selling games including the Lara Croft: Tomb Raider series.<br/><br/>The gaming industry can be quite gueling at times (known as \"crunch time\" to many :]) however getting to program UI and gameplay for AAA games was an unbelievable and truly rewarding experience for me.<br/><ul><li>Most code written in C++ with some written in a proprietary game scripting language and tools written in Python</li><li>Worked on all major platforms (PS3, XBOX360, PC, Wii, PSP, DS) in projects that ranged from 7 months to 1.5 years</li><li>Implemented entire UI system for Tomb Raider: Underworld project in 2008</li><li>Lead one of ten internal new features teams during final year</li><li>Gave presentations to executives on new product features, UI designs, and feasibility/recommendations of each</li></ul>"
+		descr: "Working at Crystal Dynamics was one of my dream roles shortly after college where I worked as a Engineer / Gameplay Programmer for several multi-platinum selling games including the Lara Croft: Tomb Raider series.<br/><br/>The gaming industry can be quite grueling at times (known as \"crunch time\" to many :]) however getting to program UI and gameplay for AAA games was an unbelievable and truly rewarding experience for me.<br/><ul><li>Most code written in C++ with some written in a proprietary game scripting language and tools written in Python</li><li>Worked on all major platforms (PS3, XBOX360, PC, Wii, PSP, DS) in projects that ranged from 7 months to 1.5 years</li><li>Implemented entire UI system for Tomb Raider: Underworld project in 2008</li><li>Lead one of ten internal new features teams during final year</li><li>Gave presentations to executives on new product features, UI designs, and feasibility/recommendations of each</li></ul>"
 	}
 ]
+
+// add short (expandable) descriptions for each journey listing
+jobsData[0].descr_short = jobsData[0].descr.slice(0,220)
+jobsData[1].descr_short = jobsData[1].descr.slice(0,224)
+jobsData[2].descr_short = jobsData[2].descr.slice(0,183)
+jobsData[3].descr_short = jobsData[3].descr.slice(0,213)
 
 export default function Journey() {
 
 	const [footerOpacity, setFooterOpacity] = useState(0)
 	const [titleTranslate, setTitleTranslate] = useState(0)
 	const [footerXTranslate, setFooterXTranslate] = useState([1, 1])
-	// const appStateContext = useContext(AppStateContext)
+	const [expandSectionFlags, setExpandSectionFlags] = useState([false,false,false,false])
 
 	const jobItems = jobsData.map((job, index) =>
 	  <JobInfo key={`job-${index+1}`}
@@ -59,7 +65,11 @@ export default function Journey() {
 	  	logo={job.logo} 
 	  	link={job.link}
 	  	descr={job.descr}
+	  	descr_short={job.descr_short}
 	  	id={index}
+	  	// pass state hook update function to child component
+	  	setExpandSectionFlags={setExpandSectionFlags}
+	  	expandSectionFlags={expandSectionFlags}
 	  />
 	)
 

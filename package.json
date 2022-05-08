@@ -29,7 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gcloud app deploy",
+    "deploy": "gcloud config set project calm-history-184223 && gcloud app deploy",
     "gcp-start": "yarn run serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -32,13 +32,23 @@ html {
   padding-bottom: 6rem !important;
 }
 
+.br-top-8 {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+.br-bot-8 {
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
 .my-system-overlay {
   background-color: rgba(0,0,0,.45) !important;
   border-radius: 8px !important;
 }
 .my-interest-overlay {
   background-color: rgba(50,50,50,.65) !important;
-  border-radius: 8px !important;
+  padding: 2rem !important;
+  /*border-radius: 8px !important;*/
 }
 
 .my-system-gradient {
@@ -136,7 +146,7 @@ html {
   }
 
   100% {
-    transform: scale(2.0);
+    transform: scale(1.25);
   }
 }
 
@@ -164,6 +174,9 @@ html {
 
 .title.is-hero {
   font-size: 12.5vmin;
+}
+.title.is-interests {
+  font-size: 3vmin;
 }
 
 .company-text {
@@ -251,6 +264,10 @@ html {
   margin-right: auto !important;
 }
 
+.cursor-pt {
+  cursor: pointer !important;  
+}
+
 .career-section { 
   background: white;
 }
@@ -309,9 +326,9 @@ html {
 }
 
 #particles-swiper {
-  position: absolute;
+  /*position: absolute;
   top: 0;
-  left: 0;
+  left: 0;*/
   z-index: 1;
 }
 
@@ -321,6 +338,13 @@ html {
 .swiper-button-next, .swiper-button-prev {
   @extend .anim-color-pulse;
   color: $primary !important;
+}
+
+.swiper-button-next:after {
+  content: '\21D2' !important;
+}
+.swiper-button-prev:after {
+  content: '\21D0' !important;
 }
 
 .swiper-slide img {
