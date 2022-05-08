@@ -17,10 +17,12 @@ import interestImg2 from '../img/interests/bitcoin.png'
 import interestImg3 from '../img/interests/chess_backgammon.png'
 import interestImg4 from '../img/interests/fenerbahce.png'
 
-import particlesOptions1 from '../effects/particlesTunnel.json'
-import particlesOptions3 from '../effects/particleslineLinkColor.json'
+import particlesOptions4 from '../effects/particlesTunnel.json'
 import particlesOptions2 from '../effects/particlesShapeLink.json'
-import particlesOptions4 from '../effects/particlesFireworks.json'
+import particlesOptions3 from '../effects/particleslineLinkColor.json'
+import particlesOptions1 from '../effects/particlesFireworks.json'
+
+const ENABLEPARTICLES = false
 
 const partOptions = [
 	particlesOptions1,
@@ -34,8 +36,8 @@ const testContent = "Lorem Ipsum is simply dummy text of the printing and typese
 
 const contentTitles = [
 	"Metaverse", 
-	"Blockchain & Crypto",
-	"Chess & Backgammon",
+	"Blockchain",
+	"Board Games",
 	"Fenerbahçe"
 ]
 
@@ -70,6 +72,7 @@ const interestsImages = [
 export default function MyInterests() {
 
   const [activeSlideIndex, setActiveSlideIndex] = useState(0)
+  const [swiperInst, setSwiperInst] = useState(null)
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // TSParticles related:
@@ -93,10 +96,11 @@ export default function MyInterests() {
   			id="particles-swiper"
         effect={'flip'}
         grabCursor={true}
-        navigation={true}
+        navigation={false}
         pagination={false}
         modules={[EffectFlip, Navigation]}
         onSlideChange={(swiperInstance) => setActiveSlideIndex(swiperInstance.activeIndex)}
+        onSwiper={(swiper) => setSwiperInst(swiper)}
         className="swiper-interests"
       >
       	<SwiperSlide>
@@ -123,12 +127,18 @@ export default function MyInterests() {
 
 	    	<div className="columns auto-margins-x is-relative">
 		      <div className="column is-relative">
+		      	{
+		      	ENABLEPARTICLES || process.env.NODE_ENV === 'production'
+		      	?
 		      	<Particles
 				      id="tsparticles"
 				      init={particlesInit}
 				      loaded={particlesLoaded}
 				      options={partOptions[activeSlideIndex]}
 				    />
+				    :
+				    <div></div>
+				  	}
 
 						<div className="columns m-0 is-justify-content-center">
 				      <div className="column is-6 is-relative ">
@@ -138,12 +148,37 @@ export default function MyInterests() {
 				      </div>
 				    </div>
 
-				    <div className="columns m-0 auto-margins-x is-relative">
-				    	<div className="column is-6 mx-2 has-text-centered is-relative">
-				    		
-						    <div >
+				    <div className="columns m-0 is-mobile my-interest-overlay br-top-8">
+				    	<div className="column is-flex is-justify-content-end is-align-items-center">
+				    		{
+				    			activeSlideIndex
+				    			?
+				    			<div onClick={()=>swiperInst.slidePrev()} className="swiper-button-prev is-relative" />
+				    			:
+				    			<div></div>
+				    		}
+				    	</div>
+				    	<div className="column is-6 mx-4" style={{border:'2px solid #00D1B2', borderRadius:'8px'}}>
+				    		<div className="title is-interests has-text-primary">
+				    			{contentTitles[activeSlideIndex]}
+				    		</div>
+				    	</div>
+				    	<div className="column is-flex is-justify-content-start is-align-items-center">
+				    		{
+				    			activeSlideIndex !== 3
+				    			?
+				    			<div onClick={()=>swiperInst.slideNext()} className="swiper-button-next is-relative" />
+				    			:
+				    			<div></div>
+				    		}
+				    	</div>
+				    </div>
+
+				    <div className="columns m-0 auto-margins-x is-relative my-interest-overlay br-bot-8">
+				    	<div className="column has-text-centered">
+
 				      		{InterestsSwiper()}
-				      	</div>
+
 				      </div>
 				      <div className="column mx-2 has-text-centered">
 				      	<InterestBlock 
