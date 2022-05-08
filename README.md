@@ -1,6 +1,8 @@
 # Ergin Dervisoglu's Personal Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You can view the running site at www.ergin-d.com. 
+
+> :information_source: This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Dependencies
 
