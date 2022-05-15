@@ -14,7 +14,7 @@ export default function About() {
   return (
 
   	<React.Fragment>
-	  	<div className="App-section is-block" style={{background:'linear-gradient(180deg, #000022 0%, #000000 100%)', paddingTop:'4.25rem', paddingBottom:'4.25rem'}}>
+	  	<div className="App-section is-block" id="about" style={{background:'linear-gradient(180deg, #000022 0%, #000000 100%)', paddingTop:'4.25rem', paddingBottom:'4.25rem'}}>
 
 				    <div className="columns m-0 has-text-centered auto-margins-x is-justify-content-center">
 				      <div className="column is-9 mx-2 has-text-centered">

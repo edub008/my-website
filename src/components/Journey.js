@@ -88,7 +88,7 @@ export default function Journey() {
 
   return (
   	<React.Fragment>
-  		<div className="App-section is-justify-content-flex-start has-background-white">
+  		<div className="App-section is-justify-content-flex-start has-background-white" id="journey" >
   			
   				<div className="columns auto-margins-x">
 			      <div className="column is-relative">

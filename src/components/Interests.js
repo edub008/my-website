@@ -123,7 +123,7 @@ export default function MyInterests() {
   return (
 
   	<React.Fragment>
-	  	<div className="App-section my-interests-gradient section-pad">
+	  	<div className="App-section my-interests-gradient section-pad" id="interests">
 
 	    	<div className="columns auto-margins-x is-relative">
 		      <div className="column is-relative">
