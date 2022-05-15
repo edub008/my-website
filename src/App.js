@@ -6,6 +6,7 @@
 import { ParallaxProvider } from 'react-scroll-parallax'
 import Hero from './components/Hero'
 import Journey from './components/Journey'
+import Education from './components/Education'
 import Interests from './components/Interests'
 import System from './components/System'
 import About from './components/About'
@@ -21,6 +22,7 @@ export default function App() {
         <ParallaxProvider>
           <Hero />
           <Journey />
+          <Education />
           <Interests />
           <System />
           <About />

@@ -22,7 +22,7 @@ import particlesOptions2 from '../effects/particlesShapeLink.json'
 import particlesOptions3 from '../effects/particleslineLinkColor.json'
 import particlesOptions1 from '../effects/particlesFireworks.json'
 
-const ENABLEPARTICLES = false
+const ENABLEPARTICLES = false  // disable before deploying to production!
 
 const partOptions = [
 	particlesOptions1,

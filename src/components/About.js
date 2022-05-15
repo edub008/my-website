@@ -5,8 +5,9 @@ import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 // import { polygonPathName, loadPolygonPath } from "tsparticles-path-polygon"
 
 const mainTitle = "About"
-const footerTitle = "Thanks for visiting!!! 🙂"
+const footerTitle = "Thanks for visiting! 🙂"
 const footerText = "I built this site using <a href='https://reactjs.org/' target='_blank' rel='noopener noreferrer'>React.js</a> along with some popular libraries such as <a href='https://www.npmjs.com/package/react-scroll-parallax' target='_blank' rel='noopener noreferrer'>react-scroll-parallax</a>, <a href='https://particles.js.org/' target='_blank' rel='noopener noreferrer'>tsparticles</a>, and <a href='https://swiperjs.com/' target='_blank' rel='noopener noreferrer'>Swiper.js</a>. CSS is handled with <a href='https://bulma.io/' target='_blank' rel='noopener noreferrer'>Bulma</a>."
+const textBack = "Back to Top"
 
 export default function About() {
 
@@ -17,12 +18,18 @@ export default function About() {
 
 				    <div className="columns m-0 has-text-centered auto-margins-x is-justify-content-center">
 				      <div className="column is-9 mx-2 has-text-centered">
-				      	<div className="title is-3 has-text-white ">
+				      	<div className="title is-4 has-text-white ">
 				      		{footerTitle}
 				      	</div>
-				      	<div className="title is-4 has-text-white">
-				      		<h4 dangerouslySetInnerHTML={{__html: footerText }}></h4>
+				      	<div className="subtitle is-5 has-text-white">
+				      		<h6 dangerouslySetInnerHTML={{__html: footerText }}></h6>
 				      	</div>
+				      </div>
+				    </div>
+
+				    <div className="columns m-0 has-text-centered auto-margins-x is-justify-content-center">
+				      <div className="column">
+				      	<div className="button is-small is-primary" onClick={()=>window.scrollTo(0,0)}> {textBack} </div>
 				      </div>
 				    </div>
 
