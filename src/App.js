@@ -12,7 +12,7 @@ import System from './components/System'
 import About from './components/About'
 import { AppStateContext } from './AppStateContext'
 import logo from './logo.svg'
-import './App.scss'
+import './scss/App.scss'
 
 export default function App() {
 

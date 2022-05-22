@@ -42,14 +42,14 @@ html {
 }
 
 .degree-1 {
-  background-image: url('./img/education/ucsc-bs-degree.jpg');
+  background-image: url('../img/education/ucsc-bs-degree.jpg');
   background-position: center top;
   background-size: 100% auto;
   min-height: 33vh;
 }
 
 .degree-2 {
-  background-image: url('./img/education/sjsu-mba.jpg');
+  background-image: url('../img/education/sjsu-mba.jpg');
   background-position: center top;
   background-size: 100% auto;
   min-height: 33vh;
@@ -162,12 +162,8 @@ html {
     border-radius: 100%;
   }
 
-  50% {
-    /* background-color: orange; */
-  }
-
   100% {
-    transform: scale(1.25);
+    transform: scale(1);
   }
 }
 
@@ -326,14 +322,16 @@ html {
 ////////////////////////////////////////////////////
 
 .swiper {
-  width: 50vw;
+  //width: 50vw;
   position: relative;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  background: rgba(0,0,0,0) !important;
+  background: transparent !important;
   /*background-color: $dark;*/
 }
 
@@ -359,14 +357,24 @@ html {
 .swiper-button-next, .swiper-button-prev {
   @extend .anim-color-pulse;
   color: $primary !important;
+  margin-left: .25rem;
+  margin-right: .25rem;
 }
 
+/* un-comment to customize swiper next/prev icons
 .swiper-button-next:after {
-  content: '\21D2' !important;
+  //content: '\21D2' !important;
+  border: 2px solid $primary; 
+  border-radius: 6px;
+  padding: .25rem;
 }
 .swiper-button-prev:after {
-  content: '\21D0' !important;
+  //content: '\21D0' !important;
+  border: 2px solid $primary; 
+  border-radius: 6px;
+  padding: .25rem;
 }
+*/
 
 .swiper-slide img {
   display: block;
@@ -375,6 +383,7 @@ html {
 
 .swiper-interests {
   margin: 0 !important;
+  height: 75vh !important;
   /* height: 75vh !important; */
 }
 

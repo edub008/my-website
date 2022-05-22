@@ -1,0 +1,119 @@
+@import 'vars';
+
+$primary-alt: #76DEE5;
+
+$border-size: 15px;
+$board-size: 300px;
+$board-perspective: 600px;
+
+/*
+body {
+  perspective: 800px;
+  background-color: black;
+}
+*/
+
+.chessboard-container {
+  perspective: $board-perspective;
+}
+
+board {
+  left: 50%;
+  margin-left: -$board-size/2;
+  display: block;
+  position: absolute;
+  width: $board-size;
+  height: $board-size;
+  transform: rotate3D(1,0,0,70deg);
+  
+  perspective: $board-perspective;
+  transform-style: preserve-3d;
+  
+  animation-name: example;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  //animation-direction: alternate;
+  animation-timing-function: linear;
+
+  display: none !important;
+}
+
+.swiper-slide-active > .chessboard-container > board {
+  display: block !important;
+}
+
+face {
+  display: block;
+  position: absolute;
+  transform-origin: 0px 0px;
+  backface-visibility: hidden;
+
+  perspective: $board-perspective;
+  
+  &#base {
+    width: $board-size;
+    height: $board-size;
+    background-color: brown;
+    //background-image: url(https://www.dropbox.com/s/7r0viz5wxlkt7ug/chessboard.jpg?dl=1);
+    background-image: url('../img/interests/chessboard/chessboard-slice.png');
+    background-size: $board-size $board-size;
+  }
+  
+  &#front {
+    top:$board-size;
+    width: $board-size;
+    height: $border-size;
+    background-color: blue;
+    transform: rotateX(-90deg);
+    //background-image: url(https://www.dropbox.com/s/owz8ajy8nagkota/border2.jpg?dl=1);
+    //background-image: url('../img/interests/chessboard/border2.jpg');
+    background: $primary;
+  }
+  
+  &#side-l{    
+    width: $border-size;
+    height: $board-size;
+    background-color: yellow;
+    transform: rotateY(-90deg);
+    transform-origin: $border-size 0px;
+    left: -$border-size;
+    //background-image: url(https://www.dropbox.com/s/sk2ra5b00w3dlpf/border1.jpg?dl=1);
+    //background-image: url('../img/interests/chessboard/border1.jpg');
+    background: $primary-alt;
+  }
+  &#side-r{  
+    width: $border-size;
+    height: $board-size;
+    background-color: gray;
+    right:-$border-size;
+    transform: rotateY(90deg);
+    //background-image: url(https://www.dropbox.com/s/sk2ra5b00w3dlpf/border1.jpg?dl=1);
+    //background-image: url('../img/interests/chessboard/border1.jpg');
+    background: $primary-alt;
+  }
+  &#back{  
+    height: $border-size;
+    width: $board-size;
+    background-color: red;
+    transform: rotateX(90deg);
+    
+    top:-$border-size;    
+    transform-origin: 0px $border-size;
+    
+    //background-image: url(https://www.dropbox.com/s/owz8ajy8nagkota/border2.jpg?dl=1);
+    //background-image: url('../img/interests/chessboard/border2.jpg');
+    background: $primary;
+  }
+  &#bottom{  
+    width: $board-size;
+    height: $board-size;
+    background-color: brown;
+    transform: rotateX(180deg) translateZ($border-size);
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes example {
+    from {transform: rotate3D(1,0,0,70deg) rotate3D(0,0,1,0deg);}
+    to {transform: rotate3D(1,0,0,70deg) rotate3D(0,0,1,360deg);}
+}

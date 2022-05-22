@@ -194,7 +194,7 @@
       }
     },
     "color": {
-      "value": "#ffffff",
+      "value": "#fff",
       "animation": {
         "h": {
           "count": 0,
@@ -220,7 +220,7 @@
       }
     },
     "destroy": {
-      "mode": "none",
+      "mode": "split",
       "split": {
         "count": 1,
         "factor": {
@@ -228,25 +228,84 @@
             "enable": false,
             "minimumValue": 0
           },
-          "value": 3
+          "value": 0.333333
         },
         "rate": {
           "random": {
             "enable": false,
             "minimumValue": 0
           },
-          "value": {
-            "min": 4,
-            "max": 9
-          }
+          "value": 100
         },
-        "sizeOffset": true
+        "sizeOffset": true,
+        "particles": {
+          "stroke": {
+            "width": 0
+          },
+          "color": {
+            "value": [
+              "#ff595e",
+              "#ffca3a",
+              "#8ac926",
+              "#1982c4",
+              "#6a4c93"
+            ]
+          },
+          "number": {
+            "value": 0
+          },
+          "collisions": {
+            "enable": false
+          },
+          "opacity": {
+            "value": {
+              "min": 0.1,
+              "max": 1
+            },
+            "animation": {
+              "enable": true,
+              "speed": 0.7,
+              "sync": false,
+              "startValue": "max",
+              "destroy": "min"
+            }
+          },
+          "shape": {
+            "type": "circle"
+          },
+          "size": {
+            "value": 2,
+            "animation": {
+              "enable": false
+            }
+          },
+          "life": {
+            "count": 1,
+            "duration": {
+              "value": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          },
+          "move": {
+            "enable": true,
+            "gravity": {
+              "enable": false
+            },
+            "speed": 2,
+            "direction": "none",
+            "random": true,
+            "straight": false,
+            "outMode": "destroy"
+          }
+        }
       }
     },
     "gradient": [],
     "groups": {},
     "life": {
-      "count": 0,
+      "count": 1,
       "delay": {
         "random": {
           "enable": false,
@@ -312,10 +371,10 @@
       "drift": 0,
       "enable": true,
       "gravity": {
-        "acceleration": 9.81,
-        "enable": false,
-        "inverse": false,
-        "maxSpeed": 50
+        "acceleration": 15,
+        "enable": true,
+        "inverse": true,
+        "maxSpeed": 100
       },
       "path": {
         "clamp": true,
@@ -334,11 +393,14 @@
         "bottom": "destroy",
         "left": "destroy",
         "right": "destroy",
-        "top": "destroy"
+        "top": "none"
       },
       "random": false,
-      "size": true,
-      "speed": 5,
+      "size": false,
+      "speed": {
+        "min": 10,
+        "max": 20
+      },
       "spin": {
         "acceleration": 0,
         "enable": false
@@ -346,9 +408,9 @@
       "straight": false,
       "trail": {
         "enable": true,
-        "length": 3,
+        "length": 10,
         "fillColor": {
-          "value": "#000000"
+          "value": "#000"
         }
       },
       "vibrate": false,
@@ -368,10 +430,7 @@
         "enable": false,
         "minimumValue": 0.1
       },
-      "value": {
-        "min": 0.3,
-        "max": 0.8
-      },
+      "value": 1,
       "animation": {
         "count": 0,
         "enable": false,
@@ -437,7 +496,7 @@
         "sync": false
       },
       "direction": "clockwise",
-      "path": false
+      "path": true
     },
     "shadow": {
       "blur": 0,
@@ -452,7 +511,7 @@
     },
     "shape": {
       "options": {},
-      "type": "circle"
+      "type": "line"
     },
     "size": {
       "random": {
@@ -460,20 +519,46 @@
         "minimumValue": 1
       },
       "value": {
-        "min": 1,
-        "max": 10
+        "min": 0.1,
+        "max": 50
       },
       "animation": {
         "count": 0,
-        "enable": false,
-        "speed": 5,
-        "sync": false,
-        "destroy": "none",
-        "startValue": "random"
+        "enable": true,
+        "speed": 90,
+        "sync": true,
+        "destroy": "min",
+        "startValue": "max"
       }
     },
     "stroke": {
-      "width": 0
+      "width": 1,
+      "color": {
+        "value": "#ffffff",
+        "animation": {
+          "h": {
+            "count": 0,
+            "enable": false,
+            "offset": 0,
+            "speed": 1,
+            "sync": true
+          },
+          "s": {
+            "count": 0,
+            "enable": false,
+            "offset": 0,
+            "speed": 1,
+            "sync": true
+          },
+          "l": {
+            "count": 0,
+            "enable": false,
+            "offset": 0,
+            "speed": 1,
+            "sync": true
+          }
+        }
+      }
     },
     "tilt": {
       "random": {
@@ -527,52 +612,26 @@
     "autoPlay": true,
     "fill": true,
     "life": {
-      "wait": false
+      "wait": false,
+      "count": 0,
+      "delay": 0.1,
+      "duration": 0.1
     },
     "rate": {
-      "quantity": 10,
-      "delay": 0.25
+      "quantity": 1,
+      "delay": 0.5
     },
     "shape": "square",
     "startCount": 0,
     "size": {
       "mode": "percent",
       "height": 0,
-      "width": 0
+      "width": 100
     },
-    "direction": "none",
+    "direction": "top",
     "position": {
       "x": 50,
-      "y": 50
-    },
-    "spawnColor": {
-      "value": "#ff0000",
-      "animation": {
-        "h": {
-          "count": 0,
-          "enable": true,
-          "offset": 0,
-          "speed": 5,
-          "sync": true
-        },
-        "s": {
-          "count": 0,
-          "enable": false,
-          "offset": 0,
-          "speed": 1,
-          "sync": true
-        },
-        "l": {
-          "count": 0,
-          "enable": true,
-          "offset": {
-            "min": 20,
-            "max": 80
-          },
-          "speed": 0,
-          "sync": true
-        }
-      }
+      "y": 100
     }
   }
 }
