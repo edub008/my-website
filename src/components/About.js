@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
-import Particles from 'react-tsparticles'
-import { loadFull } from 'tsparticles'
-import { polygonPathName, loadPolygonPath } from 'tsparticles-path-polygon'
+// import Particles from 'react-tsparticles'
+// import { loadFull } from 'tsparticles'
+// import { polygonPathName, loadPolygonPath } from 'tsparticles-path-polygon'
 import { Link } from 'react-scroll'
 
-import particlesOptions2 from '../effects/particlesShapeLink.json'
-import particlesOptions3 from '../effects/particleslineLinkColor.json'
-import particlesOptions1 from '../effects/particlesFireworks1.json'
+// import particlesOptions2 from '../effects/particlesShapeLink.json'
+// import particlesOptions3 from '../effects/particleslineLinkColor.json'
+// import particlesOptions1 from '../effects/particlesFireworks1.json'
 
-const ENABLEPARTICLES = false  // disable before deploying to production
+// const ENABLEPARTICLES = false  // disable before deploying to production
 
 const mainTitle = "About"
 const footerTitle = "Thanks for visiting! 🙂"
@@ -27,15 +27,15 @@ export default function About() {
     // console.log(container)
   }
 
-  const particlesEffect = (ENABLEPARTICLES || process.env.NODE_ENV === 'production') ? 
-  	<Particles
-      id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={particlesOptions3}
-    />
-    :
-    <div></div>
+  // const particlesEffect = ENABLEPARTICLES ? 
+  // 	<Particles
+  //     id="tsparticles"
+  //     init={particlesInit}
+  //     loaded={particlesLoaded}
+  //     options={particlesOptions3}
+  //   />
+  //   :
+  //   <div></div>
 
   return (
 
@@ -43,7 +43,8 @@ export default function About() {
 	  	<div className="App-section is-block dark-gradient" id="about" style={{paddingTop:'4.25rem', paddingBottom:'4.25rem'}}>
 
 	  		<div className="is-relative is-fullwidth">
-		  		{particlesEffect}
+		  		
+		  		{/*particlesEffect*/}
 
 			    <div className="columns m-0 has-text-centered auto-margins-x is-justify-content-center">
 			      <div className="column is-9 mx-2 has-text-centered">

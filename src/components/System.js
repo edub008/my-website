@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
+import useWindowDimensions from './helpers/useWindowDimensions'
 import * as Shared from '../shared/shared'
 import backgroundImg from '../img/turkiye2.jpg'
 
@@ -19,6 +20,7 @@ const systemItems = [
 export default function MySystem() {
 
 	const [itemsYTranslate, setItemsYTranslate] = useState(0)
+	const { screenWidth, screenHeight } = useWindowDimensions();
 
 	const mySystemItems = systemItems.map((item, index) =>
 		<div key={`system-item-${index+1}`} style={{transform: `translateY(${100-(itemsYTranslate*100)}px)`}} >
@@ -30,12 +32,14 @@ export default function MySystem() {
 		</div>
 	)
 
+	const bkgdHeight = screenWidth < Shared.maxMobileScreenWidth ? '105vh' : '100vh'
+
   return (
   	<React.Fragment>
 	  	<div className="App-section is-block pb-0" id="system">
 	  		<ParallaxBanner
 		      layers={[{ image: backgroundImg, speed: -70 }]}
-		      style={{ aspectRatio: '4 / 3', height: '100vh' }}
+		      style={{ aspectRatio: '4 / 3', height: bkgdHeight }}
 		    >
 		    	<div className="columns auto-margins-x">
 			      <div className="column is-relative">
