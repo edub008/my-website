@@ -4,14 +4,14 @@ export default function ChessBoard() {
 
   return (
     <div className="chessboard-container">
-      <board>
-        <face id="base"></face>
-        <face id="front"></face>      
-        <face id="side-l"></face>
-        <face id="side-r"></face>
-        <face id="back"></face>  
-        <face id="bottom"></face>
-      </board>
+      <div className="board">
+        <div className="face" id="base"></div>
+        <div className="face" id="front"></div>      
+        <div className="face" id="side-l"></div>
+        <div className="face" id="side-r"></div>
+        <div className="face" id="back"></div>  
+        <div className="face" id="bottom"></div>
+      </div>
     </div>
   )
 }

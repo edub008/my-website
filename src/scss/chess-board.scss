@@ -17,7 +17,7 @@ body {
   perspective: $board-perspective;
 }
 
-board {
+.board {
   left: 50%;
   margin-left: calc(($board-size*-1) / 2);
   display: block;
@@ -38,11 +38,11 @@ board {
   display: none !important;
 }
 
-.swiper-slide-active > .chessboard-container > board {
+.swiper-slide-active > .chessboard-container > .board {
   display: block !important;
 }
 
-face {
+.face {
   display: block;
   position: absolute;
   transform-origin: 0px 0px;

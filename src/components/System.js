@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 import useWindowDimensions from './helpers/useWindowDimensions'
 import * as Shared from '../shared/shared'
-import backgroundImg from '../img/turkiye2.jpg'
+import backgroundImg from '../img/turkiye.jpg'
 
 const mainTitle = "My System"
 const bkgdImage = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/105988/banner.jpg"

@@ -19,12 +19,9 @@
     "react-scripts": "5.0.0",
     "react-scroll": "^1.8.7",
     "react-scroll-parallax": "^3.0.5",
-    "react-tsparticles": "^2.0.6",
     "sass": "^1.49.9",
     "serve": "^13.0.2",
     "swiper": "^8.1.1",
-    "tsparticles": "^2.0.6",
-    "tsparticles-path-polygon": "^2.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
