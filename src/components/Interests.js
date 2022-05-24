@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectFade, Navigation, Pagination } from "swiper"
-import Particles from "react-tsparticles"
-import { loadFull } from "tsparticles"
-import { polygonPathName, loadPolygonPath } from "tsparticles-path-polygon"
+// import Particles from "react-tsparticles"
+// import { loadFull } from "tsparticles"
+// import { polygonPathName, loadPolygonPath } from "tsparticles-path-polygon"
 import "swiper/css"
 import "swiper/css/effect-fade"
 import "swiper/css/pagination"
@@ -17,17 +17,17 @@ import ChessBoard from './helpers/ChessBoard'
 import RotatingCube from './helpers/RotatingCube'
 import useWindowDimensions from './helpers/useWindowDimensions'
 
-import particlesOptions2 from '../effects/particlesShapeLink.json'
-import particlesOptions3 from '../effects/particleslineLinkColor.json'
-import particlesOptions1 from '../effects/particlesFireworks1.json'
+// import particlesOptions2 from '../effects/particlesShapeLink.json'
+// import particlesOptions3 from '../effects/particleslineLinkColor.json'
+// import particlesOptions1 from '../effects/particlesFireworks1.json'
 
-const ENABLEPARTICLES = false  // disable before deploying to production!
+// const ENABLEPARTICLES = false  // disable before deploying to production!
 
-const partOptions = [
-	particlesOptions1,
-	particlesOptions2,
-	particlesOptions3
-]
+// const partOptions = [
+// 	particlesOptions1,
+// 	particlesOptions2,
+// 	particlesOptions3
+// ]
 
 const mainTitle = "My Interests"
 const testContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
@@ -54,17 +54,17 @@ export default function MyInterests() {
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // TSParticles related:
-  const particlesInit = async (main) => {
-    // console.log(main);
+  // const particlesInit = async (main) => {
+  //   // console.log(main);
 
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    await loadFull(main);
-  };
-  const particlesLoaded = (container) => {
-    // console.log(container);
-  };
+  //   // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+  //   // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+  //   // starting from v2 you can add only the features you need reducing the bundle size
+  //   await loadFull(main);
+  // };
+  // const particlesLoaded = (container) => {
+  //   // console.log(container);
+  // };
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   function InterestsSwiper() {
@@ -105,18 +105,6 @@ export default function MyInterests() {
 
 	    	<div className="columns is-relative">
 		      <div className="column is-relative">
-		      	{/*
-		      	ENABLEPARTICLES || process.env.NODE_ENV === 'production'
-		      	?
-		      	<Particles
-				      id="tsparticles"
-				      init={particlesInit}
-				      loaded={particlesLoaded}
-				      options={partOptions[activeSlideIndex]}
-				    />
-				    :
-				    <div></div>
-				  	*/}
 
 						<div className="columns m-0 is-justify-content-center">
 				      <div className="column is-6 is-relative ">
