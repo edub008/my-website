@@ -19,7 +19,7 @@ body {
 
 board {
   left: 50%;
-  margin-left: -$board-size/2;
+  margin-left: calc(($board-size*-1) / 2);
   display: block;
   position: absolute;
   width: $board-size;

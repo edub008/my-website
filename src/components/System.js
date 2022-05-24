@@ -35,19 +35,17 @@ export default function MySystem() {
 	  	<div className="App-section is-block pb-0" id="system">
 	  		<ParallaxBanner
 		      layers={[{ image: backgroundImg, speed: -70 }]}
-		      style={{ aspectRatio: '4 / 3', height: '125vh' }}
+		      style={{ aspectRatio: '4 / 3', height: '100vh' }}
 		    >
 		    	<div className="columns auto-margins-x">
 			      <div className="column is-relative">
 
 							<div className="columns m-0 is-justify-content-center">
-
 					      <div className="column is-6 is-relative ">
 					      	<Parallax>
 								  	<h2 className="title is-1 fancy-title fancy-title-light mx-1 my-6"> <span> {mainTitle} </span> </h2>
 								  </Parallax>
 					      </div>
-
 					    </div>
 
 					    <div className="columns m-0 auto-margins-x is-justify-content-center  is-relative">

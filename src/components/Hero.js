@@ -9,7 +9,7 @@ const bkgdImage = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/105988/banner.jp
 export default function Hero() {
 
   return (
-  	<div className="App-section">
+  	<div className="App-section" id="hero">
   		<ParallaxBanner
 	      layers={[{ image: backgroundImg, speed: -70 }]}
 	      style={{ aspectRatio: '4 / 3', height:'100vh' }}

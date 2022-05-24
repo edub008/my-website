@@ -76,8 +76,8 @@ html {
   background-color: radial-gradient(circle, rgba(219,124,2,1) 0%, rgba(114,69,11,1) 23%, rgba(219,124,2,1) 56%, rgba(20,20,20,1) 91%);
 }
 
-.my-interests-gradient {
-  background-color: linear-gradient(180deg, rgba(80,2,219,1) 0%, rgba(20,20,20,1) 55%, rgba(80,2,219,1) 100%);
+.dark-gradient {
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
 }
 
 .my-system-text {
@@ -333,6 +333,15 @@ html {
   background-size: cover;
   background: transparent !important;
   /*background-color: $dark;*/
+}
+
+.swiper-pagination {
+  background-color: rgba(100,100,100,.25);
+  border-radius: 6px;
+  border: 1px solid $primary;
+  display: block;
+  width: 25vw !important;
+  position: relative !important;
 }
 
 

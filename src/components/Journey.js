@@ -97,7 +97,7 @@ export default function Journey() {
 					      <div className="column is-10 is-relative ">
 					      	<h2 className="title is-1 fancy-title mx-1 mx-6 has-text-dark"> <span>{mainTitle}</span> </h2>
 					      	<Parallax onProgressChange={(progress) => setTitleTranslate(Shared.scaleQuarterScreen(progress)) } >
-					      		<h2 className="title is-5 mx-1 mt-6 mb-1 has-text-dark"> <span>{mainDescr}</span> </h2>
+					      		<h2 className="title is-5 mx-1 mt-6 mb-4 has-text-dark"> <span>{mainDescr}</span> </h2>
 								  </Parallax>
 					      </div>
 					    </div>

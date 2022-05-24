@@ -24,3 +24,5 @@ export function scaleQuarterScreen(progress) {
 }
 
 export const minTitleWidth = Object.freeze('10rem')
+
+export const maxMobileScreenWidth = Object.freeze(1024)

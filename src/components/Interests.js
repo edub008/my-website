@@ -15,10 +15,11 @@ import WavingCubes from './helpers/WavingCubes'
 import RubixCube from './helpers/RubixCube'
 import ChessBoard from './helpers/ChessBoard'
 import RotatingCube from './helpers/RotatingCube'
+import useWindowDimensions from './helpers/useWindowDimensions'
 
 import particlesOptions2 from '../effects/particlesShapeLink.json'
 import particlesOptions3 from '../effects/particleslineLinkColor.json'
-import particlesOptions1 from '../effects/particlesTest.json'
+import particlesOptions1 from '../effects/particlesFireworks1.json'
 
 const ENABLEPARTICLES = false  // disable before deploying to production!
 
@@ -34,7 +35,7 @@ const testContent = "Lorem Ipsum is simply dummy text of the printing and typese
 const contentTitles = [
 	"Blockchain",
 	"Metaverse",
-	"Board Games",
+	"Chess/Backgammon",
 	"Fenerbahçe"
 ]
 
@@ -49,6 +50,7 @@ export default function MyInterests() {
 
   const [activeSlideIndex, setActiveSlideIndex] = useState(0)
   const [swiperInst, setSwiperInst] = useState(null)
+  const { screenWidth, screenHeight } = useWindowDimensions();
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // TSParticles related:
@@ -67,7 +69,7 @@ export default function MyInterests() {
 
   function InterestsSwiper() {
   	return (
-  		<div style={window.innerWidth < 720 ? {width:'95vw'} : {width:'50vw'} }>
+  		<div style={screenWidth < Shared.maxMobileScreenWidth ? {width:'95vw'} : {width:'50vw'} }>
   		<Swiper
         style={{height:'400px', overflow:'visible'}}
         effect="fade"
@@ -99,7 +101,7 @@ export default function MyInterests() {
   return (
 
   	<React.Fragment>
-	  	<div className="App-section my-interests-gradient section-pad" id="interests">
+	  	<div className="App-section dark-gradient section-pad" id="interests">
 
 	    	<div className="columns is-relative">
 		      <div className="column is-relative">

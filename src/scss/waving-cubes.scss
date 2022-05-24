@@ -8,9 +8,9 @@ $col: 8;
 $animationHeightCube: 15px;
 $animationDuration: 2s;
 $delayAnimation: 0.2;
-$cubeSize: ($containerSize / ($totalCube / $col));
-$facesPosition: ($cubeSize / 2)-0.2;
-$columns: ($totalCube / $col) - 1;
+$cubeSize: calc($containerSize / calc($totalCube / $col));
+$facesPosition: calc($cubeSize / 2)-0.2;
+$columns: calc($totalCube / $col) - 1;
 $cubeI: 0;
 $delayI: 0;
 @for $y from 0 through $columns {
