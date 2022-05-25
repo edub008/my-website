@@ -11,7 +11,7 @@ import "swiper/css/pagination"
 import "swiper/css/navigation"
 import * as Shared from '../shared/shared'
 import InterestBlock from './helpers/InterestBlock'
-import WavingCubes from './helpers/WavingCubes'
+import Metaverse from './helpers/Metaverse'
 import RubixCube from './helpers/RubixCube'
 import ChessBoard from './helpers/ChessBoard'
 import RotatingCube from './helpers/RotatingCube'
@@ -85,7 +85,7 @@ export default function MyInterests() {
       		<RubixCube />
       	</SwiperSlide>
 	      <SwiperSlide>
-	      	<WavingCubes />
+	      	<Metaverse />
 	      </SwiperSlide>
 	      <SwiperSlide>
 	      	<ChessBoard />

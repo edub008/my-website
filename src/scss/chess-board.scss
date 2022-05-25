@@ -2,8 +2,8 @@
 
 $primary-alt: #76DEE5;
 
-$border-size: 15px;
-$board-size: 300px;
+$border-size: 2vmin;
+$board-size: 25vmin;
 $board-perspective: 600px;
 
 /*
@@ -15,6 +15,10 @@ body {
 
 .chessboard-container {
   perspective: $board-perspective;
+  height: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .board {
@@ -54,7 +58,6 @@ body {
     width: $board-size;
     height: $board-size;
     background-color: brown;
-    //background-image: url(https://www.dropbox.com/s/7r0viz5wxlkt7ug/chessboard.jpg?dl=1);
     background-image: url('../img/interests/chessboard/chessboard-slice.png');
     background-size: $board-size $board-size;
   }
@@ -66,7 +69,7 @@ body {
     background-color: blue;
     transform: rotateX(-90deg);
     //background-image: url(https://www.dropbox.com/s/owz8ajy8nagkota/border2.jpg?dl=1);
-    //background-image: url('../img/interests/chessboard/border2.jpg');
+    background-image: url('../img/interests/chessboard/border2.jpg');
     background: $primary;
   }
   

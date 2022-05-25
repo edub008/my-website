@@ -12,7 +12,7 @@ import { Link } from 'react-scroll'
 // const ENABLEPARTICLES = false  // disable before deploying to production
 
 const mainTitle = "About"
-const footerTitle = "Thanks for visiting! 🙂"
+const footerTitle = "Thanks for visiting"
 const footerText = "I built this site using <a href='https://reactjs.org/' target='_blank' rel='noopener noreferrer'>React.js</a> along with some popular libraries such as <a href='https://www.npmjs.com/package/react-scroll-parallax' target='_blank' rel='noopener noreferrer'>react-scroll-parallax</a>, <a href='https://swiperjs.com/' target='_blank' rel='noopener noreferrer'>Swiper.js</a>, and <a href='https://particles.js.org/' target='_blank' rel='noopener noreferrer'>tsparticles</a>. CSS is handled with <a href='https://bulma.io/' target='_blank' rel='noopener noreferrer'>Bulma</a>."
 const textBack = "Back to Top"
 

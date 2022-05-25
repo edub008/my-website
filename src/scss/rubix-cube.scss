@@ -40,8 +40,8 @@ label {
 }
 
 .rubix-cubes {
-  width: 10vmin;
-  height: 10vmin;
+  width: 8vmin;
+  height: 8vmin;
   transform: rotateX(60deg) rotateZ(-45deg);
   backface-visibility: visible;
   overflow: visible;
@@ -62,8 +62,8 @@ label {
 }
 
 .rubix-cube, .large-shadow {
-  height: 10vmin;
-  width: 10vmin;
+  height: 8vmin;
+  width: 8vmin;
   transform-style: preserve-3d;
   backface-visibility: visible;
   transform-origin: center center -.5vmin;
@@ -96,7 +96,7 @@ label {
   }
   
   &[data-cube^="1"] {
-    top: calc(-10vmin - #{$gap});
+    top: calc(-8vmin - #{$gap});
     --color-bg-top: #A0EBE8;
     --color-bg-bottom: #89E4E4;
     --color-fl-top: #4EAFBC;
@@ -109,7 +109,7 @@ label {
     --color-fl-bottom: #3D93A9;
   }
   &[data-cube^="3"] {
-    top: calc(10vmin + #{$gap});
+    top: calc(8vmin + #{$gap});
     --color-bg-top: #76DEE5;
     --color-bg-bottom: #63D3D4;
     --color-fl-top: #3D93A9;
@@ -118,7 +118,7 @@ label {
   &[data-cube^="11"],
   &[data-cube^="21"],
   &[data-cube^="31"]{
-    left: calc(-10vmin - #{$gap});
+    left: calc(-8vmin - #{$gap});
     --color-fr-top: #2D505F;
     --color-fr-bottom: #2D4F63;
   }
@@ -131,17 +131,17 @@ label {
   &[data-cube^="13"],
   &[data-cube^="23"],
   &[data-cube^="33"]{
-    left: calc(10vmin + #{$gap});
+    left: calc(8vmin + #{$gap});
     --color-fr-top: #2A5262;
     --color-fr-bottom: #2A5467;
   }
   
   &[data-cube$="2"] {
-    transform: translateZ(calc(10vmin + #{$gap}));
+    transform: translateZ(calc(8vmin + #{$gap}));
   }
   
   &[data-cube$="3"] {
-    transform: translateZ(calc(-10vmin - #{$gap}));
+    transform: translateZ(calc(-8vmin - #{$gap}));
   }
 }
 
@@ -151,8 +151,8 @@ label {
 }
 .large-shadow {
   background: black;
-  height: 10vmin;
-  width: 10vmin;
+  height: 8vmin;
+  width: 8vmin;
   transform-origin: top right;
   animation: large-shadow $duration infinite both;
   filter: var(--shadow-filter, blur(3vmin));
@@ -239,7 +239,7 @@ label {
   
   @keyframes cube-top {
     20% {
-      transform: translateZ(calc(-10vmin + 2vmin));
+      transform: translateZ(calc(-6vmin + 2vmin));
     }
     40%, 60%, 80% {
       transform: none;
@@ -268,7 +268,7 @@ label {
       transform: scaleX(.2);
     }
     40%, 60% {
-      transform: translateX(-8vmin) scaleX(.2) ;
+      transform: translateX(-6vmin) scaleX(.2) ;
     }
     80% {
       transform: none;
@@ -294,7 +294,7 @@ label {
       transform: scaleY(.2);
     }
     40%, 60% {
-      transform: translateY(8vmin) scaleY(.2) ;
+      transform: translateY(6vmin) scaleY(.2) ;
     }
     80% {
       transform: none;
@@ -303,14 +303,14 @@ label {
 }
 
 .cube-bottom {
-  transform: translateZ(-10vmin);
+  transform: translateZ(-6vmin);
   background-image:
     linear-gradient(to bottom, var(--color-bg-top), var(--color-bg-bottom));
   animation-name: cube-bottom;
   
   @keyframes cube-bottom {
     from, 20%, 80%, to {
-      transform: translateZ(calc(-10vmin + 1px)) scale(.95);
+      transform: translateZ(calc(-6vmin + 1px)) scale(.95);
     }
     40%, 60% {
       transform: translateZ(-2vmin) scale(.95);
