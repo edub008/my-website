@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { Parallax } from 'react-scroll-parallax'
 import * as Shared from '../shared/shared'
 import JobInfo from './helpers/JobInfo'
@@ -132,7 +132,7 @@ export default function Journey() {
 							      				<a href="https://www.linkedin.com/in/ergindervisoglu/" target="_blank" >
 							      				<img src={li_logo}
 							      					
-							      					className="career-link ml-0"
+							      					className="image is-128x128 career-link ml-0"
 							      					alt="ergin-dervisoglu-linkedin" 
 							      				/>
 							      				</a>

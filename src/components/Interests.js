@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
-import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectFade, Navigation, Pagination } from "swiper"
-// import Particles from "react-tsparticles"
-// import { loadFull } from "tsparticles"
-// import { polygonPathName, loadPolygonPath } from "tsparticles-path-polygon"
 import "swiper/css"
 import "swiper/css/effect-fade"
 import "swiper/css/pagination"
@@ -16,18 +12,6 @@ import RubixCube from './helpers/RubixCube'
 import ChessBoard from './helpers/ChessBoard'
 import RotatingCube from './helpers/RotatingCube'
 import useWindowDimensions from './helpers/useWindowDimensions'
-
-// import particlesOptions2 from '../effects/particlesShapeLink.json'
-// import particlesOptions3 from '../effects/particleslineLinkColor.json'
-// import particlesOptions1 from '../effects/particlesFireworks1.json'
-
-// const ENABLEPARTICLES = false  // disable before deploying to production!
-
-// const partOptions = [
-// 	particlesOptions1,
-// 	particlesOptions2,
-// 	particlesOptions3
-// ]
 
 const mainTitle = "My Interests"
 const testContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
@@ -52,21 +36,6 @@ export default function MyInterests() {
   const [swiperInst, setSwiperInst] = useState(null)
   const { screenWidth, screenHeight } = useWindowDimensions();
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
-  // TSParticles related:
-  // const particlesInit = async (main) => {
-  //   // console.log(main);
-
-  //   // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-  //   // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-  //   // starting from v2 you can add only the features you need reducing the bundle size
-  //   await loadFull(main);
-  // };
-  // const particlesLoaded = (container) => {
-  //   // console.log(container);
-  // };
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
-
   function InterestsSwiper() {
   	return (
   		<div style={screenWidth < Shared.maxMobileScreenWidth ? {width:'95vw'} : {width:'50vw'} }>
@@ -79,7 +48,6 @@ export default function MyInterests() {
         modules={[ Navigation, Pagination, EffectFade]}
         onSlideChange={(swiperInstance) => setActiveSlideIndex(swiperInstance.activeIndex)}
         onSwiper={(swiper) => setSwiperInst(swiper)}
-
       >
       	<SwiperSlide>
       		<RubixCube />
@@ -99,7 +67,6 @@ export default function MyInterests() {
   }
 
   return (
-
   	<React.Fragment>
 	  	<div className="App-section dark-gradient section-pad" id="interests">
 
@@ -108,40 +75,9 @@ export default function MyInterests() {
 
 						<div className="columns m-0 is-justify-content-center">
 				      <div className="column is-6 is-relative ">
-				      	<Parallax>
-							  	<h2 className="title is-1 fancy-title fancy-title-light has-text-light"> <span> {mainTitle} </span> </h2>
-							  </Parallax>
+							  <h2 className="title is-1 fancy-title fancy-title-light has-text-light"> <span> {mainTitle} </span> </h2>
 				      </div>
 				    </div>
-
-
-				  {/* 
-				    <div className="columns m-0 is-mobile">
-				    	<div className="column is-flex is-justify-content-end is-align-items-center">
-				    		{
-				    			activeSlideIndex
-				    			?
-				    			<div onClick={()=>swiperInst.slidePrev()} className="swiper-button-prev is-relative" />
-				    			:
-				    			<div></div>
-				    		}
-				    	</div>
-				    	<div className="column is-6 mx-4" style={{border:'2px solid #00D1B2', borderRadius:'8px'}}>
-				    		<div className="title is-interests has-text-primary">
-				    			{contentTitles[activeSlideIndex]}
-				    		</div>
-				    	</div>
-				    	<div className="column is-flex is-justify-content-start is-align-items-center">
-				    		{
-				    			activeSlideIndex !== 3
-				    			?
-				    			<div onClick={()=>swiperInst.slideNext()} className="swiper-button-next is-relative" />
-				    			:
-				    			<div></div>
-				    		}
-				    	</div>
-				    </div>
-				  */}
 
 				    <div className="columns is-desktop">
 				    	<div className="column has-text-centered">
@@ -160,6 +96,5 @@ export default function MyInterests() {
 
 		  </div>
 		</React.Fragment>
-
   )
 }

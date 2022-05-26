@@ -1,18 +1,8 @@
 import React, { useState } from 'react'
-import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
-// import Particles from 'react-tsparticles'
-// import { loadFull } from 'tsparticles'
-// import { polygonPathName, loadPolygonPath } from 'tsparticles-path-polygon'
 import { Link } from 'react-scroll'
 import img_linkedIn from "../img/communities/linked-in.webp"
 import img_GitHub from "../img/communities/github.webp"
 import img_StackOverflow from "../img/communities/stack-overflow.webp"
-
-// import particlesOptions2 from '../effects/particlesShapeLink.json'
-// import particlesOptions3 from '../effects/particleslineLinkColor.json'
-// import particlesOptions1 from '../effects/particlesFireworks1.json'
-
-// const ENABLEPARTICLES = false  // disable before deploying to production
 
 const mainTitle = "About"
 const footerTitle = "Let's connect, a great way to get my attention is through the following communities..."
@@ -21,27 +11,7 @@ const textBack = "Back to Top"
 
 export default function About() {
 
-  // TSParticles setup/config
-  const particlesInit = async (main) => {
-    // console.log(main)
-    await loadFull(main)
-  }
-  const particlesLoaded = (container) => {
-    // console.log(container)
-  }
-
-  // const particlesEffect = ENABLEPARTICLES ? 
-  // 	<Particles
-  //     id="tsparticles"
-  //     init={particlesInit}
-  //     loaded={particlesLoaded}
-  //     options={particlesOptions3}
-  //   />
-  //   :
-  //   <div></div>
-
   return (
-
   	<React.Fragment>
 	  	<div className="App-section is-block dark-gradient" id="about" style={{paddingTop:'4.25rem', paddingBottom:'4.25rem'}}>
 
@@ -69,7 +39,7 @@ export default function About() {
 					          <hr />
 					        </article>
 					        <article className="tile is-child">
-					          <img src={img_linkedIn} style={{maxHeight:'5rem'}} />
+					          <img className="image is-128x128 auto-margins-x" src={img_linkedIn}  />
 					        </article>
 					      </a>
 					      <a className="tile is-parent is-vertical tile-hover" href="https://github.com/edub008" target='_blank' rel='noopener noreferrer' >
@@ -78,7 +48,7 @@ export default function About() {
 					          <hr />
 					        </article>
 					        <article className="tile is-child">
-					          <img src={img_GitHub} style={{maxHeight:'5rem'}} />
+					          <img className="image is-128x128 auto-margins-x" src={img_GitHub}  />
 					        </article>
 					      </a>
 					      <a className="tile is-parent is-vertical tile-hover" href="https://stackoverflow.com/users/1968395/ergin" target='_blank' rel='noopener noreferrer' >
@@ -87,7 +57,7 @@ export default function About() {
 					          <hr />
 					        </article>
 					        <article className="tile is-child">
-					          <img src={img_StackOverflow} style={{maxHeight:'5rem'}} />
+					          <img className="image is-128x128 auto-margins-x" src={img_StackOverflow}  />
 					        </article>
 					      </a>
 				        <div className="tile is-parent">
@@ -126,9 +96,7 @@ export default function About() {
 			    </div>
 
 			  </div>
-
 		  </div>
 		</React.Fragment>
-
   )
 }

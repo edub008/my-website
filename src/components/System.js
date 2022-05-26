@@ -5,7 +5,6 @@ import * as Shared from '../shared/shared'
 import backgroundImg from '../img/turkiye.webp'
 
 const mainTitle = "My System"
-const bkgdImage = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/105988/banner.jpg"
 
 const systemItems = [
 	"PURSUE PASSIONS, NOT PAYCHECKS",
@@ -32,7 +31,7 @@ export default function MySystem() {
 		</div>
 	)
 
-	const bkgdHeight = screenWidth < Shared.maxMobileScreenWidth ? '105vh' : '100vh'
+	const bkgdHeight = screenWidth < Shared.maxMobileScreenWidth ? '110vh' : '100vh'
 
   return (
   	<React.Fragment>

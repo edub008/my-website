@@ -1,21 +1,11 @@
-import React, { useState, useContext } from 'react'
-import { Parallax } from 'react-scroll-parallax'
-import { AppStateContext } from '../AppStateContext'
+import React from 'react'
 import * as Shared from '../shared/shared'
 import ucsc_badge from "../img/education/UC-logo.webp"
 import sjsu_badge from "../img/education/SJSU-logo.webp"
 
 const mainTitle = "My Degrees"
-const overlayStyle = {
-	top:'20%',
-	width: '80%',
-	border:'1px solid #00D1B2',
-	borderRadius: '4px'
-}
 
 export default function Education() {
-
-	const [titleTranslate, setTitleTranslate] = useState(0)
 
   return (
   	<React.Fragment>
@@ -27,42 +17,25 @@ export default function Education() {
 		    </div>
   			<div className="columns m-0 p-0 is-tablet">
 		      <div className="column m-0 p-0 degree-1 is-flex is-relative is-justify-content-center">
-		      	<div className="default-overlay is-absolute py-2" style={overlayStyle}>
+		      	<div className="default-overlay overlay-style is-absolute py-2">
 			      	<div className="title is-5 is-underlined has-text-light"> BSci, Computer Science</div>
 			      	<div className="subtitle is-5 mb-1 has-text-light"> UC Santa Cruz </div>
 			      	<figure className="image is-64x64 auto-margins-x is-justify-content-center is-align-content-center">
-					      <img src={ucsc_badge} />
+					      <img src={ucsc_badge} className="image is-64x64" />
 					    </figure>
 		      	</div>
 		      	
 		      </div>
 		      <div className="column m-0 p-0 degree-2 is-flex is-relative is-justify-content-center">
-		      	<div className="default-overlay is-absolute py-2" style={overlayStyle}>
+		      	<div className="default-overlay overlay-style is-absolute py-2">
 			      	<div className="title is-5 is-underlined has-text-light"> Masters, Business Administration</div>
 			      	<div className="subtitle is-5 mb-1 has-text-light"> San Jose State University </div>
 			      	<figure className="image is-64x64 auto-margins-x">
-					      <img src={sjsu_badge} />
+					      <img src={sjsu_badge} className="image is-64x64" />
 					    </figure>
 			      </div>
 		      </div>
 		    </div>
-
-
-  		{/*
-				<div className="columns auto-margins-x">
-		      <div className="column is-relative">
-						<div className="columns m-0 is-justify-content-center">
-				      <div className="column ">
-				      	<Parallax onProgressChange={(progress) => setTitleTranslate(Shared.scaleQuarterScreen(progress)) } >
-				      		<h2 className="title is-1 fancy-title mx-1 mx-6 has-text-dark"> <span>{mainTitle}</span> </h2>
-							  </Parallax>
-				      </div>
-				    </div>
-				  </div>
-
-				</div>
-		  */}
-		    
 	    </div>
 	  </React.Fragment>
   )

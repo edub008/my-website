@@ -86,6 +86,13 @@ code {
   /*border-radius: 8px !important;*/
 }
 
+.overlay-style {
+  top: 20%;
+  width: 80%;
+  border: 1px solid #00D1B2;
+  borderRadius: 4px
+}
+
 .my-system-gradient {
   background-color: radial-gradient(circle, rgba(219,124,2,1) 0%, rgba(114,69,11,1) 23%, rgba(219,124,2,1) 56%, rgba(20,20,20,1) 91%);
 }
