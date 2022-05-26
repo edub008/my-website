@@ -5,6 +5,20 @@ html {
   background-color: $dark;
 }
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 .App {
   text-align: center;
 }
@@ -42,14 +56,14 @@ html {
 }
 
 .degree-1 {
-  background-image: url('../img/education/ucsc-bs-degree.jpg');
+  background-image: url('../img/education/ucsc-campus.webp');
   background-position: center top;
   background-size: 100% auto;
   min-height: 33vh;
 }
 
 .degree-2 {
-  background-image: url('../img/education/sjsu-mba.jpg');
+  background-image: url('../img/education/sjsu-mba.webp');
   background-position: center top;
   background-size: 100% auto;
   min-height: 33vh;
@@ -83,6 +97,16 @@ html {
 .my-system-text {
   color: white;
   text-shadow: 2px 2px #220000;
+}
+
+.tile {
+  border: 2px solid transparent;
+}
+
+.tile-hover:hover {
+  border-radius: 6px;
+  border: 2px solid $primary;
+  cursor: pointer !important;
 }
 
 .fancy-title {

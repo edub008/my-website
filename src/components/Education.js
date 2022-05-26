@@ -2,25 +2,15 @@ import React, { useState, useContext } from 'react'
 import { Parallax } from 'react-scroll-parallax'
 import { AppStateContext } from '../AppStateContext'
 import * as Shared from '../shared/shared'
-import dm_logo from "../img/logos/deepmotion-glyph.png"
-import ds_logo from "../img/logos/docusign_logo.png"
-
-import ucsc_badge from "../img/education/UC-logo.png"
-import sjsu_badge from "../img/education/SJSU-logo.png"
+import ucsc_badge from "../img/education/UC-logo.webp"
+import sjsu_badge from "../img/education/SJSU-logo.webp"
 
 const mainTitle = "My Degrees"
 const overlayStyle = {
 	top:'20%',
 	width: '80%',
-	border:'2px solid black',
+	border:'1px solid #00D1B2',
 	borderRadius: '4px'
-}
-const overlayStyleRight = {
-	top:'20%',
-	borderTop:'2px solid black', 
-	borderRight:'2px solid black',
-	borderBottom:'2px solid black',
-	borderLeft:'1px solid black'
 }
 
 export default function Education() {

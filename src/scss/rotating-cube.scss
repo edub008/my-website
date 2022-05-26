@@ -33,16 +33,49 @@
 	.cube-left {transform-origin: 0%; transform: rotatey(-90deg) translatex(-5vmin);}
 	.cube-bottom {transform-origin: 50% 100%; transform: rotatex(-90deg) translatey(5vmin);}
 	.cube-top {transform-origin: 50% 0%; transform: rotatex(90deg) translatey(-5vmin);}
-	@for $i from 1 through 6 {
-		.cube-#{$i} {
-			background-image: url('../img/interests/fenerbahce.png');
+	
+	.cube-1 {
+			background-image: url('../img/interests/fenerbahce.webp');
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center;
-			background-color: $dark;
-			border: 2px solid $primary;
+			background-color: $primary;
 		}
-	}
+		.cube-2 {
+			background-image: url('../img/interests/fenerbahce.webp');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: $primary-dark;
+		}
+		.cube-3 {
+			background-image: url('../img/interests/fenerbahce.webp');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: $primary-darker;
+		}
+		.cube-4 {
+			background-image: url('../img/interests/fenerbahce.webp');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: $primary-light;
+		}
+		.cube-5 {
+			background-image: url('../img/interests/fenerbahce.webp');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: $primary;
+		}
+		.cube-6 {
+			background-image: url('../img/interests/fenerbahce.webp');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: $primary-dark;
+		}
 }
 
 @keyframes rotate {

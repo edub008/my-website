@@ -1,15 +1,12 @@
 import React, { useState, useContext } from 'react'
 import { Parallax } from 'react-scroll-parallax'
-import { AppStateContext } from '../AppStateContext'
 import * as Shared from '../shared/shared'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 import JobInfo from './helpers/JobInfo'
-import dm_logo from "../img/logos/deepmotion-glyph.png"
-import ds_logo from "../img/logos/docusign_logo.png"
-import dc_logo from "../img/logos/david-corp.jpeg"
-import cd_logo from "../img/logos/crystal-dynamics.png"
-import li_logo from "../img/LI-In-Bug.png"
+import dm_logo from "../img/logos/deepmotion-glyph.webp"
+import ds_logo from "../img/logos/docusign_logo.webp"
+import dc_logo from "../img/logos/david-corp.webp"
+import cd_logo from "../img/logos/crystal-dynamics.webp"
+import li_logo from "../img/communities/linked-in.webp"
 
 const mainTitle = "My Journey"
 const mainDescr = "I love working at the intersection of technology and product on highly disruptive solutions that make a positive impact"

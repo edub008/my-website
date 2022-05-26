@@ -25,7 +25,7 @@
 	height:30vmin;
 	-webkit-transform-style: preserve-3d;
 	-webkit-transform: rotate3d(1,0,0,60deg) rotate3d(0,0,1,0deg);
-	-webkit-animation: rotate-city 20s ease-in-out infinite;
+	-webkit-animation: rotate-city 10s ease-in-out infinite;
 }
 .world:hover
 {
@@ -223,7 +223,7 @@
 }
 .building .north
 {
-    background:$primary-lighter;
+    background:$primary-darker;
 	width:4.25vmin;
 	height:4.25vmin;
 	-webkit-transform-origin:0 0;

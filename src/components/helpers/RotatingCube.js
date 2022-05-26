@@ -1,5 +1,4 @@
 import '../../scss/rotating-cube.scss'
-// import '../../scss/test.scss'
 
 export default function RotatingCube() {
   return (
@@ -14,25 +13,4 @@ export default function RotatingCube() {
 			</div>
 		</div>
 	)
-	// return (
-	// 	<div className="scene">
-	// 	    <div className="plane">
-	// 	        <div className="cuboid plant-pot">
-	// 	            <div className="cuboid__side"></div>
-	// 	            <div className="cuboid__side"></div>
-	// 	            <div className="cuboid__side"></div>
-	// 	            <div className="cuboid__side"></div>
-	// 	            <div className="cuboid__side"></div>
-	// 	            <div className="cuboid__side"></div>
-	// 	        </div>
-	// 	        <div className="plant">
-	// 	        	<img src="https://assets.codepen.io/605876/plant-leaves-large.png" />
-	// 	        	<img src="https://assets.codepen.io/605876/plant-leaves-large.png" />
-	// 	        	<img src="https://assets.codepen.io/605876/plant-leaves-large.png" />
-	// 	        	<img src="https://assets.codepen.io/605876/plant-leaves-large.png" />
-	// 	        	<img src="https://assets.codepen.io/605876/plant-leaves-large.png" />
-	// 	        </div>
-	// 	    </div>
-	// 	</div>
-	// )
 }

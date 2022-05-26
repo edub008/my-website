@@ -1,10 +1,9 @@
 import React from 'react'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
-import backgroundImg from '../img/ergin-hero.jpg'
+import backgroundImg from '../img/ergin-hero.webp'
 
 const preTitle = "Hey, I'm"
 const mainTitle = "Ergin Dervişoğlu"
-const bkgdImage = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/105988/banner.jpg"
 
 export default function Hero() {
 
