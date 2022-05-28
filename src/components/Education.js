@@ -21,7 +21,7 @@ export default function Education() {
 			      	<div className="title is-5 is-underlined has-text-light"> BSci, Computer Science</div>
 			      	<div className="subtitle is-5 mb-1 has-text-light"> UC Santa Cruz </div>
 			      	<figure className="image is-64x64 auto-margins-x is-justify-content-center is-align-content-center">
-					      <img src={ucsc_badge} className="image is-64x64" />
+					      <img src={ucsc_badge} className="image is-64x64" alt="uc-santa-cruz-campus" />
 					    </figure>
 		      	</div>
 		      	
@@ -31,7 +31,7 @@ export default function Education() {
 			      	<div className="title is-5 is-underlined has-text-light"> Masters, Business Administration</div>
 			      	<div className="subtitle is-5 mb-1 has-text-light"> San Jose State University </div>
 			      	<figure className="image is-64x64 auto-margins-x">
-					      <img src={sjsu_badge} className="image is-64x64" />
+					      <img src={sjsu_badge} className="image is-64x64" alt="sjsu-campus"/>
 					    </figure>
 			      </div>
 		      </div>

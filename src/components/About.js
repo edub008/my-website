@@ -39,7 +39,7 @@ export default function About() {
 					          <hr />
 					        </article>
 					        <article className="tile is-child">
-					          <img className="image is-128x128 auto-margins-x" src={img_linkedIn}  />
+					          <img className="image is-128x128 auto-margins-x" src={img_linkedIn} alt="ergin dervisoglu - linkedin" />
 					        </article>
 					      </a>
 					      <a className="tile is-parent is-vertical tile-hover" href="https://github.com/edub008" target='_blank' rel='noopener noreferrer' >
@@ -48,7 +48,7 @@ export default function About() {
 					          <hr />
 					        </article>
 					        <article className="tile is-child">
-					          <img className="image is-128x128 auto-margins-x" src={img_GitHub}  />
+					          <img className="image is-128x128 auto-margins-x" src={img_GitHub} alt="ergin dervisoglu - github" />
 					        </article>
 					      </a>
 					      <a className="tile is-parent is-vertical tile-hover" href="https://stackoverflow.com/users/1968395/ergin" target='_blank' rel='noopener noreferrer' >
@@ -57,7 +57,7 @@ export default function About() {
 					          <hr />
 					        </article>
 					        <article className="tile is-child">
-					          <img className="image is-128x128 auto-margins-x" src={img_StackOverflow}  />
+					          <img className="image is-128x128 auto-margins-x" src={img_StackOverflow} alt="ergin dervisoglu - stackoverflow" />
 					        </article>
 					      </a>
 				        <div className="tile is-parent">

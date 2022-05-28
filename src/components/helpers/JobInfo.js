@@ -26,7 +26,7 @@ export default function JobInfo(props) {
         <div className="tile is-4 is-vertical is-parent">
           <div className="tile is-child is-flex is-justify-content-center">
             <figure className="image is-256x256 is-flex is-align-items-center" style={{maxWidth:'55%'}}>
-  					  <img src={props.logo} />
+  					  <img src={props.logo} alt={props.company} />
   					</figure>
           </div>
 

@@ -1,13 +1,12 @@
 runtime: nodejs16
 env_variables:
   NODE_ENV: "production"
-default_expiration: "1d 12h"
 
 handlers:
-- url: /static/media
+- url: /static/media/.*
   secure: always
   static_dir: static/media
-  default_expiration: "1d 12h"
+  expiration: "1d 12h"
 
 - url: /.*
   secure: always
