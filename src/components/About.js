@@ -72,7 +72,7 @@ export default function About() {
 			    <div className="columns m-0 mt-6 has-text-centered auto-margins-x is-justify-content-center">
 			      <div className="column is-9 mx-2 has-text-centered">
 			      	<div className="subtitle is-6 has-text-white">
-			      		<h6 dangerouslySetInnerHTML={{__html: footerText }}></h6>
+			      		<h1 className="subtitle is-6" dangerouslySetInnerHTML={{__html: footerText }}></h1>
 			      	</div>
 			      </div>
 			    </div>
@@ -88,6 +88,7 @@ export default function About() {
 								  offset={-100}
 								  duration={800}
 								  className="has-text-black"
+								  href="#hero"
 								  >
 								  	{textBack}
 								</Link>

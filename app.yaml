@@ -6,7 +6,7 @@ handlers:
 - url: /static/media/.*
   secure: always
   static_dir: static/media
-  expiration: "1d 12h"
+  expiration: "4d 12h"
 
 - url: /.*
   secure: always

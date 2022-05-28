@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectFade, Navigation, Pagination } from "swiper"
-import "swiper/css"
-import "swiper/css/effect-fade"
-import "swiper/css/pagination"
-import "swiper/css/navigation"
+import "swiper/scss"
+import "swiper/scss/effect-fade"
+import "swiper/scss/pagination"
+import "swiper/scss/navigation"
 import * as Shared from '../shared/shared'
 import InterestBlock from './helpers/InterestBlock'
 import Metaverse from './helpers/Metaverse'

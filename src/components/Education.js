@@ -12,7 +12,7 @@ export default function Education() {
   		<div className="has-background-white" id="education">
   			<div className="columns m-0 p-0 is-mobile">
 		      <div className="column m-0 has-text-centered">
-		      	<div className="title is-4 has-text-primary"> {mainTitle} </div>
+		      	<div className="title is-3 has-text-black"> {mainTitle} </div>
 		      </div>
 		    </div>
   			<div className="columns m-0 p-0 is-tablet">

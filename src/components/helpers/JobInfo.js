@@ -38,7 +38,7 @@ export default function JobInfo(props) {
   			  			<a href={props.link}> <h2 className="job-title company-text"> {props.company} </h2></a>
   			  			<h3 className="has-text-primary"> {props.title} </h3>
 
-                <h5 className="has-text-black" style={{maxWidth:'85%'}} dangerouslySetInnerHTML={{__html: displayText }}></h5>
+                <h4 className="has-text-black" style={{maxWidth:'85%'}} dangerouslySetInnerHTML={{__html: displayText }}></h4>
                 { 
                   props.expandSectionFlags[props.id] 
                   ?

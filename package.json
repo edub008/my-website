@@ -2,7 +2,7 @@
   "name": "ergin-dervisoglu-website",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://ergin-d.com/",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
