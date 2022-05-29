@@ -42,7 +42,6 @@ export default function MyInterests() {
   		<Swiper
         style={{height:'400px', overflow:'visible'}}
         effect="fade"
-        grabCursor={true}
         navigation={true}
         pagination={{clickable: true}}
         modules={[ Navigation, Pagination, EffectFade]}
