@@ -115,7 +115,7 @@ export default function Journey() {
 
 	      			<Parallax onProgressChange={(progress) => setFooterOpacity( Shared.scaleQuarterScreen(progress) ) } >
 		      			<div style={{opacity: footerOpacity}}>
-			      			<div className="columns is-mobile" style={{marginLeft: '0', marginRight: '0'}}>
+			      			<div className="columns is-mobile ml-0 mr-0">
 		      					<div className="column is-relative has-text-right">
 		      						<Parallax onProgressChange={(progress) => setTranslateXValue( 0, 1-Shared.scaleQuarterScreen(progress) )} >
 		      							<div style={{transform: `translateX(${footerXTranslate[0]*-50}px)`}}>

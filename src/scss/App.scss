@@ -13,7 +13,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .App {
   text-align: center;
 }
@@ -41,15 +40,6 @@ body {
   padding-bottom: 6rem !important;
 }
 
-.br-top-8 {
-  border-top-left-radius: 8px !important;
-  border-top-right-radius: 8px !important;
-}
-.br-bot-8 {
-  border-bottom-left-radius: 8px !important;
-  border-bottom-right-radius: 8px !important;
-}
-
 .degree-1 {
   background-image: url('../img/education/ucsc-campus.webp');
   background-position: center top;
@@ -75,21 +65,12 @@ body {
   background-color: $overlay !important;
   border-radius: 8px !important;
 }
-.my-interest-overlay {
-  background-color: $overlay-darker !important;
-  padding: 2rem !important;
-  /*border-radius: 8px !important;*/
-}
 
 .overlay-style {
   top: 20%;
   width: 80%;
   border: 1px solid #00D1B2;
   borderRadius: 4px
-}
-
-.my-system-gradient {
-  background-color: radial-gradient(circle, rgba(219,124,2,1) 0%, rgba(114,69,11,1) 23%, rgba(219,124,2,1) 56%, rgba(20,20,20,1) 91%);
 }
 
 .dark-gradient {
@@ -128,7 +109,6 @@ body {
 }
 .fancy-title span:before,
 .fancy-title span:after {
-  /*@extend .auto-margins-y;*/
   content: "";
   position: absolute;
   height: 5px;
@@ -140,7 +120,6 @@ body {
 }
 .fancy-title-light span:before,
 .fancy-title-light span:after {
-  /*@extend .auto-margins-y;*/
   content: "";
   position: absolute;
   height: 5px;
@@ -228,18 +207,16 @@ body {
 }
 
 .text-shadow-3d {
-  /* text-shadow: 2px 2px 4px #957dad; */
-
   text-shadow: 1px 1px 1px #957dad,
-             1px 2px 1px #957dad,
-             1px 3px 1px #957dad,
-             1px 4px 1px #957dad,
-             1px 5px 1px #957dad,
-             1px 6px 1px #957dad,
-             1px 10px 5px rgba(16, 16, 16, 0.5),
-             1px 15px 10px rgba(16, 16, 16, 0.4),
-             1px 20px 30px rgba(16, 16, 16, 0.3),
-             1px 25px 50px rgba(16, 16, 16, 0.2);
+               1px 2px 1px #957dad,
+               1px 3px 1px #957dad,
+               1px 4px 1px #957dad,
+               1px 5px 1px #957dad,
+               1px 6px 1px #957dad,
+               1px 10px 5px rgba(16, 16, 16, 0.5),
+               1px 15px 10px rgba(16, 16, 16, 0.4),
+               1px 20px 30px rgba(16, 16, 16, 0.3),
+               1px 25px 50px rgba(16, 16, 16, 0.2);
 
 }
 
@@ -248,31 +225,6 @@ body {
   margin-left: 2rem;
   margin-right: 2rem;
 }
-
-/*.dashed-title:before {
-  content: "";
-  color: black;
-  display: block;
-  width: 120px;
-  height: 2px;
-  background: #fff;
-  right: 100%;
-  top: 50%;
-  position: absolute;
-}
-
-.dashed-title:after {
-  content: "";
-  color: black;
-  display: block;
-  width: 120px;
-  height: 2px;
-  background: #fff;
-  left: 100%;
-  top: 50%;
-  position: absolute;
-}
-*/
 
 .job-title {
   color: #fab03c;
@@ -297,10 +249,6 @@ body {
 }
 .mr-0 {
   margin-right: 0 !important;
-}
-.auto-margins-y {
-  margin-top: auto !important;
-  margin-bottom: auto !important;
 }
 .auto-margins-x {
   margin-left: auto !important;
@@ -369,22 +317,6 @@ body {
   width: 25vw !important;
   position: relative !important;
   margin: auto;
-}
-
-
-#tsparticles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#particles-swiper {
-  /*position: absolute;
-  top: 0;
-  left: 0;*/
-  z-index: 1;
 }
 
 .swiper-button-disabled {

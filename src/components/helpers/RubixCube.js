@@ -1,4 +1,4 @@
-import '../../scss/rubix-cube.scss'
+import '../../scss/rubix-cube.css'
 
 export default function RubixCube() {
   return (
