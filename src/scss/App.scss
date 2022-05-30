@@ -1,4 +1,12 @@
-@import 'bulma/css/bulma.css';
+@import "bulma/sass/base/_all.sass";
+@import "bulma/sass/grid/_all.sass";
+@import "bulma/sass/helpers/_all.sass";
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/elements/image.sass";
+@import "bulma/sass/elements/content.sass";
+@import "bulma/sass/elements/title.sass";
+@import "bulma/sass/layout/hero.sass";
+
 @import 'vars';
 
 html {
@@ -78,8 +86,8 @@ body {
 }
 
 .my-system-text {
-  color: white;
-  text-shadow: 2px 2px #220000;
+  color: white !important;
+  text-shadow: 2px 2px #220000 !important;
 }
 
 .tile {
@@ -240,6 +248,14 @@ body {
   width: 100% !important;
 }
 
+.is-visible {
+  visibility: visible !important;
+}
+
+.is-hidden {
+  visibility: hidden !important;
+}
+
 .is-fullheight {
   height: 100vh !important;
 }
@@ -255,6 +271,10 @@ body {
   margin-right: auto !important;
 }
 
+.ratio-4x3 {
+  aspect-ratio: 4 / 3;
+}
+
 .cursor-pt {
   cursor: pointer !important;  
 }
@@ -264,10 +284,14 @@ body {
 }
 
 .career-link {
-  /* @extend .auto-margins-x; */
   max-width: 50px;
   max-height: 50px;
   cursor: pointer;
+}
+
+.about-class {
+  padding-top: 4.25rem;
+  padding-bottom: 4.25rem;
 }
 
 .parallax-root {
@@ -300,6 +324,11 @@ body {
   position: relative;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+}
+
+.swiper-class {
+  height: 400px;
+  overflow: visible;
 }
 
 .swiper-slide {

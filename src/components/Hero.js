@@ -10,14 +10,13 @@ export default function Hero() {
   	<div className="App-section" id="hero">
   		<ParallaxBanner
 	      layers={[{ image: backgroundImg, speed: -70 }]}
-	      style={{ aspectRatio: '4 / 3', height:'100vh' }}
-	    >
-	    <div className="is-flex is-absolute inset-0 is-justify-content-center is-align-items-center">
-	    	<div className="is-relative">
-		      <h2 className="subtitle is-2 has-text-white"> {preTitle} </h2>
-	    		<h1 className="title is-hero has-text-white"> {mainTitle} </h1>
-	    	</div>
-	    </div>
+	      className="ratio-4x3 is-fullheight">
+		    <div className="is-flex is-absolute inset-0 is-justify-content-center is-align-items-center">
+		    	<div className="is-relative">
+			      <h2 className="subtitle is-2 has-text-white"> {preTitle} </h2>
+		    		<h1 className="title is-hero has-text-white"> {mainTitle} </h1>
+		    	</div>
+		    </div>
 	    </ParallaxBanner>
 	  </div>
   )

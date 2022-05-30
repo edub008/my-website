@@ -5,7 +5,6 @@ import * as Shared from '../shared/shared'
 import backgroundImg from '../img/turkiye.webp'
 
 const mainTitle = "My System"
-
 const systemItems = [
 	"PURSUE PASSIONS, NOT PAYCHECKS",
 	"PRIORITIZE THE CUSTOMER",
@@ -38,7 +37,8 @@ export default function MySystem() {
 	  	<div className="App-section is-block pb-0" id="system">
 	  		<ParallaxBanner
 		      layers={[{ image: backgroundImg, speed: -70 }]}
-		      style={{ aspectRatio: '4 / 3', height: bkgdHeight }}
+		      style={{ height: bkgdHeight }}
+		      className="ratio-4x3"
 		    >
 		    	<div className="columns auto-margins-x">
 			      <div className="column is-relative">

@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectFade, Navigation, Pagination } from "swiper"
-import "swiper/scss"
+import { EffectFade, Navigation, Pagination } from 'swiper'
+import InterestBlock from './helpers/InterestBlock'
+import useWindowDimensions from './helpers/useWindowDimensions'
+import * as Shared from '../shared/shared'
+
+import "../scss/swiper.scss"
 import "swiper/scss/effect-fade"
 import "swiper/scss/pagination"
 import "swiper/scss/navigation"
-import * as Shared from '../shared/shared'
-import InterestBlock from './helpers/InterestBlock'
-import Metaverse from './helpers/Metaverse'
-import RubixCube from './helpers/RubixCube'
-import ChessBoard from './helpers/ChessBoard'
-import RotatingCube from './helpers/RotatingCube'
-import useWindowDimensions from './helpers/useWindowDimensions'
+
+// create components using React.lazy to minimize main thread work on 
+// initial load to improve site performance
+const Metaverse = React.lazy(() => import('./helpers/Metaverse'))
+const RubixCube = React.lazy(() => import('./helpers/RubixCube'))
+const ChessBoard = React.lazy(() => import('./helpers/ChessBoard'))
+const RotatingCube = React.lazy(() => import('./helpers/RotatingCube'))
 
 const mainTitle = "My Interests"
 const testContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
@@ -23,6 +27,13 @@ const contentTitles = [
 	"Fenerbahçe"
 ]
 
+const interestAnims = Object.freeze({
+	blockchain: 0,
+	metaverse: 1,
+	games: 2,
+	fenerbahce: 3
+})
+
 const contentTexts = [
 	"I believe Blockchain & Cryptocurrencies will play a vital role in Web 3.0 and stay actively engaged. Some specific projects I find super interesting and have either invested in or I'm kicking the tires with are: <a href='https://solana.com' target='_blank' rel='noopener noreferrer'>SOL</a>, <a href='https://polkadot.network' target='_blank' rel='noopener noreferrer'>DOT</a>, <a href='https://polygon.technology' target='_blank' rel='noopener noreferrer'>MATIC</a>, <a href='https://oceanprotocol.com' target='_blank' rel='noopener noreferrer'>OCEAN</a>, and <a href='https://www.originprotocol.com' target='_blank' rel='noopener noreferrer'>OGN</a>.",
 	"I'm an active investor, developer, and advocate of multiple Metaverse solutions and technologies including <a href='https://www.deepmotion.com/animate-3d' target='_blank' rel='noopener noreferrer'>Animate 3D</a> which lets you create high-fidelity animations from video and is proving to be a valuable tool for animators, developers, and other content creators.",
@@ -32,7 +43,8 @@ const contentTexts = [
 
 export default function MyInterests() {
 
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0)
+  const [activeSlideIndex, setActiveSlideIndex] = useState(interestAnims.blockchain)
+  const [divVisibility, setDivVisibility] = useState('is-hidden')
   const [swiperInst, setSwiperInst] = useState(null)
   const { screenWidth, screenHeight } = useWindowDimensions();
 
@@ -40,7 +52,7 @@ export default function MyInterests() {
   	return (
   		<div style={screenWidth < Shared.maxMobileScreenWidth ? {width:'95vw'} : {width:'50vw'} }>
   		<Swiper
-        style={{height:'400px', overflow:'visible'}}
+        className="swiper-class"
         effect="fade"
         navigation={true}
         pagination={{clickable: true}}
@@ -49,16 +61,24 @@ export default function MyInterests() {
         onSwiper={(swiper) => setSwiperInst(swiper)}
       >
       	<SwiperSlide>
-      		<RubixCube />
+      		<React.Suspense fallback={<></>}>
+		        {(activeSlideIndex === interestAnims.blockchain) && <RubixCube />}
+		      </React.Suspense>
       	</SwiperSlide>
 	      <SwiperSlide>
-	      	<Metaverse />
+	      	<React.Suspense fallback={<></>}>
+		        {(activeSlideIndex === interestAnims.metaverse) && <Metaverse />}
+		      </React.Suspense>
 	      </SwiperSlide>
 	      <SwiperSlide>
-	      	<ChessBoard />
+	      	<React.Suspense fallback={<></>}>
+		        {(activeSlideIndex === interestAnims.games) && <ChessBoard />}
+		      </React.Suspense>
       	</SwiperSlide>
 	      <SwiperSlide>
-	      	<RotatingCube />
+	      	<React.Suspense fallback={<></>}>
+		        {(activeSlideIndex === interestAnims.fenerbahce) && <RotatingCube />}
+		      </React.Suspense>
 	      </SwiperSlide>
 	    </Swiper>
 	    </div>
@@ -68,7 +88,6 @@ export default function MyInterests() {
   return (
   	<React.Fragment>
 	  	<div className="App-section dark-gradient section-pad" id="interests">
-
 	    	<div className="columns is-relative">
 		      <div className="column is-relative">
 
@@ -77,8 +96,7 @@ export default function MyInterests() {
 							  <h2 className="title is-1 fancy-title fancy-title-light has-text-light"> <span> {mainTitle} </span> </h2>
 				      </div>
 				    </div>
-
-				    <div className="columns is-desktop">
+			    	<div className="columns is-desktop" >
 				    	<div className="column has-text-centered">
 				      	{InterestsSwiper()}
 				      </div>
@@ -89,10 +107,10 @@ export default function MyInterests() {
 				      		className="anim-grow"
 				      	/>
 				      </div>
-				    </div>
+			    	</div>
+
 				  </div>
 				</div>
-
 		  </div>
 		</React.Fragment>
   )

@@ -13,7 +13,7 @@ export default function About() {
 
   return (
   	<React.Fragment>
-	  	<div className="App-section is-block dark-gradient" id="about" style={{paddingTop:'4.25rem', paddingBottom:'4.25rem'}}>
+	  	<div className="App-section about-class is-block dark-gradient " id="about">
 
 	  		<div className="is-relative is-fullwidth">
 		  		
