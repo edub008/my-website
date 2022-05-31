@@ -2,7 +2,7 @@ import '../../scss/metaverse.scss'
 
 export default function Metaverse() {
 	return (
-		<div className="meta-wrapper">
+		<div className="meta-wrapper anim-grow">
 		<div id="world" className="world">
 			<h1 className="ground">ground</h1>
 

@@ -21,7 +21,7 @@ export default function MySystem() {
 	const { screenWidth, screenHeight } = useWindowDimensions();
 
 	const mySystemItems = systemItems.map((item, index) =>
-		<div key={`system-item-${index+1}`} style={{transform: `translateY(${100-(itemsYTranslate*100)}px)`}} >
+		<div key={`system-item-${index+1}`} >
 			<div className="column">
 				<ul>
 		  		<li className="title is-3 my-system-text"> {item} </li>
@@ -30,36 +30,27 @@ export default function MySystem() {
 		</div>
 	)
 
-	const bkgdHeight = screenWidth < Shared.maxMobileScreenWidth ? '110vh' : '100vh'
-
   return (
   	<React.Fragment>
 	  	<div className="App-section is-block pb-0" id="system">
 	  		<ParallaxBanner
-		      layers={[{ image: backgroundImg, speed: -70 }]}
-		      style={{ height: bkgdHeight }}
-		      className="ratio-4x3"
+		      layers={[{ image: backgroundImg }]}
+		      className="ratio-4x3 is-fullheight"
 		    >
 		    	<div className="columns auto-margins-x">
 			      <div className="column is-relative">
-
 							<div className="columns m-0 is-justify-content-center">
 					      <div className="column is-6 is-relative ">
-					      	
 								  	<h2 className="title is-1 fancy-title fancy-title-light mx-1 my-6"> <span> {mainTitle} </span> </h2>
-								  
 					      </div>
 					    </div>
-
 					    <div className="columns m-0 auto-margins-x is-justify-content-center  is-relative">
 					    	<div className="column is-7 p-2 my-system-overlay">
-					    		
-					      	<Parallax onProgressChange={(progress) => setItemsYTranslate( Shared.scaleQuarterScreen(progress) )} >
+					    		<Parallax speed="-20">
 								  	{mySystemItems}
 								  </Parallax>
 					      </div>
 					    </div>
-
 					  </div>
 					</div>
 				</ParallaxBanner>

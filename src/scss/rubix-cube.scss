@@ -19,7 +19,7 @@ $gap: 2px;
   position: relative;
   animation-timing-function: $easing !important;
 }
-*/
+
 
 label, #shadows {
   position: fixed;
@@ -38,6 +38,7 @@ label {
 #shadows:not(:checked) ~ .rubix-cubes {
   --shadow-filter: none;
 }
+*/
 
 .rubix-cubes {
   width: 8vmin;
@@ -47,7 +48,7 @@ label {
   overflow: visible;
   transform-style: preserve-3d;
   perspective: 9000px;
-  display: none !important;
+  display: flex;
   top: 50%;
   margin: auto;
 }
@@ -55,10 +56,6 @@ label {
 .rubix-container {
   top: 33% !important;
   position: relative !important;
-}
-
-.swiper-slide-active > .rubix-container > .rubix-cubes {
-  display: flex !important;
 }
 
 .rubix-cube, .large-shadow {

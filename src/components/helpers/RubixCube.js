@@ -2,7 +2,7 @@ import '../../scss/rubix-cube.scss'
 
 export default function RubixCube() {
   return (
-    <div className="rubix-container">
+    <div className="rubix-container anim-grow">
     <div className="rubix-cubes">
       <div className="rubix-cube" data-cube="111">
         <div className="cube-wrap">

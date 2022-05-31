@@ -25,7 +25,7 @@ export default function JobInfo(props) {
   		<div className="tile is-ancestor my-2" style={{ opacity: elemScale, transform: `scale(${elemScale})`}}>
         <div className="tile is-4 is-vertical is-parent">
           <div className="tile is-child is-flex is-justify-content-center">
-            <figure className="image is-256x256 is-flex is-align-items-center" style={{maxWidth:'55%'}}>
+            <figure className="image is-256x256 is-flex is-align-items-center max-w-55" >
   					  <img src={props.logo} alt={props.company} />
   					</figure>
           </div>
@@ -38,7 +38,7 @@ export default function JobInfo(props) {
   			  			<a href={props.link}> <h2 className="job-title company-text"> {props.company} </h2></a>
   			  			<h3 className="has-text-primary"> {props.title} </h3>
 
-                <h4 className="has-text-black" style={{maxWidth:'85%'}} dangerouslySetInnerHTML={{__html: displayText }}></h4>
+                <h4 className="has-text-black max-w-85" dangerouslySetInnerHTML={{__html: displayText }}></h4>
                 { 
                   props.expandSectionFlags[props.id] 
                   ?

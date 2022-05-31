@@ -3,6 +3,7 @@
 @import "bulma/sass/helpers/_all.sass";
 @import "bulma/sass/utilities/_all.sass";
 @import "bulma/sass/elements/image.sass";
+@import "bulma/sass/elements/button.sass";
 @import "bulma/sass/elements/content.sass";
 @import "bulma/sass/elements/title.sass";
 @import "bulma/sass/layout/hero.sass";
@@ -181,7 +182,7 @@ body {
 }
 
 .anim-grow {
-  animation: grow 1.25s ease-in-out;
+  animation: grow .5s ease-in-out;
 }
 
 @keyframes grow {
@@ -247,17 +248,41 @@ body {
 .is-fullwidth {
   width: 100% !important;
 }
+.is-fullheight {
+  height: 100vh !important;
+}
+.fullheight {
+  height: 100% !important;
+}
+.min-halfheight {
+  min-height: 50vh !important;
+}
 
 .is-visible {
   visibility: visible !important;
 }
-
 .is-hidden {
   visibility: hidden !important;
 }
 
-.is-fullheight {
-  height: 100vh !important;
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.br-none {
+  border: none !important;
+}
+.w-95vw {
+  width: 95vw;
+}
+.w-50vw {
+  width: 50vw;
+}
+.max-w-85 {
+  max-width: 85%;
+}
+.max-w-55 {
+  max-width: 55%;
 }
 
 .ml-0 {
@@ -269,6 +294,10 @@ body {
 .auto-margins-x {
   margin-left: auto !important;
   margin-right: auto !important;
+}
+.has-text-centered {
+  text-align: center !important;
+  text-align: -moz-center !important;
 }
 
 .ratio-4x3 {
@@ -316,79 +345,6 @@ body {
   width: 25em;
 }
 
-
-////////////////////////////////////////////////////
-
-.swiper {
-  //width: 50vw;
-  position: relative;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.swiper-class {
-  height: 400px;
-  overflow: visible;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  background: transparent !important;
-  /*background-color: $dark;*/
-}
-
-.swiper-pagination {
-  background-color: rgba(100,100,100,.25);
-  border-radius: 6px;
-  border: 1px solid $primary;
-  display: block;
-  width: 25vw !important;
-  position: relative !important;
-  margin: auto;
-}
-
-.swiper-button-disabled {
-  display:none;   
-}
-.swiper-button-next, .swiper-button-prev {
-  @extend .anim-color-pulse;
-  color: $primary !important;
-  margin-left: .25rem;
-  margin-right: .25rem;
-}
-
-/* un-comment to customize swiper next/prev icons
-.swiper-button-next:after {
-  //content: '\21D2' !important;
-  border: 2px solid $primary; 
-  border-radius: 6px;
-  padding: .25rem;
-}
-.swiper-button-prev:after {
-  //content: '\21D0' !important;
-  border: 2px solid $primary; 
-  border-radius: 6px;
-  padding: .25rem;
-}
-*/
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-}
-
-.swiper-interests {
-  margin: 0 !important;
-  height: 75vh !important;
-  /* height: 75vh !important; */
-}
-
 .my-interests-bkgd {
   background-color: #282c34;
-}
-
-.has-text-centered {
-  text-align: center !important;
-  text-align: -moz-center !important;
 }

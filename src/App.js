@@ -15,7 +15,7 @@ import './scss/App.scss'
 export default function App() {
 
   return (
-    <div className="App" style={{overflow:'hidden'}}>
+    <div className="App overflow-hidden">
       <ParallaxProvider>
         <Hero />
         <Journey />
