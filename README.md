@@ -2,7 +2,7 @@
 
 You can view my live site at www.ergin-d.com
 
-![ergin-d.com](./hero.png)
+![ergin-d.com](./src/img/ergin-hero.webp)
 
 > :information_source: This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
