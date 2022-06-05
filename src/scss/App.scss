@@ -1,5 +1,6 @@
 @import "bulma/sass/base/_all.sass";
-@import "bulma/sass/grid/_all.sass";
+@import "bulma/sass/grid/tiles.sass";
+@import "./columns-local.scss";
 @import "bulma/sass/helpers/_all.sass";
 @import "bulma/sass/utilities/_all.sass";
 @import "bulma/sass/elements/image.sass";
