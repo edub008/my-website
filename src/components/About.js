@@ -18,59 +18,64 @@ export default function About() {
 	  		<div className="is-relative is-fullwidth">
 		  		
 			    <div className="columns m-0 mb-5 has-text-centered auto-margins-x is-justify-content-center">
-			      <div className="column is-9 mx-2 has-text-centered">
+			      <div className="column is-9 auto-margins-x has-text-centered">
 			      	<div className="title is-4 has-text-white ">
 			      		{footerTitle}
 			      	</div>
 			      </div>
 			    </div>
 
-			    <div className="columns m-0 mb-5">
+			    <div className="columns is-desktop m-0 mb-5">
 			    	<div className="column">
-				      <div className="tile is-ancestor">
-				        <div className="tile is-parent">
-				          <article className="tile is-child">
-				            
-				          </article>
-				        </div>
-				        <a className="tile is-parent is-vertical tile-hover" href="https://www.linkedin.com/in/ergindervisoglu/" target='_blank' rel='noopener noreferrer' >
-					        <article className="tile is-child">
-					          <p className="subtitle has-text-primary">Linked In</p>
-					          <hr />
-					        </article>
-					        <article className="tile is-child">
-					          <img className="image is-128x128 auto-margins-x" src={img_linkedIn} alt="ergin dervisoglu - linkedin" />
-					        </article>
-					      </a>
-					      <a className="tile is-parent is-vertical tile-hover" href="https://github.com/edub008" target='_blank' rel='noopener noreferrer' >
-					        <article className="tile is-child">
-					          <p className="subtitle has-text-primary">GitHub</p>
-					          <hr />
-					        </article>
-					        <article className="tile is-child">
-					          <img className="image is-128x128 auto-margins-x" src={img_GitHub} alt="ergin dervisoglu - github" />
-					        </article>
-					      </a>
-					      <a className="tile is-parent is-vertical tile-hover" href="https://stackoverflow.com/users/1968395/ergin" target='_blank' rel='noopener noreferrer' >
-					        <article className="tile is-child">
-					          <p className="subtitle has-text-primary">Stack Overflow</p>
-					          <hr />
-					        </article>
-					        <article className="tile is-child">
-					          <img className="image is-128x128 auto-margins-x" src={img_StackOverflow} alt="ergin dervisoglu - stackoverflow" />
-					        </article>
-					      </a>
-				        <div className="tile is-parent">
-				          <article className="tile is-child">
-				            
-				          </article>
-				        </div>
-				      </div>
+			    	</div>
+			    	<div className="column about-col">
+			    		<a className="card" href="https://www.linkedin.com/in/ergindervisoglu/" target='_blank' rel='noopener noreferrer'>
+		            <div className="card-image">
+		              <img className="image is-128x128 auto-margins-x" src={img_linkedIn} alt="ergin dervisoglu - linkedin" />
+		            </div>
+		            <div className="card-content">
+		              <div className="media">
+		                <div className="media-content">
+		                  <p className="title about-title has-text-light">LinkedIn</p>
+		                </div>
+		              </div>
+		            </div>
+		          </a>
+          	</div>
+          	<div className="column about-col">
+		          <a className="card" href="https://github.com/edub008" target='_blank' rel='noopener noreferrer'>
+		            <div className="card-image">
+		              <img className="image is-128x128 auto-margins-x" src={img_GitHub} alt="ergin dervisoglu - github" />
+		            </div>
+		            <div className="card-content">
+		              <div className="media">
+		                <div className="media-content">
+		                  <p className="title about-title has-text-light">GitHub</p>
+		                </div>
+		              </div>
+		            </div>
+		          </a>
+		        </div>
+          	<div className="column about-col">
+		          <a className="card" href="https://stackoverflow.com/users/1968395/ergin" target='_blank' rel='noopener noreferrer'>
+		            <div className="card-image">
+		              <img className="image is-128x128 auto-margins-x" src={img_StackOverflow} alt="ergin dervisoglu - stackoverflow" />
+		            </div>
+		            <div className="card-content">
+		              <div className="media">
+		                <div className="media-content">
+		                  <p className="title about-title has-text-light">Stack Overflow</p>
+		                </div>
+		              </div>
+		            </div>
+		          </a>
 				    </div>
+				    <div className="column">
+			    	</div>
 			    </div>
 
 			    <div className="columns m-0 mt-6 has-text-centered auto-margins-x is-justify-content-center">
-			      <div className="column is-9 mx-2 has-text-centered">
+			      <div className="column is-9 auto-margins-x has-text-centered">
 			      	<div className="subtitle is-6 has-text-white">
 			      		<h1 className="subtitle is-6" dangerouslySetInnerHTML={{__html: footerText }}></h1>
 			      	</div>
