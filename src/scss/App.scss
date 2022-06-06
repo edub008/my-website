@@ -1,14 +1,16 @@
 @import "bulma/sass/base/_all.sass";
-@import "bulma/sass/grid/tiles.sass";
-@import "bulma/sass/grid/columns.sass";
 @import "bulma/sass/components/card.sass";
-@import "bulma/sass/helpers/_all.sass";
-@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/form/shared.sass";
+@import "bulma/sass/form/select.sass";
 @import "bulma/sass/elements/image.sass";
 @import "bulma/sass/elements/button.sass";
 @import "bulma/sass/elements/content.sass";
 @import "bulma/sass/elements/title.sass";
+@import "bulma/sass/grid/tiles.sass";
+@import "bulma/sass/grid/columns.sass";
+@import "bulma/sass/helpers/_all.sass";
 @import "bulma/sass/layout/hero.sass";
+@import "bulma/sass/utilities/_all.sass";
 
 @import 'vars';
 
@@ -200,6 +202,23 @@ body {
 }
 .title.is-interests {
   font-size: 3vmin;
+}
+
+.language-select {
+  position: absolute;
+  bottom: 3%;
+  right: 1.5%;
+  z-index: 50;
+}
+select {
+  background-color: rgba(50,50,50,.65) !important;
+}
+.select select {
+  color: white;
+}
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color: white !important;
+  color: white !important;
 }
 
 .company-text {

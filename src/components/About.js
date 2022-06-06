@@ -4,23 +4,23 @@ import img_linkedIn from "../img/communities/linked-in.webp"
 import img_GitHub from "../img/communities/github.webp"
 import img_StackOverflow from "../img/communities/stack-overflow.webp"
 
-const mainTitle = "About"
-const footerTitle = "Let's connect, a great way to get my attention is through the following communities..."
-const footerText = "I built this site using <a href='https://reactjs.org/' target='_blank' rel='noopener noreferrer'>React.js</a> along with some popular libraries such as <a href='https://www.npmjs.com/package/react-scroll-parallax' target='_blank' rel='noopener noreferrer'>react-scroll-parallax</a>, <a href='https://swiperjs.com/' target='_blank' rel='noopener noreferrer'>Swiper.js</a>, and <a href='https://particles.js.org/' target='_blank' rel='noopener noreferrer'>tsparticles</a>. CSS is handled with <a href='https://bulma.io/' target='_blank' rel='noopener noreferrer'>Bulma</a>."
-const textBack = "Back to Top"
+const linkedInHref = "https://www.linkedin.com/in/ergindervisoglu/"
+const gitHubHref = "https://github.com/edub008"
+const stackOverflowHref = "https://stackoverflow.com/users/1968395/ergin"
+const linkedInImgAlt = "ergin dervisoglu - linkedin"
+const gitHubImgAlt = "ergin dervisoglu - github"
+const stackOverflowImgAlt = "ergin dervisoglu - stack overflow"
 
-export default function About() {
-
+export default function About(props) {
   return (
   	<React.Fragment>
 	  	<div className="App-section about-class is-block dark-gradient " id="about">
 
 	  		<div className="is-relative is-fullwidth">
-		  		
 			    <div className="columns m-0 mb-5 has-text-centered auto-margins-x is-justify-content-center">
 			      <div className="column is-9 auto-margins-x has-text-centered">
 			      	<div className="title is-4 has-text-white ">
-			      		{footerTitle}
+			      		{props.t("text-connect")}
 			      	</div>
 			      </div>
 			    </div>
@@ -29,9 +29,9 @@ export default function About() {
 			    	<div className="column">
 			    	</div>
 			    	<div className="column about-col">
-			    		<a className="card" href="https://www.linkedin.com/in/ergindervisoglu/" target='_blank' rel='noopener noreferrer'>
+			    		<a className="card" href={linkedInHref} target='_blank' rel='noopener noreferrer'>
 		            <div className="card-image">
-		              <img className="image is-128x128 auto-margins-x" src={img_linkedIn} alt="ergin dervisoglu - linkedin" />
+		              <img className="image is-128x128 auto-margins-x" src={img_linkedIn} alt={linkedInImgAlt} />
 		            </div>
 		            <div className="card-content">
 		              <div className="media">
@@ -43,9 +43,9 @@ export default function About() {
 		          </a>
           	</div>
           	<div className="column about-col">
-		          <a className="card" href="https://github.com/edub008" target='_blank' rel='noopener noreferrer'>
+		          <a className="card" href={gitHubHref} target='_blank' rel='noopener noreferrer'>
 		            <div className="card-image">
-		              <img className="image is-128x128 auto-margins-x" src={img_GitHub} alt="ergin dervisoglu - github" />
+		              <img className="image is-128x128 auto-margins-x" src={img_GitHub} alt={gitHubImgAlt} />
 		            </div>
 		            <div className="card-content">
 		              <div className="media">
@@ -57,9 +57,9 @@ export default function About() {
 		          </a>
 		        </div>
           	<div className="column about-col">
-		          <a className="card" href="https://stackoverflow.com/users/1968395/ergin" target='_blank' rel='noopener noreferrer'>
+		          <a className="card" href={stackOverflowHref} target='_blank' rel='noopener noreferrer'>
 		            <div className="card-image">
-		              <img className="image is-128x128 auto-margins-x" src={img_StackOverflow} alt="ergin dervisoglu - stackoverflow" />
+		              <img className="image is-128x128 auto-margins-x" src={img_StackOverflow} alt={stackOverflowImgAlt} />
 		            </div>
 		            <div className="card-content">
 		              <div className="media">
@@ -77,7 +77,7 @@ export default function About() {
 			    <div className="columns m-0 mt-6 has-text-centered auto-margins-x is-justify-content-center">
 			      <div className="column is-9 auto-margins-x has-text-centered">
 			      	<div className="subtitle is-6 has-text-white">
-			      		<h1 className="subtitle is-6" dangerouslySetInnerHTML={{__html: footerText }}></h1>
+			      		<h1 className="subtitle is-6" dangerouslySetInnerHTML={{__html: props.t("text-footer") }}></h1>
 			      	</div>
 			      </div>
 			    </div>
@@ -95,12 +95,11 @@ export default function About() {
 								  className="has-text-black"
 								  href="#hero"
 								  >
-								  	{textBack}
+								  	{props.t("button-top")}
 								</Link>
 			      	</div>
 			      </div>
 			    </div>
-
 			  </div>
 		  </div>
 		</React.Fragment>

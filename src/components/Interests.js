@@ -5,13 +5,24 @@ import InterestsSwiper from './helpers/InterestsSwiper'
 import useWindowDimensions from './helpers/useWindowDimensions'
 import * as Shared from '../shared/shared'
 
-const mainTitle = "My Interests"
-
-export default function MyInterests() {
+export default function MyInterests(props) {
 
   const [activeSlideIndex, setActiveSlideIndex] = useState(Shared.interestAnims.blockchain)
   const [showView, setShowView] = useState(0)
   const {screenWidth, screenHeight} = useWindowDimensions()
+
+  const contentTitles = [
+    props.t("interest-title-1"),
+    props.t("interest-title-2"),
+    props.t("interest-title-3"),
+    props.t("interest-title-4")
+  ]
+  const contentTexts = [
+    props.t("interest-text-1"),
+    props.t("interest-text-2"),
+    props.t("interest-text-3"),
+    props.t("interest-text-4")
+  ]
 
   function moveToPreviousInterest() {
   	if( activeSlideIndex ) {
@@ -39,8 +50,8 @@ export default function MyInterests() {
         </div>
 	      <div className="column is-flex mx-2 min-halfheight has-text-centered">
 	      	<InterestBlock 
-	      		title={Shared.contentTitles[activeSlideIndex]} 
-	      		content={Shared.contentTexts[activeSlideIndex]} 
+	      		title={contentTitles[activeSlideIndex]} 
+	      		content={contentTexts[activeSlideIndex]} 
 	      		className="anim-grow"
 	      	/>
 	      </div>
@@ -111,7 +122,7 @@ export default function MyInterests() {
 			      <div className="column is-relative">
 							<div className="columns m-0 is-justify-content-center">
 					      <div className="column is-6 is-relative ">
-								  <h2 className="title is-1 fancy-title fancy-title-light has-text-light"> <span> {mainTitle} </span> </h2>
+								  <h2 className="title is-1 fancy-title fancy-title-light has-text-light"> <span> {props.t("title-interests")} </span> </h2>
 					      </div>
 					    </div>
 
