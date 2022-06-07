@@ -14,7 +14,7 @@ const stackOverflowImgAlt = "ergin dervisoglu - stack overflow"
 export default function About(props) {
   return (
   	<React.Fragment>
-	  	<div className="App-section about-class is-block dark-gradient " id="about">
+	  	<div className="App-section about-class is-block dark-gradient " id="connect">
 
 	  		<div className="is-relative is-fullwidth">
 			    <div className="columns m-0 mb-5 has-text-centered auto-margins-x is-justify-content-center">

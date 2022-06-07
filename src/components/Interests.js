@@ -115,9 +115,9 @@ export default function MyInterests(props) {
   }
 
   return (
-  	<React.Fragment>
+  	<div id="interests">
   		<Parallax onProgressChange={(progress) => setShowView(progress > 0 ? 'is-visible' : 'is-hidden')} >
-		  	<div className={`App-section dark-gradient section-pad ${showView}`} id="interests">
+		  	<div className={`App-section dark-gradient section-pad ${showView}`} >
 		    	<div className="columns is-relative">
 			      <div className="column is-relative">
 							<div className="columns m-0 is-justify-content-center">
@@ -132,6 +132,6 @@ export default function MyInterests(props) {
 					</div>
 			  </div>
 			</Parallax>
-		</React.Fragment>
+		</div>
   )
 }

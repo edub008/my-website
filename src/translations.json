@@ -5,9 +5,15 @@
       "hero-subtitle": "Hey, I'm",
       
       "title-journey": "My Journey",
-      "title-interests": "My Interests",
       "title-edu": "My Degrees",
+      "title-interests": "My Interests",
       "title-system": "My System",
+
+      "navbar-journey": "Journey",
+      "navbar-degrees": "Degrees",
+      "navbar-interests": "Interests",
+      "navbar-system": "System",
+      "navbar-connect": "Connect",
 
       "journey-subtitle": "I love working at the intersection of technology and product on highly disruptive solutions that make a positive impact",
       "journey-full-career": "See my full career on",
@@ -44,9 +50,15 @@
       "hero-subtitle": "Selam, ben",
       
       "title-journey": "Benim Yolculuğum",
-      "title-interests": "Benim Odaklar",
       "title-edu": "Eğitim",
+      "title-interests": "Benim Odaklar",
       "title-system": "Benim Sistemim",
+
+      "navbar-journey": "Yolculuğum",
+      "navbar-degrees": "Eğitim",
+      "navbar-interests": "Odaklar",
+      "navbar-system": "Sistemim",
+      "navbar-connect": "Bağlamak",
 
       "journey-subtitle": "Olumlu bir etki yaratan son derece yıkıcı çözümler üzerinde teknoloji ve ürünün kesişiminde çalışmayı seviyorum",
       "journey-full-career": "Tüm kariyerimi burada görün",

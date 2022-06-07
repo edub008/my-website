@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 import useWindowDimensions from './helpers/useWindowDimensions'
 import backgroundImg from '../img/turkiye.webp'
 
@@ -29,28 +28,21 @@ export default function MySystem(props) {
 
   return (
   	<React.Fragment>
-	  	<div className="App-section is-block pb-0" id="system">
-	  		<ParallaxBanner
-		      layers={[{ image: backgroundImg }]}
-		      className="ratio-4x3 is-fullheight"
-		    >
-		    	<div className="columns auto-margins-x">
-			      <div className="column is-relative">
-							<div className="columns m-0 is-justify-content-center">
-					      <div className="column is-6 is-relative ">
-								  	<h2 className="title is-1 fancy-title fancy-title-light mx-1 my-6"> <span> {props.t("title-system")} </span> </h2>
-					      </div>
-					    </div>
-					    <div className="columns m-0 auto-margins-x is-justify-content-center  is-relative">
-					    	<div className="column is-7 p-2 my-system-overlay">
-					    		<Parallax speed="-20">
-								  	{mySystemItems}
-								  </Parallax>
-					      </div>
-					    </div>
-					  </div>
-					</div>
-				</ParallaxBanner>
+	  	<div className="App-section my-system-bkgd is-block pb-0" id="system">
+	    	<div className="columns auto-margins-x">
+		      <div className="column is-relative">
+						<div className="columns m-0 is-justify-content-center">
+				      <div className="column is-6 is-relative ">
+							  <h2 className="title is-1 fancy-title fancy-title-light mx-1 my-6"> <span> {props.t("title-system")} </span> </h2>
+				      </div>
+				    </div>
+				    <div className="columns m-0 auto-margins-x is-justify-content-center  is-relative">
+				    	<div className="column is-7 p-2 my-system-overlay">
+							  {mySystemItems}
+				      </div>
+				    </div>
+				  </div>
+				</div>
 		  </div>
 		</React.Fragment>
   )
