@@ -116,22 +116,20 @@ export default function MyInterests(props) {
 
   return (
   	<div id="interests">
-  		<Parallax onProgressChange={(progress) => setShowView(progress > 0 ? 'is-visible' : 'is-hidden')} >
-		  	<div className={`App-section dark-gradient section-pad ${showView}`} >
-		    	<div className="columns is-relative">
-			      <div className="column is-relative">
-							<div className="columns m-0 is-justify-content-center">
-					      <div className="column is-6 is-relative ">
-								  <h2 className="title is-1 fancy-title fancy-title-light has-text-light"> <span> {props.t("title-interests")} </span> </h2>
-					      </div>
-					    </div>
+	  	<div className={`App-section dark-gradient section-pad ${showView}`} >
+	    	<div className="columns is-relative">
+		      <div className="column is-relative">
+						<div className="columns m-0 is-justify-content-center">
+				      <div className="column is-6 is-relative ">
+							  <h2 className="title is-1 fancy-title fancy-title-light has-text-light"> <span> {props.t("title-interests")} </span> </h2>
+				      </div>
+				    </div>
 
-				    	{buildScreen()}
+			    	{buildScreen()}
 
-					  </div>
-					</div>
-			  </div>
-			</Parallax>
+				  </div>
+				</div>
+		  </div>
 		</div>
   )
 }
