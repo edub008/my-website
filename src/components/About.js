@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-scroll'
 import img_linkedIn from "../img/communities/linked-in.webp"
 import img_GitHub from "../img/communities/github.webp"
 import img_StackOverflow from "../img/communities/stack-overflow.webp"
@@ -85,18 +84,9 @@ export default function About(props) {
 			    <div className="columns m-0 has-text-centered auto-margins-x is-justify-content-center">
 			      <div className="column">
 			      	<div className="button is-small is-primary" > 
-			      		<Link
-								  activeClass="active"
-								  to="hero"
-								  spy={true}
-								  smooth={true}
-								  offset={-100}
-								  duration={800}
-								  className="has-text-black"
-								  href="#hero"
-								  >
-								  	{props.t("button-top")}
-								</Link>
+			      		<a className="has-text-black" href="#hero">
+								  {props.t("button-top")}
+								</a>
 			      	</div>
 			      </div>
 			    </div>

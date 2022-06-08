@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Parallax } from 'react-scroll-parallax'
 import InterestBlock from './helpers/InterestBlock'
 import InterestsSwiper from './helpers/InterestsSwiper'
 import useWindowDimensions from './helpers/useWindowDimensions'
