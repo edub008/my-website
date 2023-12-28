@@ -1,10 +1,10 @@
 import { useTranslation } from 'next-i18next'
-import Navbar from '/components/navbar'
-import Hero from '/components/hero'
-import GridItems from '/components/gridItems'
-import Interests from '/components/interests'
-import System from '/components/system'
-import Footer from '/components/footer'
+import Navbar from '/components/Navbar'
+import Hero from '/components/Hero'
+import GridItems from '/components/GridItems'
+import Interests from '/components/Interests'
+import System from '/components/System'
+import Footer from '/components/Footer'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
