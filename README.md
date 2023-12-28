@@ -2,9 +2,9 @@
 
 You can view my live site at www.ergin-d.com
 
-![ergin-d.com](./src/img/ergin-hero.webp)
+![ergin-d.com](/public/ergin-hero.webp)
 
-> :information: This website was built using [Next.js](https://nextjs.org/learn).
+> :information_source: This website was built using [Next.js](https://nextjs.org/learn).
 
 ## Dependencies
 
