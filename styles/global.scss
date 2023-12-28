@@ -1,0 +1,745 @@
+@import 'vars';
+
+@import "bulma/sass/base/generic.sass";
+@import "bulma/sass/components/card.sass";
+@import "bulma/sass/components/media.sass";
+@import "bulma/sass/components/navbar.sass";
+@import "bulma/sass/form/shared.sass";
+@import "bulma/sass/elements/box.sass";
+@import "bulma/sass/elements/button.sass";
+@import "bulma/sass/elements/title.sass";
+@import "bulma/sass/grid/_all.sass";
+@import "bulma/sass/helpers/_all.sass";
+@import "bulma/sass/utilities/_all.sass";
+
+@import "@fortawesome/fontawesome-svg-core/styles.css";
+
+@import '@sweetalert2/theme-dark/dark.scss';
+/* @import '@sweetalert2/theme-borderless/borderless.scss'; */
+
+:root {
+  background: $primary-bg;
+  --xyz-ease: cubic-bezier(.26,2.05,.84,.38);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+}
+
+.navbar {
+  /* background: $primary-bg; */
+  background: rgba(12,12,12,.90);
+}
+
+a.navbar-item:hover {
+  background-color: transparent;
+}
+
+a {
+  color: lightblue;
+  text-decoration: none;
+}
+a:hover {
+  color: $primary;
+  text-decoration: none;
+}
+
+.navbar-li-button {
+  background-color: transparent;
+  border-color: rgb(0, 119, 181);
+  color: white;
+}
+.navbar-li-button:focus, .navbar-li-button:hover {
+  outline: none;
+  box-shadow: none;
+  border-color: rgb(0, 119, 181);
+  color: white;
+}
+
+.navbar-li-button:hover {
+  background-color: rgb(0, 119, 181);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.grid-col {
+  border: 2px solid transparent;
+}
+.grid-col:hover {
+  border: 2px solid $primary;
+}
+
+.section-bg {
+  background: $section-bg;
+}
+
+.section-mg {
+  margin: 0 0 1rem 0 !important;
+  /*padding-bottom: 1rem !important;*/
+}
+
+.has-transparent-bg {
+  background: transparent !important;
+}
+
+.auto-margins-x {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-title {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 2rem;
+  color: $primary;
+}
+
+.section-title span {
+  display: inline-block;
+  position: relative;  
+}
+.section-title span:before,
+.section-title span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-radius: 0px !important;
+  border-top: 4px solid $dark;
+  top: 50% !important;
+  width: 5rem;
+}
+
+.section-title span:before {
+  right: 100%;
+  margin-right: 15px;
+  border-color: $primary;
+}
+.section-title span:after {
+  left: 100%;
+  margin-left: 15px;
+  border-color: $primary;
+}
+
+
+/*****************************************************************
+ *****************************************************************
+ *****************************************************************
+  Animations:
+ *****************************************************************
+ ***************************************************************** 
+ *****************************************************************/
+
+.blockchain-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 50%;
+}
+#redblocks > * {
+  transform: translate3d(160px, -93px, 0);
+  animation: moveblocks 4s 1s ease infinite;
+}
+
+@keyframes moveblocks {
+  0% {
+      transform: translate3d(160px, -93px, 0);
+  }
+  50%,
+  100% {
+      transform: translate(0);
+  }
+}
+
+#firstBlock {
+  transform: translate3d(160px, -93px, 0);
+  animation: firstBlock 4s 1s ease infinite;
+}
+#blockdis {
+  animation: blockdis 4s 1s ease infinite;
+}
+@keyframes blockdis {
+  30% {
+      opacity: 1;
+  }
+  40%, 100% {
+      opacity: 0;
+      transform: translate3d(-160px, 93px, 0);
+  }
+}
+@keyframes firstBlock {
+  0%,
+  15% {
+      opacity: 0;
+  }
+  40%,
+  100% {
+      opacity: 1;
+  }
+}
+
+@for $i from 1 to 5 {
+  #redblocksparticles g:nth-child(#{$i}) polygon {
+      opacity: 0.35;
+      animation: glow 4s 1s ease infinite;
+  }
+}
+@for $i from 1 to 20 {
+  #redblocksparticles g:nth-child(1) g circle:nth-child(#{$i}){
+      animation: dots 4s #{1000+$i*50}ms ease infinite;
+  }
+  #redblocksparticles g:nth-child(2) g circle:nth-child(#{$i}){
+      animation: dots 4s #{1000+$i*50}ms ease infinite;
+  }
+  #redblocksparticles g:nth-child(3) g circle:nth-child(#{$i}){
+      animation: dots 4s #{1000+$i*50}ms ease infinite;
+  }
+  #redblocksparticles g:nth-child(4) g circle:nth-child(#{$i}){
+      animation: dots 4s #{1000+$i*50}ms ease infinite;
+  }
+}
+@keyframes glow {
+  0%,
+  45% {
+      opacity: 0;
+  }
+  60%, 100% {
+      opacity: 0.35;
+  }
+}
+
+@keyframes dots {
+  0%,
+  35% {
+      transform: translate(0);
+      opacity: 0;
+  }
+  60%, 80% {
+      transform: translate(55px, -35px);
+      opacity: 1;
+  }
+  100% {
+      transform: translate(55px, -35px);
+      opacity: 0;
+  }
+}
+
+@for $i from 1 to 22 {
+  #purplebg > :nth-child(#{$i}) {
+      animation: up 2s #{$i* 500}ms ease infinite alternate;
+  }
+}
+
+@keyframes up {
+  to {
+      transform: translate(0, -25px);
+  }
+}
+
+@for $i from 1 to 13 {
+  #bottomparticles > :nth-child(#{$i}){
+      animation: particles 4s #{$i*300}ms ease infinite alternate, p 2s ease infinite alternate;
+  }
+  #bottomparticles2 > :nth-child(#{$i}){
+      animation: particles 4s #{$i*300}ms ease infinite alternate, p 2s ease infinite alternate;
+  }
+  #redglowparticles > :nth-child(#{$i}){
+      animation: particles 4s #{$i*300}ms ease infinite alternate, p 2s ease infinite alternate;
+  }
+
+}
+@keyframes p {
+  85%,
+   100% {
+      opacity: 0;
+  }
+}
+
+@keyframes particles {
+  0%, 100% {
+      transform: translate(0);
+  }
+  50% {
+      transform: translate(10px, 15px);
+  }
+}
+
+.particlespoly {
+  animation: p 2s ease infinite alternate;
+}
+
+@for $i from 1 to 4 {
+  #d-app g:nth-child(#{$i}){
+      animation: updown 2s #{$i*200}ms ease-in-out infinite alternate;
+  }
+}
+@for $i from 1 to 4 {
+  #d-apps2 g:nth-child(#{$i}){
+      animation: updown 2s #{$i*200}ms ease-in-out infinite alternate;
+  }
+}
+@for $i from 1 to 20 {
+  #d-apps2wrapper g:nth-child(3) g > circle:nth-child(#{$i}){
+      animation: updown 2s #{$i*50}ms ease infinite alternate;
+  }
+}
+@for $i from 1 to 20 {
+  #d-appswrapper g:nth-child(2) g > circle:nth-child(#{$i}){
+      animation: updown 2s #{$i*50}ms ease infinite alternate;
+  }
+}
+
+
+@keyframes updown {
+  100% {
+      transform: translate(0, -20px);
+  }
+}
+
+#Layer_1 > g:nth-child(2) > g:nth-child(18) > g:nth-child(12) {
+  animation: arrows 1s ease-in-out infinite alternate, p 2s ease infinite alternate;
+}
+@keyframes arrows {
+  to {
+      transform: translate(25px, 25px);
+  }
+}
+
+#Layer_1 > g:nth-child(2) > g:nth-child(17) > g:nth-child(13) {
+  animation: arrows2 1s ease-in-out infinite alternate, p 2s ease infinite alternate;
+}
+@keyframes arrows2 {
+  to {
+      transform: translate(-25px, -25px);
+  }
+}
+
+#Layer_1 > g:nth-child(2) > g:nth-child(17) > g:nth-child(12) {
+  animation: arrows 1s ease-in-out infinite alternate, p 2s ease infinite alternate;
+}
+
+/*****************************************************************
+  Animation: 3D cube waves
+ *****************************************************************/
+
+$striped-cube-size: 15;
+$striped-cube-speed: 7;
+$striped-cube-trans: linear;
+$striped-cube-hole: #121255;
+$striped-cube-start: #D02A41;
+$striped-cube-line: #202333;
+$striped-cube-ini: from 90deg at;
+$striped-cube-end: 0 25%, #fff0 0 100%;
+$striped-cube-bg: 
+  conic-gradient($striped-cube-ini 97.5% 97.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 95% 95%, $striped-cube-line $striped-cube-end), 
+  conic-gradient($striped-cube-ini 92.5% 92.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 90% 90%, $striped-cube-line $striped-cube-end), 
+  conic-gradient($striped-cube-ini 87.5% 87.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 85% 85%, $striped-cube-line $striped-cube-end), 
+  conic-gradient($striped-cube-ini 82.5% 82.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 80% 80%, $striped-cube-line $striped-cube-end), 
+  conic-gradient($striped-cube-ini 77.5% 77.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 75% 75%, $striped-cube-line $striped-cube-end), 
+  conic-gradient($striped-cube-ini 72.5% 72.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 70% 70%, $striped-cube-line $striped-cube-end), 
+  conic-gradient($striped-cube-ini 67.5% 67.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 65% 65%, $striped-cube-line $striped-cube-end), 
+  conic-gradient($striped-cube-ini 62.5% 62.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 60% 60%, $striped-cube-line $striped-cube-end), 
+  conic-gradient($striped-cube-ini 57.5% 57.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 55% 55%, $striped-cube-line $striped-cube-end), 
+  conic-gradient($striped-cube-ini 52.5% 52.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 50% 50%, $striped-cube-start $striped-cube-end), 
+  conic-gradient($striped-cube-ini 47.5% 47.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 45% 45%, $striped-cube-line $striped-cube-end),
+  conic-gradient($striped-cube-ini 42.5% 42.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 40% 40%, $striped-cube-line $striped-cube-end),
+  conic-gradient($striped-cube-ini 37.5% 37.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 35% 35%, $striped-cube-line $striped-cube-end),
+  conic-gradient($striped-cube-ini 32.5% 32.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 30% 30%, $striped-cube-line $striped-cube-end),
+  conic-gradient($striped-cube-ini 27.5% 27.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 25% 25%, $striped-cube-line $striped-cube-end),
+  conic-gradient($striped-cube-ini 22.5% 22.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 20% 20%, $striped-cube-line $striped-cube-end),
+  conic-gradient($striped-cube-ini 17.5% 17.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 15% 15%, $striped-cube-line $striped-cube-end),
+  conic-gradient($striped-cube-ini 12.5% 12.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 10% 10%, $striped-cube-line $striped-cube-end),
+  conic-gradient($striped-cube-ini 7.5% 7.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 5% 5%, $striped-cube-line $striped-cube-end),
+  conic-gradient($striped-cube-ini 2.5% 2.5%, $striped-cube-hole $striped-cube-end), 
+  conic-gradient($striped-cube-ini 0% 0%, $striped-cube-start $striped-cube-end);
+
+.striped-cube-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000vmin;
+  background: transparent;
+}
+
+.cube {
+  width: calc($striped-cube-size * 1vmin);
+  height:  calc($striped-cube-size * 1vmin);
+  background: $striped-cube-bg, $striped-cube-hole;
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  transform: rotateX(45deg) rotateZ(45deg) translateZ(calc(calc($striped-cube-size * 1vmin) / 2));
+  transform-style: preserve-3d;
+  animation: move-top calc($striped-cube-speed * 1s) $striped-cube-trans 0s infinite;
+
+}
+
+.cube:before, .cube:after {
+  content: "";
+  background: $striped-cube-bg, $striped-cube-hole;
+  background-size: 200% 200%;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg) rotateY(-90deg) translateY(calc($striped-cube-size * 1vmin));
+  transform-origin: right bottom;
+  animation: move-side calc($striped-cube-speed * 1s) $striped-cube-trans calc($striped-cube-speed * -0.95s) infinite;
+  opacity: 0.65;
+} 
+
+.cube:after {
+  transform: rotate(180deg) rotateY(-90deg) rotateX(-90deg) translateY(calc($striped-cube-size * 1vmin));
+  opacity: 0.35;
+}
+
+@keyframes move-top {
+  100% { background-position: 100% 100%; }
+}
+@keyframes move-side {
+  100% { background-position: 0% 0%; }
+}
+
+/*
+.cube:hover, .cube:hover:before, .cube:hover:after {
+  animation-play-state: paused;
+}
+*/
+
+
+/*****************************************************************
+  Animation: Neural Waves
+ *****************************************************************/
+
+$c1:#6dff73;
+$c2:#db0aff;
+$c3:#03a9f4;
+$c4:#ffc107;
+$c5:#e91e63;
+$c6:#0f0;
+$s: 7vh;
+
+.neural-box{
+  position:relative;
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+.line{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 250vh;
+  box-shadow: inset -10px 0 40px rgba(0,0,0,1),
+    inset 10px 0 40px rgba(0,0,0,1),
+    inset -10px 0 10px rgba(255,255,255,.25),
+    inset 10px 0 10px rgba(255,255,255,.25),
+           0 0 40px rgba(0,0,0,1);
+
+}
+
+@keyframes move1{
+  0%{
+    background-position: 0 0 ;
+  }
+  100%{
+    background-position:35px -35px;
+  }
+}
+
+@keyframes move2{
+  0%{
+     background-position:35px -35px;
+  }
+  100%{
+    background-position:0 0 ;
+  }
+}
+
+.line1{
+  background: #222 radial-gradient($c1 10px, #000 10px, #000 14px, transparent 14px);
+  background-size: 35px 35px;
+  transform:translate(-50%, -50%) rotate(45deg);
+  z-index: 11;
+  animation: move1 2s linear infinite;
+}
+
+.line2{
+  background: #222 radial-gradient($c2 10px, #000 10px, #000 14px, transparent 14px);
+  background-size: 35px 35px;
+  transform:translate(-50%, -39%) rotate(45deg);
+  z-index: 3;
+  animation: move2 2s linear infinite;
+}
+
+.line3{
+  background: #222 radial-gradient($c3 10px, #000 10px, #000 14px, transparent 14px);
+  background-size: 35px 35px;
+  transform:translate(-50%, -62%) rotate(45deg);
+  z-index: 3;
+   animation: move2 2s linear infinite;
+}
+
+.line4{
+  background: #222 radial-gradient($c4 10px, #000 10px, #000 14px, transparent 14px);
+  background-size: 35px 35px;
+  transform:translate(-50%, -50%) rotate(-45deg);
+  z-index: 12;
+   animation: move2 2s linear infinite;
+}
+
+.line5{
+  background: #222 radial-gradient($c5 10px, #000 10px, #000 14px, transparent 14px);
+  background-size: 35px 35px;
+  transform:translate(-50%, -38%) rotate(-45deg);
+  animation: move1 2s linear infinite;
+  z-index: 10;
+}
+
+.line6{
+  background: #222 radial-gradient($c6 10px, #000 10px, #000 14px, transparent 14px);
+  background-size: 35px 35px;
+  transform:translate(-50%, -62%) rotate(-45deg);
+  animation: move1 2s linear infinite;
+  z-index: 10;
+}
+
+
+
+/*****************************************************************
+  Animation: Cubes Wave
+ *****************************************************************/
+
+
+$total: 36;
+$time: 5s;
+$waveCubeSize: 24px;
+$wrap-z: $waveCubeSize * -2;
+
+/*
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background: black;
+}
+*/
+
+.cube-wave-wrap {
+  position: relative;
+  width: $waveCubeSize * 6;
+  height: $waveCubeSize * 6;
+  top: 50%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  perspective-origin: bottom;
+  transform: rotateX(-20deg) rotateY(0);
+  margin: $waveCubeSize * -3 auto 0;
+}
+
+.cube-wrap {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 3000px;
+  float: left;
+  height: $waveCubeSize;
+  width: $waveCubeSize;
+  transform: translate3d(0,0,$wrap-z) rotateX(0);
+  animation: move $time infinite;
+  @for $i from 1 through $total {
+    &:nth-child(#{$i}){
+      animation-delay: (($i - 1) * $time/$total/3);
+    }
+  }
+}
+
+
+@keyframes move {
+  0%, 30% {
+    transform: translate3d(0,0,$wrap-z) rotateX(0);
+  }
+  40% {
+    transform: translate3d(0,0,0) rotateX(90deg);
+  }
+  60%, 100% {
+    transform: translate3d(0,0,$wrap-z) rotateX(0);
+  }
+}
+
+.wave-cube {
+  $z: $waveCubeSize/2;
+  height: $waveCubeSize;
+  width: 100%;
+  height: 100%;
+  .side {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+  }
+  .side:nth-child(1){
+    transform: rotateX(90deg) translateZ($z);
+  }
+  .side:nth-child(2){
+     transform: translateZ($z);
+  }
+  .side:nth-child(3){
+     transform: rotateY(180deg) translateZ($z);
+  }
+  .side:nth-child(4){
+     transform: rotateY(90deg) translateZ($z);
+  }
+  .side:nth-child(5){
+     transform: rotateY(-90deg) translateZ($z);
+  }
+  .side:nth-child(6){
+     transform: rotateX(-90deg) translateZ($z);
+  }
+}
+
+@for $x from 1 through $total {
+  $hue: 330 + $x * 1.3;
+  @for $i from 1 through 6 {
+    .cube-wrap:nth-child(#{$x}) .side:nth-child(#{$i}){
+      background: hsla($hue, 66%, 49%, .55);
+
+      border: 2px solid lighten(hsla($hue, 100%, 10%, .6), 20%); 
+    }
+  }
+}
+
+
+
+/*****************************************************************
+  Animation: Glow Box
+ *****************************************************************/
+
+
+.glow-box{
+    position: absolute;
+    top: 50%;   left: 50%;
+    transform: translate(-50%,-50%) rotate(-30deg) skewX(22deg);
+    width: 100px;  height: 100px;
+    background: url('/keylock.jpg');
+    background-color: #040342;
+    background-size: 100px 100px;
+    transition: .5s;
+}
+.glow-box:hover{
+    //transform: translate(-50%,-50%); 
+}
+.glow-box::before{
+    content: '';
+    position: absolute;
+    top: 0;  left: -40px;
+    width: 40px;  height: 100%;
+    background: linear-gradient(90deg , #f00 , #262626);
+    transform-origin: right;
+    transform: skewY(-45deg);
+    animation: animateBefore 1s infinite linear;
+    transition: .5s;
+}
+.glow-box::after{
+    content: '';
+    position: absolute;
+    bottom: -40px;  left: 0;
+    width: 100%;  height: 40px;
+    background: linear-gradient(0deg , #f00 , #262626);
+    transform-origin: top;
+    transform: skewX(-45deg);
+    animation: animateAfter 1s infinite linear;
+    transition: .5s;
+}
+
+.glow-box:hover::before{
+    //transform: skewY(-45deg) rotateY(90deg);
+}
+.glow-box:hover::after{
+    //transform: skewX(-45deg) rotateX(90deg);
+}
+@keyframes animateBefore{
+    0%{
+        box-shadow: -10px 0 60px 20px #f00;  
+    }
+    25%{
+        box-shadow: -10px 0 60px 24px #f00;  
+    }
+    50%{
+        box-shadow: -10px 0 60px 20px #f00;  
+    }
+    75%{
+        box-shadow: -10px 0 100px 40px #f00;  
+    }
+    100%{
+        box-shadow: -10px 0 60px 20px #f00;  
+    }
+}
+
+@keyframes animateAfter{
+    0%{
+        box-shadow: 0 10px 60px 10px #f00;
+    }
+    25%{
+        box-shadow: 0 10px 60px 15px #f00;
+    }
+    50%{
+        box-shadow: 0 10px 60px 10px #f00;
+    }
+    75%{
+        box-shadow: 0 10px 100px 30px #f00; 
+    }
+    100%{
+        box-shadow: 0 10px 60px 10px #f00; 
+    }
+}

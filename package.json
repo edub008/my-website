@@ -1,50 +1,31 @@
 {
-  "name": "ergin-dervisoglu-website",
-  "version": "1.0.0",
   "private": true,
-  "homepage": ".",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "babel-plugin-macros": "^3.1.0",
-    "bulma": "^0.9.3",
-    "i18next": "^21.8.8",
-    "i18next-browser-languagedetector": "^6.1.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-i18next": "^11.17.0",
-    "react-scripts": "5.0.0",
-    "react-scroll-parallax": "^3.0.5",
-    "sass": "^1.49.9",
-    "serve": "^13.0.2",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "local": "yarn run serve -s build --config ./public/serve.json",
-    "deploy": "gcloud config set project calm-history-184223 && gcloud app deploy",
-    "gcp-start": "yarn run serve -s build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@sweetalert2/theme-borderless": "^5.0.15",
+    "@sweetalert2/theme-dark": "^5.0.15",
+    "bulma": "^0.9.4",
+    "i18next": "^23.7.11",
+    "next": "latest",
+    "next-i18next": "^15.1.1",
+    "react": "18.2.0",
+    "react-awesome-reveal": "^4.2.7",
+    "react-dom": "18.2.0",
+    "react-i18next": "^13.5.0",
+    "react-scroll-parallax": "^3.4.5",
+    "sass": "^1.69.5",
+    "sweetalert2": "^11.10.1",
+    "sweetalert2-react-content": "^5.0.7"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "engines": {
+    "node": ">=18"
   }
 }

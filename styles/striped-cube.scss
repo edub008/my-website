@@ -1,0 +1,106 @@
+$striped-cube-size: 20;
+$striped-cube-speed: 7;
+$striped-cube-trans: linear;
+$striped-cube-hole: #121255;
+$striped-cube-start: #D02A41;
+$striped-cube-line: #202333;
+$striped-cube-ini: from 90deg at;
+$striped-cube-end: 0 25%, #fff0 0 100%;
+$striped-cube-bg:	
+	conic-gradient($striped-cube-ini 97.5% 97.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 95% 95%, $striped-cube-line $striped-cube-end), 
+	conic-gradient($striped-cube-ini 92.5% 92.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 90% 90%, $striped-cube-line $striped-cube-end), 
+	conic-gradient($striped-cube-ini 87.5% 87.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 85% 85%, $striped-cube-line $striped-cube-end), 
+	conic-gradient($striped-cube-ini 82.5% 82.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 80% 80%, $striped-cube-line $striped-cube-end), 
+	conic-gradient($striped-cube-ini 77.5% 77.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 75% 75%, $striped-cube-line $striped-cube-end), 
+	conic-gradient($striped-cube-ini 72.5% 72.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 70% 70%, $striped-cube-line $striped-cube-end), 
+	conic-gradient($striped-cube-ini 67.5% 67.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 65% 65%, $striped-cube-line $striped-cube-end), 
+	conic-gradient($striped-cube-ini 62.5% 62.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 60% 60%, $striped-cube-line $striped-cube-end), 
+	conic-gradient($striped-cube-ini 57.5% 57.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 55% 55%, $striped-cube-line $striped-cube-end), 
+	conic-gradient($striped-cube-ini 52.5% 52.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 50% 50%, $striped-cube-start $striped-cube-end), 
+	conic-gradient($striped-cube-ini 47.5% 47.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 45% 45%, $striped-cube-line $striped-cube-end),
+	conic-gradient($striped-cube-ini 42.5% 42.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 40% 40%, $striped-cube-line $striped-cube-end),
+	conic-gradient($striped-cube-ini 37.5% 37.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 35% 35%, $striped-cube-line $striped-cube-end),
+	conic-gradient($striped-cube-ini 32.5% 32.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 30% 30%, $striped-cube-line $striped-cube-end),
+	conic-gradient($striped-cube-ini 27.5% 27.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 25% 25%, $striped-cube-line $striped-cube-end),
+	conic-gradient($striped-cube-ini 22.5% 22.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 20% 20%, $striped-cube-line $striped-cube-end),
+	conic-gradient($striped-cube-ini 17.5% 17.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 15% 15%, $striped-cube-line $striped-cube-end),
+	conic-gradient($striped-cube-ini 12.5% 12.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 10% 10%, $striped-cube-line $striped-cube-end),
+	conic-gradient($striped-cube-ini 7.5% 7.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 5% 5%, $striped-cube-line $striped-cube-end),
+	conic-gradient($striped-cube-ini 2.5% 2.5%, $striped-cube-hole $striped-cube-end), 
+	conic-gradient($striped-cube-ini 0% 0%, $striped-cube-start $striped-cube-end);
+
+.striped-cube-container {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	perspective: 1000vmin;
+	background: transparent;
+}
+
+.cube {
+	width: calc($striped-cube-size * 1vmin);
+	height:  calc($striped-cube-size * 1vmin);
+	background: $striped-cube-bg, $striped-cube-hole;
+	background-size: 200% 200%;
+	background-position: 0% 0%;
+	background-repeat: no-repeat;
+	transform: rotateX(45deg) rotateZ(45deg) translateZ(calc(calc($striped-cube-size * 1vmin) / 2));
+	transform-style: preserve-3d;
+	animation: move-top calc($striped-cube-speed * 1s) $striped-cube-trans 0s infinite;
+
+}
+
+.cube:before, .cube:after {
+	content: "";
+	background: $striped-cube-bg, $striped-cube-hole;
+	background-size: 200% 200%;
+	background-position: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform: rotate(180deg) rotateY(-90deg) translateY(calc($striped-cube-size * 1vmin));
+	transform-origin: right bottom;
+	animation: move-side calc($striped-cube-speed * 1s) $striped-cube-trans calc($striped-cube-speed * -0.95s) infinite;
+	opacity: 0.65;
+} 
+
+.cube:after {
+	transform: rotate(180deg) rotateY(-90deg) rotateX(-90deg) translateY(calc($striped-cube-size * 1vmin));
+	opacity: 0.35;
+}
+
+@keyframes move-top {
+	100% { background-position: 100% 100%; }
+}
+@keyframes move-side {
+	100% { background-position: 0% 0%; }
+}
+
+.cube:hover, .cube:hover:before, .cube:hover:after {
+	animation-play-state: paused;
+}

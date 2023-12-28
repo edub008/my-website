@@ -1,0 +1,15 @@
+{
+	"hero-title": "Hi, I'm",
+	"hero-subtitle": "Ergin Derviśoglu",
+
+	"interests": {
+		"title1": "L1 & L2 Blockchains",
+		"title2": "Generative AI",
+		"title3": "Zero Knowledge Proofs",
+		"title4": "",
+		"desc1": "I'm an active developer and investor in Blockchain and Web3 technologies that I believe will become new standards in the future. Concepts of particular interest to me are de-centralization (removing SPOFs), transparency, and true user ownership of data.",
+		"desc2": "I've been learning more about the underlying code and technologies used to create nerual networks and large language models and taking some online courses. I find the possibilities with gen-AI to be almost un-imaginable.",
+		"desc3": "I find zkProofs to be an absolutely fascinating advancement when it comes to security and privacy, both on- and off-chain. New technologies such as zkSNARKS",
+		"desc4": "",
+	}
+}

@@ -1,0 +1,11 @@
+@import 'vars';
+
+.mySystemOverlay {
+  background-color: $overlay !important;
+  border-radius: 8px !important;
+}
+
+.mySystemText {
+  color: white !important;
+  text-shadow: 2px 2px #220000 !important;
+}

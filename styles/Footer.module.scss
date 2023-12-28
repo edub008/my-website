@@ -1,0 +1,17 @@
+@import 'vars';
+
+.footerClass {
+  padding-top: 4.25rem;
+  padding-bottom: 4.25rem;
+}
+.footerTitle {
+  font-size: 3.5vmin;
+}
+.footerCol {
+  border: 2px solid transparent;
+  border-radius: 6px;
+  margin: .75rem;
+}
+.footerCol:hover {
+  border: 2px solid $primary;
+}
