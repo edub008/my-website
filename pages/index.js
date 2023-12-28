@@ -1,12 +1,12 @@
 import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Navbar from '/components/Navbar'
 import Hero from '/components/Hero'
 import GridItems from '/components/GridItems'
 import Interests from '/components/Interests'
 import System from '/components/System'
 import Footer from '/components/Footer'
-
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import UseWindowSize from '/components/UseWindowSize'
 
 export async function getStaticProps({ locale }) {
   return {
@@ -21,6 +21,8 @@ export async function getStaticProps({ locale }) {
 
 export default function Home() {
 
+  const wSize = UseWindowSize();
+  console.log(`width = ${wSize.width}, height = ${wSize.height}`)
   const { t } = useTranslation('common')
   const sectionTitles = [
     {title: t('section.one'), id: "interests"},
@@ -42,7 +44,7 @@ export default function Home() {
 
       <Hero/>
       <GridItems sectionTitles={sectionTitles}/>
-      <Interests id={sectionTitles[0].id}/>
+      <Interests id={sectionTitles[0].id} wSize={wSize}/>
       <System id={sectionTitles[1].id} />
 
       <Footer 

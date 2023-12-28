@@ -43,6 +43,7 @@ export default function InterestRow(props) {
 			break	
 	}
 
+	const mobileBreakPointinPx = 768
 	const areaSizeStyle = {
 		height: '40vh',
 		minHeight: '40vh'
@@ -56,18 +57,26 @@ export default function InterestRow(props) {
 					<h3 className="title is-4 has-text-info"> {interestTitle} </h3>
 					<div className="subtitle is-5 my-3 has-text-white" dangerouslySetInnerHTML={{__html: interestDesc }}></div>
 				</div>
-				<div className="column m-0 px-2 is-flex is-justify-content-center">
-					{displayContent}
-				</div>
+				{
+					props.wSize.width > mobileBreakPointinPx
+					&&
+					<div className="column m-0 px-2 is-flex is-justify-content-center">
+						{displayContent}
+					</div>
+				}
 			</div>
 		)
 	}
 	else {
 		return (
 			<div className="columns m-0 is-desktop " style={areaSizeStyle}>
-				<div className="column m-0 px-2 is-flex is-justify-content-center">
-					{displayContent}
-				</div>
+				{
+					props.wSize.width > mobileBreakPointinPx
+					&&
+					<div className="column m-0 px-2 is-flex is-justify-content-center">
+						{displayContent}
+					</div>
+				}
 				<div className="column m-0 px-2">
 					<h3 className="title is-4 has-text-info"> {interestTitle} </h3>
 					<div className="subtitle is-5 my-3 has-text-white" dangerouslySetInnerHTML={{__html: interestDesc }}></div>

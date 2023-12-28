@@ -1,8 +1,7 @@
-'use client'
-
+import React, {useEffect} from 'react'
 import { useTranslation } from 'next-i18next'
+import $ from "jquery"
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-// import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUpRightFromSquare, faFilePdf, faFileWord } from '@fortawesome/free-solid-svg-icons'
@@ -11,6 +10,17 @@ export default function Navbar(props) {
 
   const { t } = useTranslation('common')
   const SwalDialog = withReactContent(Swal)
+
+  useEffect(() => {
+    $(document).ready(function() {
+    // Check for click events on the navbar burger icon
+    $(".navbar-burger").click(function() {
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        $(".navbar-burger").toggleClass("is-active")
+        $(".navbar-menu").toggleClass("is-active")
+    })
+  })  
+  }, [])
 
   function SelectDocFormat() {
     return (
@@ -64,6 +74,16 @@ export default function Navbar(props) {
 
   return(
     <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      
+      <div className="navbar-brand">
+
+        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-main">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
       <div id="navbar-main" className="navbar-menu">
 
         <div className="navbar-start">

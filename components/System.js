@@ -7,15 +7,6 @@ import styles from "../styles/System.module.scss"
 
 const IMAGE_URL = "/turkiye.webp"
 
-// custom hero style with fullscreen background image
-// const heroImageStyle = {
-// 	background: "url(/turkiye.webp) no-repeat center center fixed", 
-//   WebkitBackgroundSize: "cover",
-//   MozBackgroundSize: "cover",
-//   OBackgroundSize: "cover",
-//   backgroundSize: "cover"
-// }
-
 export default function System(props) {
 
   const { t } = useTranslation('common')

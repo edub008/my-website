@@ -12,20 +12,20 @@ export default function Interests(props) {
 			<div className="columns is-justify-content-center m-0">
 				<div className="column is-10">
 					<Fade direction="up" triggerOnce>
-						<InterestRow id={1} />
+						<InterestRow id={1} wSize={props.wSize} />
 					</Fade>
 					<Fade direction="up" triggerOnce>
-						<InterestRow id={2} />
+						<InterestRow id={2} wSize={props.wSize} />
 					</Fade>
 					<Fade direction="up" triggerOnce>
-						<InterestRow id={3} />
+						<InterestRow id={3} wSize={props.wSize} />
 					</Fade>
 					<Fade direction="up" triggerOnce>
-						<InterestRow id={4} />
+						<InterestRow id={4} wSize={props.wSize} />
 					</Fade>
 					{/* 
 					<Fade direction="up" triggerOnce>
-						<InterestRow id={5} />
+						<InterestRow id={5} wSize={props.wSize} />
 					</Fade>
 					*/}
 				</div>
