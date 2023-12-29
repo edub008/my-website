@@ -22,7 +22,7 @@ export async function getStaticProps({ locale }) {
 export default function Home() {
 
   const wSize = UseWindowSize();
-  console.log(`width = ${wSize.width}, height = ${wSize.height}`)
+  // console.log(`width = ${wSize.width}, height = ${wSize.height}`)
   const { t } = useTranslation('common')
   const sectionTitles = [
     {title: t('section.one'), id: "interests"},

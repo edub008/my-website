@@ -43,10 +43,11 @@ export default function InterestRow(props) {
 			break	
 	}
 
-	const mobileBreakPointinPx = 768
+	// stack interest columns when less than desktop size
+	const mobileBreakPointInPx = 1024
 	const areaSizeStyle = {
-		height: '40vh',
-		minHeight: '40vh'
+		// height: '40vh',
+		// minHeight: '40vh'
 	}
 
 	// alternate content sides based on even/odd 
@@ -58,9 +59,9 @@ export default function InterestRow(props) {
 					<div className="subtitle is-5 my-3 has-text-white" dangerouslySetInnerHTML={{__html: interestDesc }}></div>
 				</div>
 				{
-					props.wSize.width > mobileBreakPointinPx
+					props.wSize.width > mobileBreakPointInPx
 					&&
-					<div className="column m-0 px-2 is-flex is-justify-content-center">
+					<div className="column is-half m-0 px-2 is-flex is-justify-content-center">
 						{displayContent}
 					</div>
 				}
@@ -71,9 +72,9 @@ export default function InterestRow(props) {
 		return (
 			<div className="columns m-0 is-desktop " style={areaSizeStyle}>
 				{
-					props.wSize.width > mobileBreakPointinPx
+					props.wSize.width > mobileBreakPointInPx
 					&&
-					<div className="column m-0 px-2 is-flex is-justify-content-center">
+					<div className="column is-half m-0 px-2 is-flex is-justify-content-center">
 						{displayContent}
 					</div>
 				}

@@ -1,4 +1,3 @@
-// import "../styles/striped-cube.scss"
 export default function StripedCube(props) {
   return (
     <div className="striped-cube-container">

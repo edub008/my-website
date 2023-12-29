@@ -1,8 +1,6 @@
 @import 'vars';
 
 @import "bulma/sass/base/generic.sass";
-@import "bulma/sass/components/card.sass";
-@import "bulma/sass/components/media.sass";
 @import "bulma/sass/components/navbar.sass";
 @import "bulma/sass/form/shared.sass";
 @import "bulma/sass/elements/box.sass";
@@ -13,9 +11,7 @@
 @import "bulma/sass/utilities/_all.sass";
 
 @import "@fortawesome/fontawesome-svg-core/styles.css";
-
 @import '@sweetalert2/theme-dark/dark.scss';
-/* @import '@sweetalert2/theme-borderless/borderless.scss'; */
 
 :root {
   background: $primary-bg;
@@ -350,7 +346,7 @@ img {
 }
 
 /*****************************************************************
-  Animation: 3D cube waves
+  Animation: 3D striped cube
  *****************************************************************/
 
 $striped-cube-size: 15;
@@ -429,12 +425,13 @@ $striped-cube-bg:
 
 }
 
-.cube:before, .cube:after {
+.cube::before, .cube::after {
   content: "";
   background: $striped-cube-bg, $striped-cube-hole;
   background-size: 200% 200%;
   background-position: 100% 100%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -444,7 +441,8 @@ $striped-cube-bg:
   opacity: 0.65;
 } 
 
-.cube:after {
+.cube::after {
+  position: absolute;
   transform: rotate(180deg) rotateY(-90deg) rotateX(-90deg) translateY(calc($striped-cube-size * 1vmin));
   opacity: 0.35;
 }
@@ -455,7 +453,6 @@ $striped-cube-bg:
 @keyframes move-side {
   100% { background-position: 0% 0%; }
 }
-
 
 
 /*****************************************************************
