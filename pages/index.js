@@ -44,11 +44,11 @@ export default function Home() {
     <div id="top">
       <Head>
         <title>Ergin Dervisoglu | Home </title>
-        <meta property="description" content="Ergin Dervisoglu is a Product & Engineering Director located in the San Francisco Bay Area. Learn more about my interests, system, and communities through this website I built using Next.js and React.js." key="title" />
+        <meta name="description" content="Ergin Dervisoglu is a Product & Engineering Director located in the San Francisco Bay Area. Learn more about my interests, system, and communities through this website I built using Next.js and React.js." key="title" />
 
         {/* Global site tag (gtag.js) - Google Analytics --> */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-38Y703GYJ9" />
-        <Script id="google-analytics">
+        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-38Y703GYJ9" />
+        <Script strategy="lazyOnload" id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

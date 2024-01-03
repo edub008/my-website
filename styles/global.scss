@@ -39,6 +39,7 @@ body {
 
 .navbar {
   background: rgba(12,12,12,.90);
+  z-index: 1000 !important;
 }
 
 .navbar > .is-active {
