@@ -25,6 +25,7 @@
   font-weight: normal;
   margin-bottom: .25rem;
   color: $light;
+  z-index: 50;
 }
 
 .heroTitle {
@@ -32,4 +33,5 @@
   font-weight: bold;
   margin-top: .25rem;
   color: $primary;
+  z-index: 50;
 }
