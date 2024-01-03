@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 import { Fade } from "react-awesome-reveal"
 import styles from "../styles/System.module.scss"
 
-const IMAGE_URL = "/turkiye.webp"
+const IMAGE_URL = "/turkiye.jpeg"
 
 export default function System(props) {
 

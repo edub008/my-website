@@ -87,9 +87,9 @@ export default function Navbar(props) {
       <div id="navbar-main" className="navbar-menu">
 
         <div className="navbar-start">
-          <a className="navbar-item has-text-light" onClick={ (e) => smoothScrollTo(e, "top")}>
+          <div className="navbar-item has-text-light" style={{cursor: 'pointer'}} onClick={ (e) => smoothScrollTo(e, "top")}>
             Home
-          </a>
+          </div>
           <div className="navbar-item has-text-gray" style={{cursor:'not-allowed'}}>
             Blog (coming soon)
           </div>
