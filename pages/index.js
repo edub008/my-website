@@ -1,6 +1,7 @@
+import Head from 'next/head'
+import Script from 'next/script'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import Head from 'next/head'
 import Navbar from '/components/Navbar'
 import Hero from '/components/Hero'
 import GridItems from '/components/GridItems'
@@ -44,6 +45,19 @@ export default function Home() {
       <Head>
         <title>Ergin Dervisoglu | Home </title>
         <meta property="description" content="Ergin Dervisoglu is a Product & Engineering Director located in the San Francisco Bay Area. Learn more about my interests, system, and communities through this website I built using Next.js and React.js." key="title" />
+
+        {/* Global site tag (gtag.js) - Google Analytics --> */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-38Y703GYJ9" />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+   
+            gtag('config', 'G-38Y703GYJ9');
+          `}
+        </Script> 
+
       </Head>
 
       <Navbar/>
