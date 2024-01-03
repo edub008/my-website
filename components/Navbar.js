@@ -102,7 +102,7 @@ export default function Navbar(props) {
                 LinkedIn <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" className="mx-2"/>
               </a>
               <div className="is-relative">
-              <div className="button is-primary" onClick={ showResumeTypeDialog }>
+              <div className="button is-primary has-text-black" onClick={ showResumeTypeDialog }>
                 <strong>Resume</strong>
               </div>
               </div>

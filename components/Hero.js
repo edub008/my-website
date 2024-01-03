@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next'
 import styles from "../styles/Hero.module.scss"
 
 const { heroContent, heroImage, heroWrapper, heroSubtitle, heroTitle } = styles;
-const IMAGE_URL = "/ergin-hero.jpeg"
+const IMAGE_URL = "/ergin-hero.jpg"
 
 export default (props) => {
 
