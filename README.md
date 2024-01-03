@@ -1,6 +1,6 @@
 # Ergin Dervisoglu's Personal Website
 
-You can view my live site at www.ergin-d.com
+You can view the live site at www.ergin-d.com
 
 ![ergin-d.com](/public/ergin-hero.jpg)
 
