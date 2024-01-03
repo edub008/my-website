@@ -9,23 +9,23 @@ You can view the live site at www.ergin-d.com
 ## Dependencies
 
 - Node v17.4.0+
-- Yarn v1.22.18+
+- Npm v10.2.3+
 - Next.js v14.0.4+
 
 ## Installation & Build Scripts
 
 In the project directory, you can run:
 
-### `yarn dev`
+### `npm run dev`
 
 Runs `next dev` to start Next.js in development mode. Default port: http://localhost:3000
 
 Fast Refresh is supported through Next.js.
 
-### `yarn build`
+### `npm run build`
 
 Builds the application for production usage/deploy.
 
-### `yarn start`
+### `npm run dev start`
 
 Use to start the application on a Next.js production server.
