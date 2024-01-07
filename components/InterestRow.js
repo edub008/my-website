@@ -1,13 +1,11 @@
-import { useTranslation } from 'next-i18next'
 import BlockChainSvg from './BlockChainSvg'
 import StripedCube from './StripedCube'
 import ZkAnim from './ZkAnim'
 import UiDevAnim from './UiDevAnim'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+const STRINGS = require('/public/strings.json')
 
 export default function InterestRow(props) {
-
-	const { t } = useTranslation('common')
 
 	let interestTitle = ""
 	let interestDesc = ""
@@ -17,28 +15,28 @@ export default function InterestRow(props) {
 		default:
 		case 0:
 		case 1:
-			interestTitle = t('interests.title1')
-			interestDesc = t('interests.desc1')
+			interestTitle = STRINGS.interests.title1
+			interestDesc = STRINGS.interests.desc1
 			displayContent = <BlockChainSvg id="Layer_1" />
 			break
 		case 2:
-			interestTitle = t('interests.title2')
-			interestDesc = t('interests.desc2')
+			interestTitle = STRINGS.interests.title2
+			interestDesc = STRINGS.interests.desc2
 			displayContent = <UiDevAnim />
 			break
 		case 3:
-			interestTitle = t('interests.title3')
-			interestDesc = t('interests.desc3')
+			interestTitle = STRINGS.interests.title3
+			interestDesc = STRINGS.interests.desc3
 			displayContent = <ZkAnim />
 			break
 		case 4:
-			interestTitle = t('interests.title4')
-			interestDesc = t('interests.desc4')		
+			interestTitle = STRINGS.interests.title4
+			interestDesc = STRINGS.interests.desc4		
 			displayContent = <StripedCube />
 			break
 		case 5:
-			interestTitle = t('interests.title5')
-			interestDesc = t('interests.desc5')		
+			interestTitle = STRINGS.interests.title5
+			interestDesc = STRINGS.interests.desc5		
 			displayContent = <StripedCube />
 			break	
 	}

@@ -1,14 +1,12 @@
 // Header component.
 import Image from "next/image"
-import { useTranslation } from 'next-i18next'
 import styles from "../styles/Hero.module.scss"
+const STRINGS = require('/public/strings.json')
 
 const { heroContent, heroImage, heroWrapper, heroSubtitle, heroTitle } = styles;
-const IMAGE_URL = "/ergin-hero.jpg"
+const IMAGE_URL = "/img/ergin-hero.jpg"
 
 export default (props) => {
-
-  const { t } = useTranslation('common')
 
   return (
     <div className={heroWrapper}>
@@ -21,8 +19,8 @@ export default (props) => {
       />
 
       <div className={heroContent}>
-        <h1 className={heroSubtitle}> {t('hero-title')} </h1>
-        <p className={heroTitle}>{t('hero-subtitle')}</p>
+        <h1 className={heroSubtitle}> {STRINGS.heroTitle} </h1>
+        <p className={heroTitle}>{STRINGS.heroSubtitle}</p>
       </div>
     </div>
   )

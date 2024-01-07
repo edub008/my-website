@@ -1,14 +1,13 @@
 import React, {useEffect} from 'react'
-import { useTranslation } from 'next-i18next'
 import $ from "jquery"
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import withReactContent from 'sweetalert2-react-content'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUpRightFromSquare, faFilePdf, faFileWord } from '@fortawesome/free-solid-svg-icons'
+const STRINGS = require('/public/strings.json')
 
 export default function Navbar(props) {
 
-  const { t } = useTranslation('common')
   const SwalDialog = withReactContent(Swal)
 
   useEffect(() => {
@@ -98,7 +97,7 @@ export default function Navbar(props) {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a className="button navbar-li-button" target="_blank" href={t('communities.three.link')}>
+              <a className="button navbar-li-button" target="_blank" href={STRINGS.communities.three.link}>
                 LinkedIn <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" className="mx-2"/>
               </a>
               <div className="is-relative">

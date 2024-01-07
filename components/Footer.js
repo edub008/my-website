@@ -8,9 +8,9 @@ const linkedInImgAlt = "ergin dervisoglu - linkedin"
 const gitHubImgAlt = "ergin dervisoglu - github"
 const stackOverflowImgAlt = "ergin dervisoglu - stack overflow"
 
-const IMAGE_URL1 = "/github.webp"
-const IMAGE_URL2 = "/stack-overflow.webp"
-const IMAGE_URL3 = "/linked-in.webp"
+const IMAGE_URL1 = "/img/github.webp"
+const IMAGE_URL2 = "/img/stack-overflow.webp"
+const IMAGE_URL3 = "/img/linked-in.webp"
 
 export default function Footer(props) {
 

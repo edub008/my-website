@@ -1,24 +1,22 @@
 import Image from "next/image"
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { ParallaxBanner } from 'react-scroll-parallax'
-import { useTranslation } from 'next-i18next'
 import { Fade } from "react-awesome-reveal"
 import styles from "../styles/System.module.scss"
+const STRINGS = require('/public/strings.json')
 
-const IMAGE_URL = "/turkiye.jpeg"
+const IMAGE_URL = "/img/turkiye.jpeg"
 
 export default function System(props) {
 
-  const { t } = useTranslation('common')
-
   const systemItems = [
-    <Fade direction="up" triggerOnce>{t('system.rule1')}</Fade>,
-    <Fade direction="up" triggerOnce>{t('system.rule2')}</Fade>,
-    <Fade direction="up" triggerOnce>{t('system.rule3')}</Fade>,
-    <Fade direction="up" triggerOnce>{t('system.rule4')}</Fade>,
-    <Fade direction="up" triggerOnce>{t('system.rule5')}</Fade>,
-    <Fade direction="up" triggerOnce>{t('system.rule6')}</Fade>,
-    <Fade direction="up" triggerOnce>{t('system.rule7')}</Fade>
+    <Fade direction="up" triggerOnce>{STRINGS.system.rule1}</Fade>,
+    <Fade direction="up" triggerOnce>{STRINGS.system.rule2}</Fade>,
+    <Fade direction="up" triggerOnce>{STRINGS.system.rule3}</Fade>,
+    <Fade direction="up" triggerOnce>{STRINGS.system.rule4}</Fade>,
+    <Fade direction="up" triggerOnce>{STRINGS.system.rule5}</Fade>,
+    <Fade direction="up" triggerOnce>{STRINGS.system.rule6}</Fade>,
+    <Fade direction="up" triggerOnce>{STRINGS.system.rule7}</Fade>
   ]
   const mySystemItems = systemItems.map((item, index) =>
     <div key={`system-item-${index+1}`} >
@@ -44,7 +42,7 @@ export default function System(props) {
           />
           <div className="columns m-0 is-justify-content-center">
             <div className="column is-6 is-relative ">
-              <div className="section-title has-text-primary mx-1 my-4"> <span> {t('section.two')} </span> </div>
+              <div className="section-title has-text-primary mx-1 my-4"> <span> {STRINGS.section.two} </span> </div>
             </div>
           </div>
           <div className="container py-6 is-fullhd has-text-centered">
