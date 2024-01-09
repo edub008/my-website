@@ -2,10 +2,6 @@
 
 You can view the live site at www.ergin-d.com
 
-![ergin-d.com](/public/ergin-hero.jpg)
-
-> :information_source: This website was built using [Next.js](https://nextjs.org/learn).
-
 ## Dependencies
 
 - Node v17.4.0+
