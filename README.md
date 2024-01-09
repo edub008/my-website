@@ -22,6 +22,6 @@ Fast Refresh is supported through Next.js.
 
 Builds the application for production usage/deploy.
 
-### `npm run dev start`
+### `npm run start`
 
 Use to start the application on a Next.js production server.
