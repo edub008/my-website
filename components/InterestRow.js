@@ -2,7 +2,6 @@ import BlockChainSvg from './BlockChainSvg'
 import StripedCube from './StripedCube'
 import ZkAnim from './ZkAnim'
 import UiDevAnim from './UiDevAnim'
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 const STRINGS = require('/public/strings.json')
 
 export default function InterestRow(props) {

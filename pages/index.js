@@ -1,7 +1,4 @@
 import Head from 'next/head'
-// import Script from 'next/script'
-// import { useTranslation } from 'next-i18next'
-// import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Navbar from '/components/Navbar'
 import Hero from '/components/Hero'
 import GridItems from '/components/GridItems'
@@ -35,6 +32,16 @@ export default function Home() {
       <Head>
         <title>Ergin Dervisoglu | Home </title>
         <meta name="description" content="Ergin Dervisoglu is a Product & Engineering Director located in the San Francisco Bay Area. Learn more about my interests, system, and communities through this website I built using Next.js and React.js." key="title" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Ergin's Cool Website" />
+        <meta
+          property="og:description"
+          content="Thanks for visiting my super cool website, I hope you enjoy your stay!"
+        />
+        <meta
+          property="og:image"
+          content="https://example.com/img/opengraph-image.jpg"
+        />
       </Head>
 
       <Navbar/>

@@ -3,7 +3,7 @@ import Image from "next/image"
 import styles from "../styles/Hero.module.scss"
 const STRINGS = require('/public/strings.json')
 
-const { heroContent, heroImage, heroWrapper, heroSubtitle, heroTitle } = styles;
+const { heroContent, heroWrapper, heroSubtitle, heroTitle } = styles;
 const IMAGE_URL = "/img/ergin-hero.jpg"
 
 export default (props) => {

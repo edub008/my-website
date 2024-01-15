@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, {useEffect} from 'react'
 import $ from "jquery"
 import Swal from 'sweetalert2/dist/sweetalert2.js'
@@ -89,22 +90,21 @@ export default function Navbar(props) {
           <div className="navbar-item has-text-light" style={{cursor: 'pointer'}} onClick={ (e) => smoothScrollTo(e, "top")}>
             Home
           </div>
-          <div className="navbar-item has-text-gray" style={{cursor:'not-allowed'}}>
-            Blog (coming soon)
-          </div>
+          <Link className="navbar-item has-text-light" href="/blog">
+            Blog
+          </Link>
         </div>
 
         <div className="navbar-end">
+          <div className="navbar-item has-text-light" style={{cursor:'pointer'}} onClick={ showResumeTypeDialog }>
+            Resume
+          </div>
           <div className="navbar-item">
             <div className="buttons">
+              
               <a className="button navbar-li-button" target="_blank" href={STRINGS.communities.three.link}>
                 LinkedIn <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" className="mx-2"/>
               </a>
-              <div className="is-relative">
-              <div className="button is-primary has-text-black" onClick={ showResumeTypeDialog }>
-                <strong>Resume</strong>
-              </div>
-              </div>
 
             </div>
           </div>

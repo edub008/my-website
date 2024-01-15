@@ -4,18 +4,17 @@
 	"section": {
 		"one": "My Interests",
 		"two": "My System",
-		"three": "My Communities",
-		"four": "My Education"
+		"three": "My Communities"
 	},
 	"interests": {
 		"title1": "Web 3.0",
-		"title4": "Generative AI",
-		"title3": "Zero Knowledge Proofs",
 		"title2": "React & UI Development",
+		"title3": "Zero Knowledge Proofs",
+		"title4": "Generative AI",
 		"title5": "Games / Gaming",
 		"desc1": "I'm an active developer and investor in Blockchain and Web3 technologies that I believe will become new standards in the future. I've been testing some <a href='https://ethereum.org/en/' target='_blank' rel='noopener noreferrer' >ETH</a> smart contracts using the Solidity language and just recently migrated this website onto the <a href='https://internetcomputer.org/' target='_blank' rel='noopener noreferrer' >ICP</a> blockchain! To try and stay up to date sometimes I kick the tires with test/educational projects such as the following Node.js <a href='https://github.com/edub008/blockchain-nodejs-pow' target='_blank' rel='noopener noreferrer' >blockchain</a> on Github.",
-		"desc2": "In more recent years I have contributed to lots of frontend web, cloud, and mobile projects including this site (see <a href='https://github.com/edub008/my-website' target='_blank' rel='noopener noreferrer' >code</a>) using wonderful libraries such as <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' >React.js</a> and <a href='https://nextjs.org/' target='_blank' rel='noopener noreferrer' >Next.js</a>. While I have lots of experience working and managing the fullstack across my career (including web APIs and gaming consoles) I especially enjoy coding up UIs and front-ends these days.",
-		"desc3": "While still in their infancy I find <a href='https://en.wikipedia.org/wiki/Zero-knowledge_proof' target='_blank' rel='noopener noreferrer' >zkProofs</a> to be quite a fascinating advancement when it comes to security and privacy, allowing users to securely verify private data or other statements of truth without actually revealing the information or knowledge itself. This presents great new opportunities for authentication and verification, both on- and off-chain.",
+		"desc2": "In more recent years I have contributed to lots of frontend web, cloud, and mobile projects including this site (see <a href='https://github.com/edub008/my-website' target='_blank' rel='noopener noreferrer' >code</a>) using wonderful libraries such as <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' >React.js</a> and <a href='https://nextjs.org/' target='_blank' rel='noopener noreferrer' >Next.js</a>. While I have lots of experience working and managing the fullstack across my career (including REST APIs and gaming consoles) I especially enjoy coding up UIs and front-ends these days.",
+		"desc3": "While still in their infancy I find <a href='https://en.wikipedia.org/wiki/Zero-knowledge_proof' target='_blank' rel='noopener noreferrer' >zkProofs</a> to be quite a fascinating advancement when it comes to security and privacy. The idea that a user can verify they have certain data or know a particular truth - without revealing any info about that actual truth - is mind-boggling to me. I believe this presents great new opportunities for authentication and verification, both on- and off-chain.",
 		"desc4": "I've been learning more about the underlying code and technologies used to create nerual networks and large language models. While relatively new to this area (currently taking some online courses) I find the opportunities and possibilities with generative-AI to be almost un-imaginable and strongly believe these technologies will have a major impact on the world in many different ways.",
 		"desc5": "When I'm not coding up the next revolutionary product I'm still a gamer at my core. Games like FC24, Fortnite, and even StarCraft 2 (Battle.net: <span className='has-text-info'>NavyYeti</span>) are still heavy in my rotation. I also enjoy classic board games and traditionals such as chess and backgammon."
 	},
@@ -43,5 +42,26 @@
 			"link": "https://stackoverflow.com/users/1968395/ergin"
 		}
 	},
-	"about": "I built this website using <a href='https://nextjs.org/' target='_blank' rel='noopener noreferrer' >Next.js</a>, <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' >React.js</a>, and <a href='https://bulma.io/' target='_blank' rel='noopener noreferrer' >Bulma</a> (for CSS). This site is currently hosted on the <a href='https://internetcomputer.org/' target='_blank' rel='noopener noreferrer' >ICP</a> blockchain."
+	"about": "I built this website using <a href='https://nextjs.org/' target='_blank' rel='noopener noreferrer' >Next.js</a>, <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' >React.js</a>, and <a href='https://bulma.io/' target='_blank' rel='noopener noreferrer' >Bulma</a> (for CSS). This site is currently hosted on the <a href='https://internetcomputer.org/' target='_blank' rel='noopener noreferrer' >ICP</a> blockchain.",
+	"blogs": [
+		{
+			"title": "Steps for converting projects from React to Next.js, some problems you will encounter, plus tips and tricks.",
+			"date": "Jan 2024",
+			"url": "/blog/convert-react-to-nextjs"
+		},
+		{
+			"title": "Why I migrated my hosting services from Google Cloud Platform to the Internet Computer.",
+			"date": "TBD",
+			"url": "/blog"
+		},
+		{
+			"title": "Will Zero Knowledge Proofs become a standard for all forms of authorization and authentication in the future?",
+			"date": "TBD",
+			"url": "/blog"
+		}
+	],
+	"blogAuthors": [
+		{"author": "Ergin Dervisoglu"}
+	],
+	"blogTitle" : "The Technic@l Turk Blog"
 }
