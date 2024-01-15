@@ -2,10 +2,6 @@
 
 You can view the live site at www.ergin-d.com
 
-![ergin-d.com](/public/ergin-hero.jpg)
-
-> :information_source: This website was built using [Next.js](https://nextjs.org/learn).
-
 ## Dependencies
 
 - Node v17.4.0+
@@ -26,6 +22,6 @@ Fast Refresh is supported through Next.js.
 
 Builds the application for production usage/deploy.
 
-### `npm run dev start`
+### `npm run start`
 
 Use to start the application on a Next.js production server.
