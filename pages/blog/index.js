@@ -18,7 +18,7 @@ export default function Blog() {
     
     <NavBarBlog />
 
-    <div className="section-bg" style={{minHeight:'100vmin'}}>
+    <div className="section-bg" style={{minHeight:'100vmin', paddingBottom:'5rem'}}>
         <div className="columns m-2">
           <div className="column has-text-centered">
             <h1 className="title is-1 neon-sign"> <span>{STRINGS.blogTitle}</span> </h1>
@@ -29,27 +29,33 @@ export default function Blog() {
           <div className="column m-2">
             <div className="tile is-ancestor">
               <div className="tile is-parent">
-                <div className={`tile is-child box ${styles.blog1Img} ${styles.blogTileBorder}`}>
-                  <div className={`p-3 ${styles.blogTitleOverlay}`}>
-                    <p className={`title is-4 has-text-white`}>{STRINGS.blogs[0].title}</p>
-                    <p className={`subtitle is-6 has-text-white`}>{STRINGS.blogs[0].date}</p>
-                    <a className="button is-primary" href={STRINGS.blogs[0].url}>Read More</a>
+                <div className={`tile is-child box p-0 ${styles.blog1Img} ${styles.blogTileBorder}`}>
+                  <div className={styles.blogTitleOverlay}>
+                    <div style={{position:'relative'}}>
+                      <div className={`title is-4 has-text-white`}>{STRINGS.blogs[0].title}</div>
+                      <div className={`subtitle is-6 has-text-white`}>{STRINGS.blogs[0].date}</div>
+                      <a className="button is-primary" href={STRINGS.blogs[0].url}>Read More</a>
+                    </div>
                   </div>
                 </div>
               </div>
               <div className="tile is-5 is-vertical is-parent">
-                <div className={`tile is-child box ${styles.blog2Img} ${styles.blogTileBorder}`}>
-                  <div className={`p-3 ${styles.blogTitleOverlay}`}>
-                    <p className={`title is-4 has-text-white`}>{STRINGS.blogs[1].title}</p>
-                    <p className={`subtitle is-6 has-text-white`}>{STRINGS.blogs[1].date}</p>
-                    <div disabled className="button">Coming Soon</div>
+                <div className={`tile is-child box p-0 ${styles.blog2Img} ${styles.blogTileBorder}`}>
+                  <div className={styles.blogTitleOverlay}>
+                    <div style={{position:'relative'}}>
+                      <div className={`title is-5 has-text-white`}>{STRINGS.blogs[1].title}</div>
+                      <div className={`subtitle is-6 has-text-white`}>{STRINGS.blogs[1].date}</div>
+                      <div disabled className="button">Coming Soon</div>
+                    </div>
                   </div>
                 </div>
-                <div className={`tile is-child box ${styles.blog3Img} ${styles.blogTileBorder}`}>
-                  <div className={`p-3 ${styles.blogTitleOverlay}`}>
-                  <p className={`title is-4 has-text-white`}>{STRINGS.blogs[2].title}</p>
-                    <p className={`subtitle is-6 has-text-white`}>{STRINGS.blogs[2].date}</p>
-                  <div disabled className="button">Coming Soon</div>
+                <div className={`tile is-child box p-0 ${styles.blog3Img} ${styles.blogTileBorder}`}>
+                  <div className={styles.blogTitleOverlay}>
+                    <div style={{position:'relative'}}>
+                      <div className={`title is-5 has-text-white`}>{STRINGS.blogs[2].title}</div>
+                      <div className={`subtitle is-6 has-text-white`}>{STRINGS.blogs[2].date}</div>
+                      <div disabled className="button">Coming Soon</div>
+                    </div>
                   </div>
                 </div>
               </div>

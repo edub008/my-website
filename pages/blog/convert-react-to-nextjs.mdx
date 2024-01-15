@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import NavBarBlog from '/components/NavBarBlog'
+import IsometricScene from '/components/IsometricScene'
 import styles from "../../styles/Blog.module.scss"
 import STRINGS from '/public/strings.json'
 
@@ -25,7 +26,7 @@ import STRINGS from '/public/strings.json'
 <div className="container">
   <Image
     alt='react-to-nextjs'
-    src='/img/blog1-fe-libraries.png'
+    src='/img/blog1-react-to-nextjs.png'
     priority
     width={0}
     height={0}
@@ -373,8 +374,6 @@ export default function Page() {
 If you have a hero image on any of your pages there's some extra properties you will need to set along with some styling to make it work properly and take up the whole screen. After lots of reading and tinkering I finally got full-screen heros working with the following code:
 
 ```javascript
-const { heroWrapper } = styles;
-
 export default function FullScreenHero(props) => {
 
   return (
@@ -391,11 +390,11 @@ export default function FullScreenHero(props) => {
 }
 ```
 
-Note the extra `fill` and `style` properties that are used in the Image component in addition to some extra CSS styling on the parent div which is required.
+The `priority` property tells Next.js this image accounts for the Largest Contentful Paint (LCP) on this page and to therefore prioritize loading of this image. Also note the extra `fill` and `style` properties as well as some extra CSS styling on the parent div which are required (e.g. parent div must have *relative* positioning). 
 
 ### Global CSS imports
 
-If your previous React project imported global CSS/SCSS files across multiple source files then you may need to refactor some of those imports. However global style imports are <span className="has-text-weight-bold">only</span> allowed under the `/app` source folder, meaning you may need to move source files around or update your styling imports.
+If your previous React project imported global CSS/SCSS files across multiple source files then you may need to refactor some of those imports. In Next.js global style imports are <span className="has-text-weight-bold">only</span> allowed under the `/app` source folder, meaning you may need to move source files around or update your styling imports.
 
 In addition to global styling Next.js also supports *CSS Modules*, *Tailwind CSS*, *Sass*, and *CSS-in-JS*, see the [styling](https://nextjs.org/docs/app/building-your-application/styling) page for more info.
 
@@ -419,7 +418,7 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-Now when you run <span className="has-text-weight-bold">npm run build</span> a new `/out` folder will be generated at the root of your project directory that contains your production build's static assets.
+Now when you run <span className="has-text-weight-bold">npm run build</span> a new `/out` folder will be generated at the root of your project that contains your production build's static assets.
 
 -----
 
@@ -427,8 +426,8 @@ Hopefully this article has helped you convert your existing React project into a
 
 Thanks for reading!
 
-<div className="title is-4 has-text-info"> 
-  {STRINGS.blogs[0].date} - <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author}</span>
+<div className="title is-5 has-text-info"> 
+  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.blogs[0].date})</span>
 </div>
 
 </div>

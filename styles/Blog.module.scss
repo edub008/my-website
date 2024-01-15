@@ -3,11 +3,11 @@
 }
 
 .blog1Img { 
-	background-image: url("/img/blog1-fe-libraries.png"); background-size: cover; background-position: center; background-repeat:no-repeat;
+	background-image: url("/img/blog1-react-to-nextjs.png"); background-size: cover; background-position: center; background-repeat:no-repeat;
 }
 
 .blog2Img { 
-	background-image: url("/img/internet-computer.png"); background-size: cover; background-position: center; background-repeat:no-repeat;
+	background-image: url("/img/internet-computer-logo.png"); background-size: cover; background-position: center; background-repeat:no-repeat;
 }
 
 .blog3Img { 
@@ -15,12 +15,17 @@
 }
 
 .blogTileBorder { 
-	border: 1px solid white;
+	border: 1px solid blue;
 }
 
 .blogTitleOverlay { 
-	background-color: rgba(0,0,0,.45);
+	background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.85) 33%, rgba(0,0,0,0.80) 66%, rgba(0,0,0,0.65) 100%);;
 	border-radius: 6px;
+	width: 100%;
+	height: 100%;
+	padding: 3.5rem;
+	display: flex;
+	align-items: center;
 }
 
 .blogPageMargins {

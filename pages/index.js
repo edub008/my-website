@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Navbar from '/components/Navbar'
 import Hero from '/components/Hero'
-import GridItems from '/components/GridItems'
+// import GridItems from '/components/GridItems'
 import Interests from '/components/Interests'
 import System from '/components/System'
 import Footer from '/components/Footer'
@@ -47,7 +47,6 @@ export default function Home() {
       <Navbar/>
 
       <Hero/>
-      <GridItems sectionTitles={sectionTitles}/>
       <Interests id={sectionTitles[0].id} wSize={wSize}/>
       <System id={sectionTitles[1].id} />
 
