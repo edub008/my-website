@@ -25,3 +25,18 @@ Builds the application for production usage/deploy.
 ### `npm run start`
 
 Use to start the application on a Next.js production server.
+
+## Deploy to the Internet Computer
+
+When deploying to ICP there's an additional project dependency of the IC SDK:
+
+- [IC SDK](https://github.com/dfinity/sdk)
+
+### IC Deploy Steps
+
+1. Create a new production build `npm run dev`.
+2. Start DFX service in the background `dfx start --background`.
+3. Generate Candid definitions: `dfx generate`.
+4. Deploy locally with: `dfx deploy`
+
+5. When ready for production `dfx deploy --ic`
