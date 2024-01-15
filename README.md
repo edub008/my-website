@@ -30,7 +30,7 @@ Use to start the application on a Next.js production server.
 
 When deploying to ICP there's an additional project dependency of the IC SDK:
 
-- [IC SDK](https://github.com/dfinity/sdk)
+- [IC SDK v0.15.2+](https://github.com/dfinity/sdk)
 
 ### IC Deploy Steps
 
