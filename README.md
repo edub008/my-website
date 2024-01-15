@@ -39,4 +39,4 @@ When deploying to ICP there's an additional project dependency of the IC SDK:
 3. Generate Candid definitions: `dfx generate`.
 4. Deploy locally with: `dfx deploy`
 
-5. When ready for production `dfx deploy --ic`
+When finally ready for production: `dfx deploy --ic`
