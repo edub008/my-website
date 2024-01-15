@@ -30,7 +30,7 @@ Use to start the application on a Next.js production server.
 
 When deploying to ICP there's an additional project dependency of the IC SDK:
 
-- [IC SDK](https://github.com/dfinity/sdk)
+- [IC SDK v0.15.2+](https://github.com/dfinity/sdk)
 
 ### IC Deploy Steps
 
@@ -39,4 +39,4 @@ When deploying to ICP there's an additional project dependency of the IC SDK:
 3. Generate Candid definitions: `dfx generate`.
 4. Deploy locally with: `dfx deploy`
 
-5. When ready for production `dfx deploy --ic`
+When finally ready for production: `dfx deploy --ic`
