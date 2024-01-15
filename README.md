@@ -1,6 +1,6 @@
 # Ergin Dervisoglu's Personal Website
 
-You can view the live site at www.ergin-d.com. The site is currently hosted on the [Internet Computer](https://internetcomputer.org/)
+You can view the live site at www.ergin-d.com. The site is currently hosted on the [Internet Computer](https://internetcomputer.org/).
 
 ## Dependencies
 
