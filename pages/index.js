@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Navbar from '/components/Navbar'
 import Hero from '/components/Hero'
-// import GridItems from '/components/GridItems'
 import Interests from '/components/Interests'
 import System from '/components/System'
 import Footer from '/components/Footer'
