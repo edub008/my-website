@@ -299,7 +299,38 @@ import React, {useState, useEffect} from 'react'
 ...
 ```
 
-As with other code ports, you may also need to update some of your `import ...` statements across your code base since references to resources like images and CSS files may have changed with the new project structure.
+<h3>Update Routing</h3>
+
+Unless you're hosting a React SPA with a single home route you will likely need to update your components to allow for front-end routes to work properly. Import the <span className="has-text-weight-bold">Link</span> component from `next/link` to create links between pages. If your components need to access the router object then you can use the `useRouter` hook.
+
+As is common with other code ports, you may also need to update some of your `import ...` statements across your components as references to resources like images and CSS files may have changed under the new project structure.
+
+<h3>Data Fetching</h3>
+
+Data fetching is handled a little different in Next.js. Instead of using React Router to define your routes and fetch data using a library like axios or fetch, Next.js routing is handled based on the file structure in the /pages directory, and data fetching is done using the `getServerSideProps` or `getStaticProps` functions.
+
+The `getServerSideProps` function is used to fetch data at request time, hence it is called every time the page is visited. On the other hand, `getStaticProps` is used to fetch data at build time, which means it will be called once when the app is built and the data will be included in the generated HTML for the page (e.g. sites that use static generation).
+
+You’ll need to export one or more of these functions from a page component in order to use it, for example:
+
+```javascript
+import axios from 'axios';
+export async function getServerSideProps() {
+  const res = await axios.get('https://my-api.com/data');
+  const data = res.data;
+  return {
+    props: {
+      data,
+    },
+  };
+}
+export default function Page({ data }) {
+  // render data in the component
+}
+```
+
+For more info including additional functions and options see the [data fetching](https://nextjs.org/docs/pages/building-your-application/data-fetching) page.
+
 
 <h3>Add Scripts (optional)</h3>
 

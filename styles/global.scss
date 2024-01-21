@@ -718,8 +718,822 @@ body {
 }
 
 
-////////////////////////////
+/*****************************************************************
+  Isometric Footer Icons:
+ *****************************************************************/
+$icon-colors: #00aced, black, #F48024, #007bb6, #e4405f;
 
+.icon-list {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  padding: 0.25rem;
+
+  .icon-list__item {
+    margin: 0 40px;
+
+    a {
+      .icon-box {
+        --box-width: 5rem;
+        --box-height: 5rem;
+        --box-depth: 1rem;
+
+        width: var(--box-width);
+        height: var(--box-height);
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateX(55deg) rotateZ(45deg);
+        transition: 0.5s;
+
+        .box__face {
+          position: absolute;
+          font-size: 0.625rem;
+          font-weight: bold;
+          color: white;
+          text-align: center;
+        }
+
+        .box__face--front,
+        .box__face--back {
+          width: var(--box-width);
+          height: var(--box-height);
+          line-height: var(--box-height);
+        }
+
+        .box__face--right,
+        .box__face--left {
+          width: var(--box-depth);
+          height: var(--box-height);
+          left: calc((var(--box-width) - var(--box-depth)) / 2);
+          line-height: var(--box-height);
+        }
+
+        .box__face--top,
+        .box__face--bottom {
+          width: var(--box-width);
+          height: var(--box-depth);
+          top: calc((var(--box-height) - var(--box-depth)) / 2);
+          line-height: var(--box-depth);
+        }
+
+        .box__face--front {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: white;
+          transition: 0.5s;
+
+          svg {
+            transform: rotate(270deg);
+            path {
+              transition: 0.5s;
+            }
+          }
+        }
+
+        .box__face--right {
+          background: darken(white, 10%);
+          transition: 0.5s;
+        }
+
+        .box__face--bottom {
+          background: darken(white, 30%);
+          transition: 0.5s;
+        }
+
+        .box__face--back {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          transition: 0.5s;
+        }
+
+        .box__face--front {
+          transform: rotateY(0deg) translateZ(calc(var(--box-depth) / 2));
+        }
+        .box__face--back {
+          transform: rotateY(180deg) translateZ(calc(var(--box-depth) / 2));
+        }
+
+        .box__face--right {
+          transform: rotateY(90deg) translateZ(calc(var(--box-width) / 2));
+        }
+        .box__face--left {
+          transform: rotateY(-90deg) translateZ(calc(var(--box-width) / 2));
+        }
+
+        .box__face--top {
+          transform: rotateX(90deg) translateZ(calc(var(--box-height) / 2));
+        }
+        .box__face--bottom {
+          transform: rotateX(-90deg) translateZ(calc(var(--box-height) / 2));
+        }
+      }
+    }
+
+    &:hover {
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) a {
+          .icon-box {
+            transform: rotateX(55deg) rotateZ(45deg) translateZ(20px);
+
+            .box__face--back {
+              box-shadow: -30px 30px 50px rgba(0, 0, 0, 0.5);
+            }
+          }
+
+          .box__face--front {
+            background: nth($icon-colors, $i);
+
+            svg path {
+              fill: white;
+            }
+          }
+
+          .box__face--right {
+            background: darken(nth($icon-colors, $i), 5%);
+          }
+
+          .box__face--bottom {
+            background: darken(nth($icon-colors, $i), 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*****************************************************************
+  Animation: Morhping UI Displays
+ *****************************************************************/
+
+.loader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+
+/* The dot */
+.loader > .dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+
+  width: 160px;
+  height: 100px;
+  
+  margin-top: -50px;
+  margin-left: -80px;
+
+  border-radius: 5px;
+
+  background-color: #D02A41;
+
+  transform-type: preserve-3d;
+
+  animation: dot1 5s cubic-bezier(.55,.3,.24,.99) infinite;
+}
+
+.loader > .dot:nth-child(2) {
+  z-index: 11;
+  
+  width: 150px;
+  height: 90px;
+  
+  margin-top: -45px;
+  margin-left: -75px;
+  
+  border-radius: 3px;
+  
+  background-color: #202333;
+  
+  animation-name: dot2;
+}
+
+.loader > .dot:nth-child(3) {
+  z-index: 12;
+  
+  width: 40px;
+  height: 20px;
+  
+  margin-top: 50px;
+  margin-left: -20px;
+  
+  border-radius: 0 0 5px 5px;
+  
+  background-color: #303444;
+  
+  animation-name: dot3;
+}
+
+@keyframes dot1 {
+  3%, 97% {
+    width: 160px;
+    height: 100px;
+
+    margin-top: -50px;
+    margin-left: -80px;
+  }
+  30%, 36% {
+    width: 80px;
+    height: 120px;
+
+    margin-top: -60px;
+    margin-left: -40px;
+  }
+  63%, 69% {
+    width: 40px;
+    height: 80px;
+
+    margin-top: -40px;
+    margin-left: -20px;
+  }
+}
+
+@keyframes dot2 {
+  3%, 97% {
+    width: 150px;
+    height: 90px;
+
+    margin-top: -45px;
+    margin-left: -75px;
+  }
+  30%, 36% {
+    width: 70px;
+    height: 96px;
+
+    margin-top: -48px;
+    margin-left: -35px;
+  }
+  63%, 69% {
+    width: 32px;
+    height: 60px;
+
+    margin-top: -30px;
+    margin-left: -16px;
+  }
+}
+
+@keyframes dot3 {
+  3%, 97% {
+    width: 40px;
+    height: 20px;
+
+    margin-top: 50px;
+    margin-left: -20px;
+  }
+  30%, 36% {
+    width: 8px;
+    height: 8px;
+
+    margin-top: 49px;
+    margin-left: -5px;
+    
+    border-radius: 8px;
+  }
+  63%, 69% {
+    width: 16px;
+    height: 4px;
+
+    margin-top: -37px;
+    margin-left: -8px;
+    
+    border-radius: 10px;
+  }
+}
+
+
+
+/*****************************************************************
+  Animation: Rubik Cube
+ *****************************************************************/
+
+$duration: 4s;
+$delays: ();
+$variance: 300;
+$easing: cubic-bezier(.5, 0, 0, 1);
+$gap: 2px;
+
+@for $row from 1 through 3 {
+  @for $col from 1 through 3 {
+    @for $layer from 1 through 3 {
+      $delays: map-merge($delays, ('#{$row}#{$col}#{$layer}': random($variance)));
+    }
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+  animation-timing-function: $easing !important;
+}
+
+/*
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  background: linear-gradient(to bottom right, #a4c5c7, #2D3F48);
+  
+  &:hover {
+    > label, > input {
+      opacity: 1;
+    }
+  }
+}
+*/
+
+label, #shadows {
+  position: fixed;
+  top: 2vmin;
+  opacity: 0.5;
+}
+label {
+  left: 6vmin;
+  color: white;
+  font-weight: bold;
+}
+#shadows {
+  left: 2vmin;
+}
+
+#shadows:not(:checked) ~ .cubes {
+  --shadow-filter: none;
+}
+
+.cubes {
+  width: 10vmin;
+  height: 10vmin;
+  transform: rotateX(60deg) rotateZ(-45deg);
+  backface-visibility: visible;
+  overflow: visible;
+  transform-style: preserve-3d;
+  perspective: 9000px;
+}
+
+.rubik-cube, .large-shadow {
+  height: 10vmin;
+  width: 10vmin;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  transform-origin: center center -.5vmin;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  > .cube-wrap {
+    animation: rubik-cube-anim $duration infinite both;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+    transform-origin: center center -.5vmin;
+    will-change: transform;
+    
+    @keyframes rubik-cube-anim {
+      from, to, 20%, 60% {
+        animation-timing-function: step-start;
+        transform: none;
+      }
+
+      40% {
+        transform: rotateY(-1turn);
+      }
+    }
+  }
+  
+  &[data-cube^="1"] {
+    top: calc(-10vmin - #{$gap});
+    --color-bg-top: red;
+    --color-bg-bottom: #D02A41;
+    --color-fl-top: red;
+    --color-fl-bottom: #e8203c;
+  }
+  &[data-cube^="2"] {
+    --color-bg-top: #D02A41;
+    --color-bg-bottom: #d7102a;
+    --color-fl-top: #e8203c;
+    --color-fl-bottom: #f2303c;
+  }
+  &[data-cube^="3"] {
+    top: calc(10vmin + #{$gap});
+    --color-bg-top: #d7102a;
+    --color-bg-bottom: #d9203d;
+    --color-fl-top: #f2303c;
+    --color-fl-bottom: #f5403c;
+  }
+  &[data-cube^="11"],
+  &[data-cube^="21"],
+  &[data-cube^="31"]{
+    left: calc(-10vmin - #{$gap});
+    --color-fr-top: darkred;
+    --color-fr-bottom: darkred;
+  }
+  &[data-cube^="12"],
+  &[data-cube^="22"],
+  &[data-cube^="32"]{
+    --color-fr-top: darkred;
+    --color-fr-bottom: darkred;
+  }
+  &[data-cube^="13"],
+  &[data-cube^="23"],
+  &[data-cube^="33"]{
+    left: calc(10vmin + #{$gap});
+    --color-fr-top: darkred;
+    --color-fr-bottom: darkred;
+  }
+  
+  &[data-cube$="2"] {
+    transform: translateZ(calc(10vmin + #{$gap}));
+  }
+  
+  &[data-cube$="3"] {
+    transform: translateZ(calc(-10vmin - #{$gap}));
+  }
+}
+
+
+.large-shadows {
+  transform: translateZ(-21vmin);
+}
+.large-shadow {
+  background: black;
+  height: 10vmin;
+  width: 10vmin;
+  transform-origin: top right;
+  animation: large-shadow $duration infinite both;
+  filter: var(--shadow-filter, blur(3vmin));
+  opacity: 0.2;
+  will-change: transform;
+  
+  @keyframes large-shadow {
+    from, 80%, to {
+      transform: scale(1.5, 3);
+    }
+    20% {
+      transform: scale(1.5, 2);
+    }
+    40%, 60% {
+      transform: scale(1.5, 5);
+    }
+    50% {
+      transform: scale(1, 5);
+    }
+  }
+}
+
+[class^="cube-"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: visible;
+  top: 0;
+  left: 0;
+  
+  &, &:before {
+    will-change: transform;
+    animation: any $duration infinite both;
+  }
+  
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+  }
+}
+
+.cube-top {
+  animation-name: cube-top;
+  overflow: hidden;
+  
+  &:before, &:after {
+    will-change: transform;
+  }
+  
+  &:before {
+    background-image:
+      linear-gradient(to bottom, #CBFEFF,  transparent),
+      linear-gradient(to bottom, var(--color-bg-top), var(--color-bg-bottom));
+    background-size: 2px 100%, auto;
+    background-repeat: no-repeat;
+  }
+  
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #DFF4F0;
+    animation: cube-top-flash $duration infinite both;
+    
+    @keyframes cube-top-flash {
+      from, 50%, 60%, to {
+        opacity: 0;
+      }
+      52% {
+        opacity: 0.9;
+      }
+    }
+  }
+  
+  @keyframes cube-top {
+    20% {
+      transform: translateZ(calc(-10vmin + 2vmin));
+    }
+    40%, 60%, 80% {
+      transform: none;
+    }
+  }
+}
+
+.cube-front-left {
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  overflow: hidden;
+  
+  &:before {
+    background-image:
+      linear-gradient(to bottom, var(--color-fl-top), var(--color-fl-bottom)),
+      linear-gradient(to bottom, rgba(white, .5), transparent 60%);
+    background-size: auto auto 1px 100%;
+    background-repeat: no-repeat;
+    transform-origin: right;
+    animation-name: cube-front-left;
+    will-change: transform;
+  }
+  
+  @keyframes cube-front-left {
+    20% {
+      transform: scaleX(.2);
+    }
+    40%, 60% {
+      transform: translateX(-8vmin) scaleX(.2) ;
+    }
+    80% {
+      transform: none;
+    }
+  }
+}
+
+.cube-front-right {
+  transform-origin: bottom center;
+  transform: rotateX(90deg);
+  
+  &:before {
+    // background-color: #2C5060;
+    background-image:
+      linear-gradient(to right, var(--color-fr-top), var(--color-fr-bottom));
+    transform-origin: top;
+    animation-name: cube-front-right;
+    will-change: transform;
+  }
+  
+  @keyframes cube-front-right {
+    20% {
+      transform: scaleY(.2);
+    }
+    40%, 60% {
+      transform: translateY(8vmin) scaleY(.2) ;
+    }
+    80% {
+      transform: none;
+    }
+  }
+}
+
+.cube-bottom {
+  transform: translateZ(-10vmin);
+  background-image:
+    linear-gradient(to bottom, var(--color-bg-top), var(--color-bg-bottom));
+  animation-name: cube-bottom;
+  
+  @keyframes cube-bottom {
+    from, 20%, 80%, to {
+      transform: translateZ(calc(-10vmin + 1px)) scale(.95);
+    }
+    40%, 60% {
+      transform: translateZ(-2vmin) scale(.95);
+    }
+  }
+  
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #DFF4F0;
+    animation: cube-bottom-flash $duration infinite both;
+    will-change: transform;
+    
+    @keyframes cube-bottom-flash {
+      from, 40%, 50%, to {
+        opacity: 0;
+      }
+      45% {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+[class^="shadow"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: var(--shadow-filter, blur(20px));
+  
+  &, &:before {
+    will-change: transform;
+  }
+  
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #214354;
+    opacity: 0.7;
+  }
+}
+
+.shadow-y {
+  animation: shadow-y $duration infinite both;
+  
+  &[data-cube^="11"],
+  &[data-cube^="21"] {
+    left: 10%;
+  }
+  &[data-cube^="13"],
+  &[data-cube^="23"] {
+    left: -10%;
+  }
+  
+  @keyframes shadow-y {
+    to, 40%, 60%, 80%, from {
+      transform: translateY(-100%) scale(2, .75);
+    }
+    20% {
+      transform: scale(2, 1);
+    }
+  }
+  
+  &:before {
+    animation: shadow-y-inverse $duration infinite both;
+    transform-origin: top center;
+    
+    @keyframes shadow-y-inverse {
+      to, 40%, 60%, 80%, from {
+        opacity: 0.9;
+        transform: scale(2, 1)
+      }
+      20% {
+        opacity: 0;
+        transform: translateY(-100%) scale(2, .75);
+      }
+    }
+  }
+}
+
+.shadow-flip {
+  width: 2vmin;
+  height: 50%;
+  top: -1vmin;
+  left: calc(50% - 1vmin);
+  transform-origin: top center;
+  filter: var(--shadow-filter, blur(1vmin));
+  animation: shadow-flip $duration infinite both;
+  overflow: visible;
+  
+  @keyframes shadow-flip {
+    from, 20%, 40%, 50%, to {
+      transform: rotate(90deg);
+    }
+    45% {
+      transform: rotate(270deg);
+    }
+  }
+  
+  &:before {
+    animation: shadow-flip-inverse $duration infinite both;
+    transform-origin: top center;
+    opacity: 0;
+    
+    @keyframes shadow-flip-inverse {
+      from, 20%, 40%, 50%, to {
+        transform: rotate(0deg);
+        opacity: 0;
+      }
+      45% {
+        transform: rotate(-180deg);
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.shadow-z {
+  animation: shadow-z $duration infinite both;
+  overflow: visible;
+  will-change: transform;
+  transform-origin: top center;
+  
+  &[data-cube^="11"] {
+    --shadow-z-left: 50%;
+    --shadow-z-top: 50%;
+  }
+  &[data-cube^="21"],
+  &[data-cube^="31"] {
+    --shadow-z-left: 50%;
+    --shadow-z-top: 0;
+  }
+  &[data-cube^="32"] {
+    --shadow-z-left: 0;
+    --shadow-z-top: 0;
+    --shadow-x-scale: 2;
+  }
+  &[data-cube^="33"] {
+    --shadow-z-left: -50%;
+    --shadow-z-top: 0;
+  }
+  
+  @keyframes shadow-z {
+    from, 40%, 60%, 80%, to {
+      transform: scale(var(--shadow-x-scale), 2);
+    }
+    20% {
+      transform: translateX(var(--shadow-z-left)) translateY(var(--shadow-z-top)) scale(calc(var(--shadow-x-scale, 1) / 2), 2);
+    }
+  }
+  
+  &:before {
+    animation: shadow-z-inverse $duration infinite both;
+    
+    @keyframes shadow-z-inverse {
+      40%, 60% {
+        transform: translateX(var(--shadow-z-left)) translateY(var(--shadow-z-top)) scale(var(--shadow-x-scale, 1), 2);
+      }
+      45% {
+        opacity: 0;
+      }
+      from, 40%, 55% {
+        opacity: .5;
+      }
+      to {
+        opacity: 1;
+      }
+      from, 20%, 80%, to {
+        transform: scale(2);
+      }
+    }
+  }
+}
+
+@each $key in map-keys($delays) {
+  .rubik-cube[data-cube="#{$key}"] > .cube-wrap {
+    &, > [class^="cube-"] {
+      &, &:before, &:after {
+        animation-delay: map-get($delays, $key) * 1ms;
+      }
+    }
+    [class^="shadow-"] {
+      animation-delay: map-get($delays, $key) * 1ms;
+    }
+  }
+  [class^="shadow-"][data-cube="#{$key}"]:before,
+  .large-shadow[data-cube="#{$key}"] {
+    animation-delay: map-get($delays, $key) * 1ms;
+  }
+}
+
+
+/*****************************************************************
+  ISO Cube Design Component
+ *****************************************************************/
+
+/*
 #backdrop {
   width: 600px;
   color: #0f0;
@@ -754,7 +1568,6 @@ body {
   left: 86px;
   background: #fff;
   color: #999;
-  /*    -webkit-transform: matrix(0.8965754721680534, -0.5176380902050416, 0.8965754721680536, 0.5176380902050415, 0, 0);*/
   -webkit-transform: rotate(-30deg) skewX(30deg) skewY(0deg) scaleY(0.87);
   -ms-transform: rotate(-30deg) skewX(30deg) skewY(0deg) scaleY(0.87);
   -moz-transform: rotate(-30deg) skewX(30deg) skewY(0deg) scaleY(0.87);
@@ -767,7 +1580,6 @@ body {
   left: 0;
   background: #999;
   color: #333;
-  /*    -webkit-transform: matrix(0.8965754721680536, 0.5176380902050415, 0, 1.035276180410083, 0, 0);*/
   -webkit-transform: rotate(30deg) skewX(30deg) skewY(0deg);
   -ms-transform: rotate(30deg) skewX(30deg) skewY(0deg);
   -moz-transform: rotate(30deg) skewX(30deg) skewY(0deg);
@@ -780,7 +1592,6 @@ body {
   left: 172px;
   background: #ccc;
   color: #666;
-  /*    -webkit-transform: matrix(0.8965754721680536, -0.5176380902050415, 0, 1.035276180410083, 0, 0);*/
   -webkit-transform: rotate(-30deg) skewX(-30deg) skewY(0deg);
   -ms-transform: rotate(-30deg) skewX(-30deg) skewY(0deg);
   -moz-transform: rotate(-30deg) skewX(-30deg) skewY(0deg);
@@ -808,3 +1619,4 @@ body {
   -ms-transform: scale(0.75) translate(320px, 400px);
   transform: scale(0.75) translate(320px, 400px);
 }
+*/

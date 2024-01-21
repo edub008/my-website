@@ -65,7 +65,56 @@ export default function Footer(props) {
             </Fade>
           </div>
           <div className="columns m-0">
-            {gridItems}
+            <div className="column m-1 p-2">
+              <Fade direction="up" triggerOnce>
+                <ul className="icon-list">
+                  <li className="icon-list__item">
+                    <a href="https://www.linkedin.com/in/ergindervisoglu/" target="_blank">
+                      <div className="icon-box">
+                        <div className="box__face box__face--front">
+                          <svg t="1580194916849" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10901" width="40" height="40"><path d="M208.603429 808.009143l132.022857 0 0-396.580571-132.022857 0 0 396.580571zM349.110857 289.133714q-0.585143-29.696-20.553143-49.152t-53.174857-19.456-53.979429 19.456-20.845714 49.152q0 29.110857 20.260571 48.859429t52.882286 19.748571l0.585143 0q33.718857 0 54.272-19.748571t20.553143-48.859429zM683.446857 808.009143l132.022857 0 0-227.401143q0-87.990857-41.691429-133.12t-110.299429-45.129143q-77.677714 0-119.442286 66.852571l1.170286 0 0-57.709714-132.022857 0q1.682286 37.741714 0 396.580571l132.022857 0 0-221.696q0-21.723429 4.022857-32.036571 8.557714-19.968 25.746286-34.011429t42.276571-13.970286q66.267429 0 66.267429 89.746286l0 211.968zM950.857143 237.714286l0 548.571429q0 68.022857-48.274286 116.297143t-116.297143 48.274286l-548.571429 0q-68.022857 0-116.297143-48.274286t-48.274286-116.297143l0-548.571429q0-68.022857 48.274286-116.297143t116.297143-48.274286l548.571429 0q68.022857 0 116.297143 48.274286t48.274286 116.297143z" p-id="10902" fill="#545454"></path></svg>
+                        </div>
+                        <div className="box__face box__face--back"></div>
+                        <div className="box__face box__face--right"></div>
+                        <div className="box__face box__face--left"></div>
+                        <div className="box__face box__face--top"></div>
+                        <div className="box__face box__face--bottom"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li className="icon-list__item">
+                    <a href="https://github.com/edub008" target="_blank">
+                      <div className="icon-box">
+                        <div className="box__face box__face--front">
+                          <svg t="1580194880319" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10619" width="40" height="40"><path d="M950.930286 512q0 143.433143-83.748571 257.974857t-216.283429 158.573714q-15.433143 2.852571-22.601143-4.022857t-7.168-17.115429l0-120.539429q0-55.442286-29.696-81.115429 32.548571-3.437714 58.587429-10.313143t53.686857-22.308571 46.299429-38.034286 30.281143-59.977143 11.702857-86.016q0-69.12-45.129143-117.686857 21.138286-52.004571-4.534857-116.589714-16.018286-5.12-46.299429 6.290286t-52.589714 25.161143l-21.723429 13.677714q-53.174857-14.848-109.714286-14.848t-109.714286 14.848q-9.142857-6.290286-24.283429-15.433143t-47.689143-22.016-49.152-7.68q-25.161143 64.585143-4.022857 116.589714-45.129143 48.566857-45.129143 117.686857 0 48.566857 11.702857 85.723429t29.988571 59.977143 46.006857 38.253714 53.686857 22.308571 58.587429 10.313143q-22.820571 20.553143-28.013714 58.88-11.995429 5.705143-25.746286 8.557714t-32.548571 2.852571-37.449143-12.288-31.744-35.693714q-10.825143-18.285714-27.721143-29.696t-28.306286-13.677714l-11.410286-1.682286q-11.995429 0-16.603429 2.56t-2.852571 6.582857 5.12 7.972571 7.460571 6.875429l4.022857 2.852571q12.580571 5.705143 24.868571 21.723429t17.993143 29.110857l5.705143 13.165714q7.460571 21.723429 25.161143 35.108571t38.253714 17.115429 39.716571 4.022857 31.744-1.974857l13.165714-2.267429q0 21.723429 0.292571 50.834286t0.292571 30.866286q0 10.313143-7.460571 17.115429t-22.820571 4.022857q-132.534857-44.032-216.283429-158.573714t-83.748571-257.974857q0-119.442286 58.88-220.306286t159.744-159.744 220.306286-58.88 220.306286 58.88 159.744 159.744 58.88 220.306286z" p-id="10620" fill="#545454"></path></svg>
+                        </div>
+                        <div className="box__face box__face--back"></div>
+                        <div className="box__face box__face--right"></div>
+                        <div className="box__face box__face--left"></div>
+                        <div className="box__face box__face--top"></div>
+                        <div className="box__face box__face--bottom"></div>
+                      </div>
+                    </a>
+                  </li>
+                  <li className="icon-list__item">
+                    <a href="https://stackoverflow.com/users/1968395/ergin" target="_blank">
+                      <div className="icon-box">
+                        <div className="box__face box__face--front">
+                          <svg aria-hidden="true" className="svg-icon iconLogoGlyphMd native native" width="32" height="37" viewBox="0 0 32 37"><path d="M26 33v-9h4v13H0V24h4v9h22Z" fill="#545454"></path><path d="m21.5 0-2.7 2 9.9 13.3 2.7-2L21.5 0ZM26 18.4 13.3 7.8l2.1-2.5 12.7 10.6-2.1 2.5ZM9.1 15.2l15 7 1.4-3-15-7-1.4 3Zm14 10.79.68-2.95-16.1-3.35L7 23l16.1 2.99ZM23 30H7v-3h16v3Z" fill="#545454"></path></svg>
+                        </div>
+                        <div className="box__face box__face--back"></div>
+                        <div className="box__face box__face--right"></div>
+                        <div className="box__face box__face--left"></div>
+                        <div className="box__face box__face--top"></div>
+                        <div className="box__face box__face--bottom"></div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </Fade>
+            </div>
+            {/*gridItems*/}
+
           </div>
           <div className="columns m-0">
             <div className="column" style={{paddingTop:'4rem'}}>

@@ -58,7 +58,7 @@ export default function InterestRow(props) {
 				{
 					props.wSize.width > mobileBreakPointInPx
 					&&
-					<div className="column is-half m-0 px-2 is-flex is-justify-content-center">
+					<div className="column is-half m-0 px-2 is-flex is-justify-content-center is-align-items-center">
 						{displayContent}
 					</div>
 				}
@@ -71,7 +71,7 @@ export default function InterestRow(props) {
 				{
 					props.wSize.width > mobileBreakPointInPx
 					&&
-					<div className="column is-half m-0 px-2 is-flex is-justify-content-center">
+					<div className="column is-half m-0 px-2 is-flex is-justify-content-center is-align-items-center">
 						{displayContent}
 					</div>
 				}
