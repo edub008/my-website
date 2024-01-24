@@ -1,0 +1,336 @@
+import Head from 'next/head'
+import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import NavBarBlog from '/components/NavBarBlog'
+import styles from "../../styles/Blog.module.scss"
+import STRINGS from '/public/strings.json'
+
+<Head>
+  <title>{`Blog | Internet Computer (ICP)`}</title>
+  <meta name="description" content="This article discusses why hosting your web apps on the Internet Computer (ICP) might make sense and lists the steps to take to successfuly launch your apps on ICP both locally and in production."/>
+</Head>
+<NavBarBlog />
+
+<div className="section section-bg">
+<div className="columns is-flex is-justify-content-center">
+<div className="column is-9" style={{overflow:'auto'}}>
+
+<h1 className="title is-3 has-text-primary"> {STRINGS.blogs[1].title} </h1>
+
+<div className="title is-4 has-text-info"> 
+  {STRINGS.blogs[1].date} - <span className="title is-5 has-text-info">14 min read</span>
+</div>
+
+<div className="container">
+  <Image
+    alt='react-to-nextjs'
+    src='/img/blog2-internet-computer.png'
+    priority
+    width={0}
+    height={0}
+    sizes="100vw"
+    style={{ width: '100%', height: 'auto' }}
+  />
+</div>
+
+(*ICP represents a layer one public blockchain network that has captured the attention of innovators worldwide. Its defining feature is the novel consensus algorithm known as “Threshold Relay,” which combines the computing power of numerous independent data centers around the globe. This fusion creates a vast decentralized world computer, known as the <span className="has-text-weight-bold">Internet Computer</span>.*)
+
+<div className={styles.blogParagraph}>
+
+<h2>Jump to Section:</h2>
+
+  * [What is the Internet Computer?](#what-is-icp)
+  * [ICP Benefits and Capabilities](#icp-vs-cloud)
+  * [Building and Running Locally](#build-and-run)
+  * [Deploying to Production](#icp-deploy)
+  * [Configuring a Custom Domain (Optional)](#custom-domain)
+
+<h2 id="what-is-icp">What is the Internet Computer?</h2>
+
+The Internet Computer (ICP) is a layer one public blockchain that offers numerous benefits including smart contracts that can serve web/HTTP at web speed. This allows developers to build decentralized applications (dApps) completely on-chain without the need for traditional cloud hosting services such as AWS and GCP. 
+
+Additionally, the reverse gas model implemented on ICP ensures that dApp developers cover the computation costs, liberating users from the obligation of owning or managing tokens. Through the use of chainkey cryptography smart contracts on ICP can effortlessly control Bitcoin balances and can interact with contracts on Ethereum and vice versa, without the need for wrapping or bridging.
+
+Developed by the [DFINITY Foundation](https://dfinity.org/), ICP uses consensus algorithm known as *Threshold Relay* which "*harmoniously combines the computing power of numerous independent data centers around the globe using ICP. This fusion creates a vast decentralized world computer*..." known today as the Internet Computer.
+
+<h2 id="icp-vs-cloud">ICP Benefits and Capabilities</h2>
+
+Hosting your applications on the Internet Computer offers several benefits when compared to competing blockchains as well as traditional cloud hosting services. 
+
+<h3>Infinite Scaling</h3>
+
+First, ICP offers infinite scaling capabilities, meaning the Internet Computer can host an unlimited number of [canisters](https://internetcomputer.org/docs/current/concepts/canisters-code) (smart contracts), store an unlimited amount of memory, and process an unlimited amount of transactions per second. In simple words, Internet Computer is designed to host even large scale social media platforms in a fully decentralized way.
+
+<div className="container">
+  <Image
+    alt='icp-scaling-data'
+    src='/img/icp-scalability.jpeg'
+    priority
+    width={0}
+    height={0}
+    sizes="100vw"
+    style={{ width: '100%', height: 'auto' }}
+  />
+  <div> <a href="https://forum.dfinity.org/t/unleashing-the-potential-of-internet-computer-icp-the-future-of-decentralized-innovation/20711">(Source)</a> </div>
+</div>
+
+<h3>Reverse Gas Model</h3>
+
+A browser is all you need to interact with smart contracts on the Internet Computer. Canisters (i.e. ICP smart contracts) have the ability to serve web content directly to end users, meaning individuals can interact with blockchain services without the requirement of holding tokens. The reverse gas model implemented on ICP ensures that dApp developers cover the computation costs, liberating users from the obligation of owning or managing tokens.
+
+On the other hand, this also means that developers need to learn how to purchase and secure ICP tokens to keep their dApps funded for hosting. There is a small learning curve and some hard to calculate forecasts developers need to make re: how much ICP is needed to fund their apps (especially once the app starts scaling). In general, ICP apps need *Cycles* in order to run so developers need to make a USD -> ICP -> Cycles conversion in order to properly run their apps. For more info see the [Tokens](https://internetcomputer.org/docs/current/concepts/tokens-cycles) page.
+
+<h3>Cost Efficiency</h3>
+
+Another noteworthy advantage of ICP lies in its cost efficiency. Storing 1GB of data on ICP costs approximately $5 per year, a stark contrast to Ethereum’s staggering $350,000,000 and Solana’s approximately $800,000 for the same storage capacity. This also counts as a benefit compared to traditional cloud services like AWS and GCP which have higher data storage costs (though not by as much).
+
+<div className="container">
+  <Image
+    alt='icp-cost-efficiency'
+    src='/img/icp-cost-efficiency.jpeg'
+    priority
+    width={0}
+    height={0}
+    sizes="100vw"
+    style={{ width: '100%', height: 'auto' }}
+  />
+  <div> <a href="https://forum.dfinity.org/t/unleashing-the-potential-of-internet-computer-icp-the-future-of-decentralized-innovation/20711">(Source)</a> </div>
+</div>
+
+<h3>100% Up-Time</h3>
+
+While many developers reading this have heard the terms four- or five-9s, corresponding to 99.99% or 99.999% annual server up-time for a given service which is hard to achieve, the Internet Computer offers a fully autonomous and unstoppable cloud that  abstracts much of the required infrastructure and corresponding human expertise needed.
+
+<h3>Additional Advantages</h3>
+
+By utilizing a decentralized blockchain protocol the IC also enjoys other benefits  especially when compared to traditional cloud hosting services. For developers looking for serverless architecture the IC offers <span className="has-text-weight-bold">Serverless Computing</span>, enabling quick and agile development cycles that can greatly reduce infrastructure maintenance and operational costs.
+
+The IC enjoys additional security benefits such as tamper-proof and unstoppable software systems and services that do not require safeguarding through firewalls, SIEM logging, or other conventional cybersecurity frameworks.
+
+Additionally, chain-key cryptography and secure multiparty computation enable enterprise-grade custody of digital assets on the Internet Computer. Security built into the protocol reduces the complexity of digital asset custody associated with traditional solutions.
+
+
+<h2 id="build-and-run">Building and Running Locally</h2>
+
+I've migrated two of my apps to the Internet Computer so far and to my surprise generally found it a straight forward and simple process, which I believe is another advantage of the IC and helps add to its increasing popularity with developers.
+
+<h3>Requirements</h3>
+
+* DFINITY command-line execution environment (dfx) v0.15.2+
+* Linux or MacOS (12+) development environment
+* Node v20.11.0+
+
+> As the 2nd requirement above states the IC SDK is natively supported on Linux or macOS 12 Monterey or later. As of this writing there is no native support for `dfx` on Windows; however by installing the Windows Subsystem for Linux (WSL 2), it's possible to run dfx on a Windows system (more [info](https://internetcomputer.org/docs/current/developer-docs/setup/install/#installing-the-ic-sdk-1)).
+
+<h3>Download IC SDK</h3>
+
+The DFINITY command-line execution environment (`dfx`) is the primary tool for creating, deploying, and managing the dApps you develop for the IC. Let's start by downloading the IC SDK locally:
+
+```shell
+sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
+```
+
+To verify the SDK is ready to use run the following command: 
+
+```shell
+dfx --version
+```
+
+For general SDK usage information and commands run:
+
+```shell
+dfx --help
+```
+
+<h3>Local Canister Execution Environment</h3>
+
+For simplicity, we will first build and deploy a "Hello World" project locally. Once that's running it's a straight forward process for replacing the app's source with the source code of an app you want to migrate and host on the IC.
+
+With the `dfx` SDK downloaded the first thing we want to do is start a local replica instance (The *--background* flag will start the replica in the background and return your terminal prompt for more commands):
+
+```shell
+dfx start --background
+```
+
+You should see output similar to the following:
+
+```shell
+Running dfx start for version 0.15.3
+Using the default definition for the 'local' shared network because /Users/user/.config/dfx/networks.json does not exist.
+Initialized replica.
+Dashboard: http://localhost:55762/_/dashboard
+```
+
+Next we use the `dfx new` command to create a basic Hello World project:
+
+```shell
+dfx new hello_world
+```
+
+This creates a "Hello, world!" project that contains a basic frontend UI (for a full, detailed guide on this project see [here](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally#test-the-dapp-frontend)). The project structure of this app should look similar to the following:
+
+```
+hello_world/
+├── README.md      # Default project documentation
+├── dfx.json       # Project configuration file
+├── node_modules   # Libraries for frontend development
+├── package-lock.json
+├── package.json
+├── src            # Source files directory
+│   ├── hello_world_backend
+│   │   └── main.mo
+│   ├── hello_world_frontend
+│       ├── assets
+│       │   ├── logo.png
+│       │   ├── main.css
+│       │   └── sample-asset.txt
+│       └── src
+│           ├── index.html
+│           └── index.js
+└── webpack.config.js
+```
+
+Now we can build and deploy the project <span className="has-text-weight-bold">locally</span> using the `dfx deploy` command: 
+
+```shell
+cd hello_world
+dfx deploy
+```
+
+Upon successful execution, the project URL(s) will be returned in the output (e.g.):
+
+```shell
+...
+Committing batch.
+Committing batch with 18 operations.
+Deployed canisters.
+URLs:
+  Frontend canister via browser
+    hello_world_frontend: http://127.0.0.1:4943/?canisterId=a4tbr-q4aaa-aaaaa-qaafq-cai
+  Backend canister via Candid interface:
+    hello_world_backend: http://127.0.0.1:4943/?canisterId=ajuq4-ruaaa-aaaaa-qaaga-cai&id=a3shf-5eaaa-aaaaa-qaafa-cai
+```
+
+You can now view the running app by accessing the frontend URL in a browser, for example:
+
+```properties
+http://127.0.0.1:4943/?canisterId=a4tbr-q4aaa-aaaaa-qaafq-cai
+```
+
+Assuming no errors you now have an IC app running against your local canister execution environment.
+
+> By default, all `dfx` commands run against the local environment. To run any command in production add the *--network ic* flag (or *--ic* for shorthand). For example, when ready to deploy to production we would do `dfx deploy --network ic`.
+
+<h3>Configure Your App for IC Hosting</h3>
+
+With the template project successfuly running, hopefully you have a better understanding of how to run and deploy apps on the Internet Computer. But what if you want to test your own app(s) on the IC instead of the Hello World template? Well the good news is that's there's two basic steps:
+
+1. Add a `dfx.json` configuration file to the root folder of your application.
+2. Configure your dfx.json file to point to the proper entrypoint and output locations of your app.
+
+Start by copying the `dfx.json` file that we created above, which should look similar to the following:
+
+```json
+{
+  "canisters": {
+    "hello_world_backend": {
+      "main": "src/hello_world_backend/main.mo",
+      "type": "motoko"
+    },
+    "hello_world_frontend": {
+      "dependencies": [
+        "hello_world_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/hello_world_frontend/src/index.html"
+      },
+      "source": [
+        "src/hello_world_frontend/assets",
+        "dist/hello_world_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
+```
+
+Next update the file to point to the source and entrypoint locations of your frontend and backend applications. Note that the canister names, *hello_world_backend* and *hello_world_frontend* in the above example, are user-defined.
+
+If your app only contains a frontend then you simply need to specify that part of the configuration, for example:
+
+```json
+{
+  "canisters": {
+    "my_website_fe": {
+      "frontend": {
+        "entrypoint": "build/index.html"
+      },
+      "source": ["build"],
+      "type": "assets"
+    }
+  }
+}
+```
+
+> The above example assumes frontend static assets are contained in a folder named `/build` located at the root of the project. For example, when using Create React App (CRA) by default optimized production builds are created under the */build* folder.
+
+With all proper paths and references updated in your <span className="has-text-weight-bold">dfx.json</span> file you can build and deploy your project locally using:
+
+```shell
+dfx deploy
+```
+
+Once your app is successfuly running in the local environment and you're ready to deploy to production you'll need to aquire and add ICP cycles to your canister(s).
+
+<h2 id="icp-deploy">Deploying to Production</h2>
+
+When you are ready to deploy your app to production - i.e. the Internet Computer [mainnet](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-mainnet) - you will first need to add cycles to power your app's storage and compute costs.
+
+If you already have enough cycles available in your production wallet you can issue the following command to deploy you app to production: 
+
+```shell
+% dfx deploy --network ic
+```
+
+or shorthand:
+
+```shell
+% dfx deploy --ic
+```
+
+If you do not have enough cycles to power your app you will need to add more to your production wallet by obtaining new ICP tokens and [converting into cycles](https://internetcomputer.org/docs/current/developer-docs/setup/cycles/) as mentioned above.
+
+{/* 
+<h3>Aquire ICP Cycles</h3>
+
+Canister smart contracts are obligated to compensate for the resources they utilize, including storage and compute power. Instead of using ICP tokens, the payment for resource consumption is made in [Cycles](https://internetcomputer.org/docs/current/developer-docs/setup/cycles/). Typically, it is the developer of the canister who allocates cycles to it. As the canister is employed, its cycle balance gradually diminishes, requiring periodic replenishment.
+
+> Unlike ICP tokens, cycles are only associated with canisters and not with user or developer principals. Because only canisters require cycles to perform operations and pay for the resources they use, users and developers manage the distribution and ownership of cycles through a special type of canister called a <span className="has-text-weight-bold">Cycles Wallet</span>.
+
+When testing against a local canister execution environment, the SDK automatically generates a default cycles wallet for each project, and the majority of operations with the cycles wallet occur seamlessly in the background.
+
+
+
+
+The biggest difference between local and production deployments are that production apps require cycles to run (this is automatically handled for you in the local environment as described below). This means you'll need to purchase or otherwise aquire ICP tokens and convert them into cycles for your production apps. The other difference is that we will be issuing our `dfx` commands with the production flag, for example `dfx deploy --network ic` or `dfx deploy --ic` for shorthand.
+
+*/}
+
+
+<h2 id="custom-domain">Configuring a Custom Domain (Optional)</h2>
+
+(Coming soon...)
+
+</div>
+</div>
+</div>
+</div>

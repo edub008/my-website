@@ -1,11 +1,11 @@
 {
-    "canisters": {
-      "my_website_fe": {
-        "frontend": {
-          "entrypoint": "out/index.html"
-        },
-        "source": ["out"],
-        "type": "assets"
-      }
+  "canisters": {
+    "my_website_fe": {
+      "frontend": {
+        "entrypoint": "out/index.html"
+      },
+      "source": ["out"],
+      "type": "assets"
     }
+  }
 }
