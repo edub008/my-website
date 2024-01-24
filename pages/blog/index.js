@@ -5,7 +5,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import styles from "../../styles/Blog.module.scss"
 const STRINGS = require('/public/strings.json')
 
-const navBack = "Back to ergin-d.com"
+const navBack = "Back to ergin-d"
 const actionTitle = "View Blog"
 
 export default function Blog() {
@@ -61,6 +61,14 @@ export default function Blog() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="columns m-0">
+          <div className="column has-text-centered m-3">
+            <div className="subtitle is-5">
+              <a href="/"> <FontAwesomeIcon icon={faArrowLeft} size="sm" className="mx-4"/>{navBack} </a>
             </div>
           </div>
         </div>
