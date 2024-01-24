@@ -60,11 +60,10 @@ a.navbar-item:hover, div.navbar-item:hover {
 
 a {
   color: lightblue;
-  text-decoration: none;
 }
 a:hover {
   color: $primary;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .navbar-li-button {
