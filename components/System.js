@@ -1,6 +1,4 @@
 import Image from "next/image"
-import { ParallaxProvider } from 'react-scroll-parallax';
-import { ParallaxBanner } from 'react-scroll-parallax'
 import { Fade } from "react-awesome-reveal"
 import styles from "../styles/System.module.scss"
 const STRINGS = require('/public/strings.json')
@@ -30,33 +28,27 @@ export default function System(props) {
 
   return (
     <div className="section-bg section-mg" id={props.id}>
-    	<ParallaxProvider>
-      	<ParallaxBanner>
-
-          <Image
-            src={IMAGE_URL}
-            fill
-            style={{objectFit:"cover"}}
-            alt="Bodrum - Turkiye"
-            className="my-0"
-          />
-          <div className="columns m-0 is-justify-content-center">
-            <div className="column is-6 is-relative ">
-              <div className="section-title has-text-primary mx-1 my-4"> <span> {STRINGS.section.two} </span> </div>
+      <Image
+        src={IMAGE_URL}
+        fill
+        style={{objectFit:"cover"}}
+        alt="Bodrum - Turkiye"
+        className="my-0"
+      />
+      <div className="columns m-0 is-justify-content-center">
+        <div className="column is-6 is-relative ">
+          <div className="section-title has-text-primary mx-1 my-4"> <span> {STRINGS.section.two} </span> </div>
+        </div>
+      </div>
+      <div className="container py-6 is-fullhd has-text-centered">
+        <div className="content">
+          <div className="columns m-0 auto-margins-x is-justify-content-center is-relative">
+            <div className={`column is-7 p-2 ${styles.mySystemOverlay}`}>
+              {mySystemItems}
             </div>
           </div>
-          <div className="container py-6 is-fullhd has-text-centered">
-            <div className="content">
-              <div className="columns m-0 auto-margins-x is-justify-content-center is-relative">
-                <div className={`column is-7 p-2 ${styles.mySystemOverlay}`}>
-                  {mySystemItems}
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </ParallaxBanner>
-  		</ParallaxProvider>
+        </div>
+      </div>
     </div>
   )
 }

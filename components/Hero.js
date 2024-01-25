@@ -4,7 +4,7 @@ import styles from "../styles/Hero.module.scss"
 const STRINGS = require('/public/strings.json')
 
 const { heroContent, heroWrapper, heroSubtitle, heroTitle } = styles;
-const IMAGE_URL = "/img/ergin-hero.jpg"
+const IMAGE_URL = "/img/ergin-hero.webp"
 
 export default (props) => {
 
