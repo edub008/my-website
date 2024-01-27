@@ -222,7 +222,7 @@ Assuming no errors you now have an IC app running against your local canister ex
 
 > By default, all `dfx` commands run against the local environment. To run any command in production add the *--network ic* flag (or *--ic* for shorthand). For example, when ready to deploy to production we would do `dfx deploy --network ic`.
 
-<h3>Configure Your App for IC Hosting</h3>
+<h3 id="config-ic-hosting">Configure Your App for IC Hosting</h3>
 
 With the template project successfully running, hopefully you have a better understanding of how to run and deploy apps on the Internet Computer. But what if you want to test your own app(s) on the IC instead of the Hello World template? Well the good news is that's there's two basic steps:
 
@@ -298,13 +298,13 @@ When you are ready to deploy your app to production - i.e. the Internet Computer
 If you already have enough cycles available in your production wallet you can issue the following command to deploy you app to production: 
 
 ```shell
-% dfx deploy --network ic
+dfx deploy --network ic
 ```
 
 or shorthand:
 
 ```shell
-% dfx deploy --ic
+dfx deploy --ic
 ```
 
 If you do not have enough cycles to power your app you will need to add more to your production wallet by obtaining new ICP tokens and [converting into cycles](https://internetcomputer.org/docs/current/developer-docs/setup/cycles/) as mentioned above.
@@ -328,7 +328,136 @@ The biggest difference between local and production deployments are that product
 
 <h2 id="custom-domain">Configuring a Custom Domain (Optional)</h2>
 
-(Coming soon...)
+If you want to make a canister accessible through a custom domain DFINITY actually has a decent [guide](https://internetcomputer.org/docs/current/developer-docs/production/custom-domain/) that walks you through the process. However I still encountered numerous problems and issues that I wanted to highlight here.
+
+There are two approaches for configuring a cansister to work with a custom domain:
+
+1. Register the domain with the boundary nodes
+2. Host the domain on your own infrasture
+
+Here we will follow the first approach of <span className="has-text-weight-bold">Registering the Domain with the Boundary Nodes</span>. If you want to host the domain on your own infrastucture see [here](https://internetcomputer.org/docs/current/developer-docs/production/custom-domain/#custom-domains-using-your-own-infrastructure).
+
+The general steps for registering your custom domain are:
+
+1. Configure custom DNS records for the custom domain.
+2. Add `.well-known/ic-domains` and `.ic-assets.json` config files to your project.
+3. Deploy your canister.
+4. Register the domain with boundary nodes.
+
+<h3>1. Configure DNS Records </h3>
+
+Let's say you want to register a custom domain `foo.bar.com`, first add the following DNS records through your domain provider:
+
+<table className="table">
+  <thead>
+    <tr>
+      <th>Record Type</th>
+      <th>Host</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="tableTitle">CNAME</td>
+      <td>foo.bar.com</td>
+      <td>icp1.io</td>
+    </tr>
+    <tr>
+      <td className="tableTitle">TXT</td>
+      <td>_canister-id.foo.bar.com</td>
+      <td>_acme-challenge.foo.bar.com</td>
+    </tr>
+    <tr>
+      <td className="tableTitle">CNAME</td>
+      <td>hwvjt-wqaaa-aaaam-qadra-cai</td>
+      <td>_acme-challenge.foo.bar.com.icp2.io</td>
+    </tr>
+  </tbody>
+</table>
+
+You may need to wait minutes or even hours for the DNS changes to propogate out. Next you'll need to add two new configuration files to your project.
+
+<h3>2. Add `.well-known/ic-domains` and `.ic-assets.json` files </h3>
+
+The next step seems obvious but can be tricky based on which framework you are using for your project and how it creates production builds. First you need to create two new files, one in a hidden folder and a second hidden file at the root of your canister source folder:
+
+```shell
+mkdir .well-known
+```
+
+Next using your editor create a `.well-known/ic-domains` file and add the following contents to the file:
+
+```
+foo.bar.com
+```
+
+Now create a `.ic-assets.json` file which contains the following:
+
+```json
+[
+    {
+        "match": ".well-known",
+        "ignore": false
+    }
+]
+```
+
+One potentially tricky issue here is that the DFINITY documentation states these two files should be added to your "*canister source root*". This might be clear for backend projects, however for frontend projects using React or Next.js it can be misleading.
+
+As was covered [earlier in this article](#config-ic-hosting), when we initially configured our project for IC hosting we added a `dfx.json` file to the project root that specifies entrypoints and source locations for canister(s). A simpler version of this file that works for frontend projects is:
+
+```json
+{
+  "canisters": {
+    "my_website_fe": {
+      "frontend": {
+        "entrypoint": "build/index.html"
+      },
+      "source": ["build"],
+      "type": "assets"
+    }
+  }
+}
+```
+
+With regards to the `.well-known/ic-domains` and `.ic-assets.json` files these files would need to be included in the `/build` folder in the example above. 
+
+For React or Next.js developers, this means you'll need to add the `.well-known/ic-domains` and `.ic-assets.json` files to the `/public` folder at your project root and rely on your framework's build process to properly include them.
+
+<h3>3. Deploy your Canister </h3>
+
+With your DNS records configured and above configuration files properly added to your project you'll need to re-deploy your canister to the IC. To deploy to production IC do:
+
+```shell
+dfx deploy --ic
+```
+
+Assuming successfull deploy the last step is to register the custom domain.
+
+<h3>4. Register Domain with Boundary Nodes </h3>
+
+To start the registration process for domain `foo.bar.com` issue the following command:
+
+```shell
+curl -sLv -X POST \
+    -H 'Content-Type: application/json' \
+    https://icp0.io/registrations \
+    --data @- <<EOF
+{
+    "name": "foo.bar.com"
+}
+EOF
+```
+
+If the call was successfull the response will look like:
+
+```json
+{"id":"REQUEST_ID"}
+```
+
+For help dealing with potential errors see [here](https://internetcomputer.org/docs/current/developer-docs/production/custom-domain/#step-3-register-the-domain-with-the-boundary-nodes-by-issuing-the-following-command-and-replacing-custom_domain-with-your-custom-domain).
+
+You may need to wait a few minutes for the certificates to become available across the boundary nodes but once they do you should be able to access your canister application by navigating to your custom domain!
 
 </div>
 </div>

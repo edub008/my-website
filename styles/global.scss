@@ -1026,25 +1026,8 @@ $gap: 2px;
 *, *:before, *:after {
   box-sizing: border-box;
   position: relative;
-  animation-timing-function: $easing !important;
+  animation-timing-function: $easing;
 }
-
-/*
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  background: linear-gradient(to bottom right, #a4c5c7, #2D3F48);
-  
-  &:hover {
-    > label, > input {
-      opacity: 1;
-    }
-  }
-}
-*/
 
 label, #shadows {
   position: fixed;
