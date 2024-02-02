@@ -33,7 +33,7 @@ export default function BlogSwiper(props) {
 		})
 	}, [])
 
-	const SLIDES = props.featuredBlogsData.map( (blog, idx) => 
+	const SLIDES = props.featuredBlogsData && props.featuredBlogsData.map( (blog, idx) => 
 		<div className="swiper-slide" key={`blog-slide-${idx+1}`}>
 			<div className="slider-image">
 				<div className="card section-bg">

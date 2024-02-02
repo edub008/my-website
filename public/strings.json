@@ -74,20 +74,20 @@
 		{
 			"title": "Run a Large Language Model (LLM) locally using Node.js",
 			"date": "Feb 1, 2024",
-			"url": "/blog/run-llm-locally-js",
-			"length": "2 min"
+			"url": "/blog/nodejs-run-local-llm",
+			"length": "4 min"
 		},
 		{
 			"title": "A simple Merkle Tree Javascript implementation",
 			"date": "TBD",
 			"url": "/blog",
-			"length": "1 min"
+			"length": "2 min"
 		},
 		{
 			"title": "Awesome particle effects using TSParticles",
 			"date": "TBD",
 			"url": "/blog",
-			"length": "1 min"
+			"length": "2 min"
 		}
 	]
 }

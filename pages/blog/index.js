@@ -16,29 +16,22 @@ const featuredBlogsData = [
   {title: STRINGS.blogs[1].title, date: STRINGS.blogs[1].date, url: STRINGS.blogs[1].url, img: '/img/blog2-internet-computer.png'},
   {title: STRINGS.blogs[2].title, date: STRINGS.blogs[2].date, url: STRINGS.blogs[2].url, img: '/img/zkProof.png'}
 ]
-
 const miniBlogsData = [
-  {title: STRINGS.miniBlogs[0].title, date: STRINGS.miniBlogs[0].date, url: STRINGS.miniBlogs[0].url, img: '/img/blog1-react-to-nextjs.png', ready: true},
-  {title: STRINGS.miniBlogs[1].title, date: STRINGS.miniBlogs[1].date, url: STRINGS.miniBlogs[1].url, img: '/img/blog2-internet-computer.png', ready: false},
-  {title: STRINGS.miniBlogs[2].title, date: STRINGS.miniBlogs[2].date, url: STRINGS.miniBlogs[2].url, img: '/img/zkProof.png', ready: false}
+  {title: STRINGS.miniBlogs[0].title, date: STRINGS.miniBlogs[0].date, url: STRINGS.miniBlogs[0].url, ready: true},
+  {title: STRINGS.miniBlogs[1].title, date: STRINGS.miniBlogs[1].date, url: STRINGS.miniBlogs[1].url, ready: false},
+  {title: STRINGS.miniBlogs[2].title, date: STRINGS.miniBlogs[2].date, url: STRINGS.miniBlogs[2].url, ready: false}
 ]
-const miniBlogStyles = [
-  {
-    backgroundImage: `url("/img/neural-network-llm.png"); background-size: cover; background-position: center; background-repeat:no-repeat`
-  },
-  {
-    backgroundImage: `url("/img/merkle-tree.png"); background-size: cover; background-position: center; background-repeat:no-repeat`
-  },
-  {
-    backgroundImage: `url("/img/particles-js.png"); background-size: cover; background-position: center; background-repeat:no-repeat`
-  }
+const miniBlogBkgds = [
+  styles.miniblog1Img,
+  styles.miniblog2Img,
+  styles.miniblog3Img,
 ]
 
 export default function Blog() {
 
   const miniBlogs = miniBlogsData.map( (blog, idx) => 
     <div className="tile is-parent" key={`mini-blog-${idx+1}`}>
-      <div className={`tile is-child box p-0 ${styles.blogTileBorder}`} style={{backgroundImage: miniBlogStyles[idx].backgroundImage}}>
+      <div className={`tile is-child box p-0 ${styles.blogTileBorder} ${miniBlogBkgds[idx]}` }>
         <div className={styles.blogTitleOverlay}>
           <div style={{position:'relative'}}>
             <div className={`title is-5 has-text-white`}>{STRINGS.miniBlogs[idx].title}</div>

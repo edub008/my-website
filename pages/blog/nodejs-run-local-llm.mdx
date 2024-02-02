@@ -37,9 +37,7 @@ import STRINGS from '/public/strings.json'
 
 <h2 id="ollama">Ollama</h2>
 
-When it comes to open source Large Language Models much credit is given to Meta with the release of [Ollama](https://ollama.ai/) - which is not only open source but also allows for commercial use without any restrictions. This is a rare approach that should be greatly applauded!
-
-This mini-blog quickly shows you how to get started locally. The below walkthrough is done on MacOS however the steps are nearly identical for Windows users.
+When it comes to open source Large Language Models much credit is given to Meta with the release of [Ollama](https://ollama.ai/) - which is not only open source but also allows for commercial use without any restrictions. This is a rare approach that should be greatly applauded! This mini-blog quickly shows you how to invoke ollama AI prompts locally using Node.js.
 
 <h2 id="requirements">Requirements</h2>
 
@@ -52,7 +50,7 @@ This mini-blog quickly shows you how to get started locally. The below walkthrou
 
 First you need to download the Ollama client locally. You can download the client through the [Ollama Github](https://github.com/ollama/ollama) repository or directly from their website [ollama.ai](https://ollama.ai/):
 
-<div className="container">
+<div className="container is-flex is-justify-content-center">
   <Image
     alt='ollama-download'
     src='/img/ollama-download.png'
@@ -60,7 +58,7 @@ First you need to download the Ollama client locally. You can download the clien
     width={0}
     height={0}
     sizes="50vw"
-    style={{ width: '100%', height: 'auto' }}
+    style={{ width: '50%', height: 'auto' }}
   />
 </div>
 
@@ -68,11 +66,27 @@ Select your operating system, download, and install the app locally on your deve
 
 <h3>2. Download a Model</h3>
 
-Next you need to download an actual LLM model to run your client against. Open the Ollama Github repo and scroll down to the Model Library:
+Next you need to download an actual LLM model to run your client against. Open the Ollama Github repo and scroll down to the Model Library. Based on your model selection you'll need anywhere from <span className="has-text-weight-bold">~3-7GB</span> available storage space on your machine. 
 
-* [Ollama Github - Model Library](https://github.com/ollama/ollama?tab=readme-ov-file#model-library)
+<div className="columns m-2">
+  <div className="column m-4 has-text-centered">
+    <a href="https://github.com/ollama/ollama?tab=readme-ov-file#model-library" className="button is-info m-2">Ollama Model Library</a>
+  </div>
+</div>
 
-Based on your model selection you'll need anywhere from <span className="has-text-weight-bold">3-7GB</span> available storage space on your machine. For example, to download Llama 2 model run: 
+<div className="container is-flex is-justify-content-center">
+  <Image
+    alt='ollama-models-library'
+    src='/img/ollama-models-library.png'
+    priority
+    width={0}
+    height={0}
+    sizes="50vw"
+    style={{ width: '50%', height: 'auto' }}
+  />
+</div>
+
+For example, to download Llama 2 model run: 
 
 ```shell
 % ollama run llama2
@@ -182,7 +196,7 @@ invokeLLM(chatConfig)
 
 > Note: If you downloaded a different model than the Llama 2 model you will need to update the `model` property in the `chatConfig` object above.
 
-Next test your code by running `node index.js` and you should output similar to:
+Next test your code by running `node index.js` and you should see output similar to:
 
 ```shell
 % node index.js
@@ -195,7 +209,7 @@ The sky appears blue because of a phenomenon called Rayleigh scattering...
 ...
 ```
 
-Lastly, as you can see the code checks for an extra command line argument which can be used to specify the prompt's content. To use try adding a new content string when you invoke the code, such as: 
+Lastly, the code checks for an extra command line argument which can be used to specify the prompt's content. To use try adding a new content string when you invoke the code, such as: 
 
 ```shell
 % node index.js "How old is the universe?"
@@ -213,7 +227,7 @@ The age of the universe is estimated to be around 13.8 billion years...
 ...
 ```
 
-And there you go, you now have a large lanaguage model successfully running on your local machine!
+And there you go, you are now able to run ollama prompts on your local machine using Node.js, happy coding!
 
 <hr />
 
