@@ -1,7 +1,7 @@
 export default function ZkAnim(props) {
   return (
     <div style={{transform: 'scale3d(.4,.4,.4)'}}>
-      <div className="cubes">        
+      <div className="cubes">
         <div className="rubik-cube" data-cube="111">
           <div className="cube-wrap">
             <div className="cube-top">

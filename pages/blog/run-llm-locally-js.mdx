@@ -1,0 +1,228 @@
+import Head from 'next/head'
+import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import NavBarBlog from '/components/NavBarBlog'
+import styles from "../../styles/Blog.module.scss"
+import STRINGS from '/public/strings.json'
+
+<Head>
+  <title>{`Blog | Local LLM using Node`}</title>
+  <meta name="description" content="This articles describes how to run the Ollama open source large language model on your local machine using Node.js."/>
+</Head>
+<NavBarBlog />
+
+<div className="section section-bg">
+<div className="columns is-flex is-justify-content-center">
+<div className="column is-9" style={{overflow:'auto'}}>
+
+<h1 className="title is-3 has-text-primary"> {STRINGS.miniBlogs[0].title} </h1>
+
+<div className="title is-4 has-text-info"> 
+  {STRINGS.miniBlogs[0].date} - <span className="title is-5 has-text-info">{STRINGS.miniBlogs[0].length} read</span>
+</div>
+
+<div className="container">
+  <Image
+    alt='react-to-nextjs'
+    src='/img/neural-network-llm.png'
+    priority
+    width={0}
+    height={0}
+    sizes="100vw"
+    style={{ width: '100%', height: 'auto' }}
+  />
+</div>
+(*Large Language Models are all the rage these days and for good reason. This mini-blog quickly describes how you can run a specific open source LLM - Ollama from Meta - on your local development machine.*)
+
+<h2 id="ollama">Ollama</h2>
+
+When it comes to open source Large Language Models much credit is given to Meta with the release of [Ollama](https://ollama.ai/) - which is not only open source but also allows for commercial use without any restrictions. This is a rare approach that should be greatly applauded!
+
+This mini-blog quickly shows you how to get started locally. The below walkthrough is done on MacOS however the steps are nearly identical for Windows users.
+
+<h2 id="requirements">Requirements</h2>
+
+* Node v20.11.0+
+* NPM v10.2.4+
+* 3GB+ Available Storage Space
+* MacOS or Linux (Windows coming soon according to docs)
+
+<h3>1. Download Ollama Client</h3>
+
+First you need to download the Ollama client locally. You can download the client through the [Ollama Github](https://github.com/ollama/ollama) repository or directly from their website [ollama.ai](https://ollama.ai/):
+
+<div className="container">
+  <Image
+    alt='ollama-download'
+    src='/img/ollama-download.png'
+    priority
+    width={0}
+    height={0}
+    sizes="50vw"
+    style={{ width: '100%', height: 'auto' }}
+  />
+</div>
+
+Select your operating system, download, and install the app locally on your development machine.
+
+<h3>2. Download a Model</h3>
+
+Next you need to download an actual LLM model to run your client against. Open the Ollama Github repo and scroll down to the Model Library:
+
+* [Ollama Github - Model Library](https://github.com/ollama/ollama?tab=readme-ov-file#model-library)
+
+Based on your model selection you'll need anywhere from <span className="has-text-weight-bold">3-7GB</span> available storage space on your machine. For example, to download Llama 2 model run: 
+
+```shell
+% ollama run llama2
+```
+
+Once successfully downloaded, you can now start running chat prompts locally on your machine. For example:
+
+```shell
+% ollama run llama2
+% >>> Send a message (/? for help)
+% >>> Why is the sky blue?
+% 
+% The sky appears blue because of a phenomenon called Rayleigh scattering...
+% ...
+```
+
+To exit the ollama shell type `/bye` into the prompt. Once you are able to run local prompts you are now ready to integrate into Javascript source code.
+
+<h3>3. Create Node.js Project</h3>
+
+Open a terminal window, create a new directory, and initialize a new project:
+
+```shell
+% mkdir ollama-test
+% cd ollama-test
+% npm init
+```
+
+This will create a new `package.json` file in the current directory with contents similar to:
+
+```json
+{
+  "name": "ollama-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+
+In order to invoke the script we will create we will need to add one line to your <span className="has-text-weight-bold">package.json</span> file to configure as a module. Add the line `"type": "module",` such as:
+
+```json
+{
+  ...
+  "type": "module",
+  ...
+}
+```
+
+<h3>4. Install ollama-js NPM package</h3>
+
+Next install the open source ollama-js NPM package:
+
+```shell
+% npm i ollama
+```
+
+You can view the full source for this module here:
+[https://github.com/ollama/ollama-js](https://github.com/ollama/ollama-js)
+
+<h3>5. Create Source File</h3>
+
+Next create an `index.js` file in the <span className="has-text-weight-bold">/ollama-test</span> directory we created above with the following contents:
+
+```javascript
+import ollama from 'ollama'
+
+let modelResponse = ""
+
+let chatConfig = {
+  model: "llama2",
+  role: "user",
+  content: "Why is the sky blue?"
+}
+
+// check for chat content argument, otherwise use default prompt above
+if( process.argv[2] && process.argv[2].length >= 2 ) {
+  chatConfig.content = process.argv[2]
+}
+
+async function invokeLLM(props) {
+  console.log(`-----`)
+  console.log(`[${props.model}]: ${props.content}`)
+  console.log(`-----`)
+  try {
+    console.log(`Running prompt...`)
+    const response = await ollama.chat({
+      model: props.model,
+      messages: [{ role: props.role, content: props.content }],
+    })
+    console.log(`${response.message.content}\n`)
+    modelResponse = response.message.content
+  }
+  catch(error) {
+    console.log(`Query failed!`)
+    console.log(error)
+  }
+}
+
+invokeLLM(chatConfig)
+```
+
+> Note: If you downloaded a different model than the Llama 2 model you will need to update the `model` property in the `chatConfig` object above.
+
+Next test your code by running `node index.js` and you should output similar to:
+
+```shell
+% node index.js
+-----
+[llama2]: Why is the sky blue?
+-----
+Running prompt...
+
+The sky appears blue because of a phenomenon called Rayleigh scattering...
+...
+```
+
+Lastly, as you can see the code checks for an extra command line argument which can be used to specify the prompt's content. To use try adding a new content string when you invoke the code, such as: 
+
+```shell
+% node index.js "How old is the universe?"
+```
+
+And you should see output similar to: 
+
+```shell
+-----
+[llama2]: How old is the universe?
+-----
+Running prompt...
+
+The age of the universe is estimated to be around 13.8 billion years...
+...
+```
+
+And there you go, you now have a large lanaguage model successfully running on your local machine!
+
+<hr />
+
+Thanks for reading!
+
+<div className="title is-5 has-text-info"> 
+  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.miniBlogs[0].date})</span>
+</div>
+
+</div>
+</div>
+</div>

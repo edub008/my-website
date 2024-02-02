@@ -422,7 +422,7 @@ As was covered [earlier in this article](#config-ic-hosting), when we initially 
 
 With regards to the `.well-known/ic-domains` and `.ic-assets.json` files these files would need to be included in the `/build` folder in the example above. 
 
-For React or Next.js developers, this means you'll need to add the `.well-known/ic-domains` and `.ic-assets.json` files to the `/public` folder at your project root and rely on your framework's build process to properly include them.
+For React or Next.js developers, this means you'll need to add the `.well-known/ic-domains` and `.ic-assets.json` files to the `/public` folder at your project root and rely on your framework's build process to properly include them in the optimized build output.
 
 <h3>3. Deploy your Canister </h3>
 
@@ -458,6 +458,12 @@ If the call was successfull the response will look like:
 For help dealing with potential errors see [here](https://internetcomputer.org/docs/current/developer-docs/production/custom-domain/#step-3-register-the-domain-with-the-boundary-nodes-by-issuing-the-following-command-and-replacing-custom_domain-with-your-custom-domain).
 
 You may need to wait a few minutes for the certificates to become available across the boundary nodes but once they do you should be able to access your canister application by navigating to your custom domain!
+
+Thanks for reading!
+
+<div className="title is-5 has-text-info"> 
+  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.blogs[1].date})</span>
+</div>
 
 </div>
 </div>

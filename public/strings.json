@@ -42,27 +42,52 @@
 			"link": "https://stackoverflow.com/users/1968395/ergin"
 		}
 	},
-	"about": "I built this website using <a href='https://nextjs.org/' target='_blank' rel='noopener noreferrer' >Next.js</a>, <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' >React.js</a>, and <a href='https://bulma.io/' target='_blank' rel='noopener noreferrer' >Bulma</a> (for CSS). This site is currently hosted on the <a href='https://internetcomputer.org/' target='_blank' rel='noopener noreferrer' >ICP</a> blockchain.",
+	"about": "I built this website using <a href='https://nextjs.org/' target='_blank' rel='noopener noreferrer' >Next.js</a>, <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' >React.js</a>, and <a href='https://bulma.io/' target='_blank' rel='noopener noreferrer' >Bulma</a> (for CSS). This site is hosted on the <a href='https://internetcomputer.org/' target='_blank' rel='noopener noreferrer' >ICP</a> blockchain.",
 	"blogs": [
 		{
 			"title": "How to convert your React projects to Next.js, problems you may encounter, plus some tips and tricks.",
 			"date": "Jan 15, 2024",
-			"url": "/blog/convert-react-to-nextjs"
+			"url": "/blog/convert-react-to-nextjs",
+			"length": ""
 		},
 		{
-			"title": "Stop hosting your apps on AWS and GCP, why switching to the IC blockchain makes sense.",
+			"title": "Stop hosting your apps on AWS and GCP, why migrating to the Internet Computer makes sense.",
 			"date": "Jan 26, 2024",
-			"url": "/blog/how-to-host-apps-on-icp"
+			"url": "/blog/how-to-host-apps-on-icp",
+			"length": ""
 		},
 		{
 			"title": "Will Zero Knowledge Proofs become a standard for all forms of authorization and authentication in the future?",
 			"date": "TBD",
-			"url": "/blog"
+			"url": "/blog",
+			"length": ""
 		}
 	],
 	"blogAuthors": [
 		{"author": "Ergin Dervisoglu"}
 	],
 	"blogTitle" : "The Technic@l Turk Blog",
-	"blogSubtitle" : "Similar to the mechanical turk, but more technical..."
+	"blogSubtitle" : "Similar to the mechanical turk, but more technical.",
+	"blogBtn": "View Blog",
+	"blogBtnDisabled": "Coming Soon",
+	"miniBlogs" : [
+		{
+			"title": "Run a Large Language Model (LLM) locally using Node.js",
+			"date": "Feb 1, 2024",
+			"url": "/blog/run-llm-locally-js",
+			"length": "2 min"
+		},
+		{
+			"title": "A simple Merkle Tree Javascript implementation",
+			"date": "TBD",
+			"url": "/blog",
+			"length": "1 min"
+		},
+		{
+			"title": "Awesome particle effects using TSParticles",
+			"date": "TBD",
+			"url": "/blog",
+			"length": "1 min"
+		}
+	]
 }
