@@ -64,7 +64,7 @@ export default function Blog() {
         </div>
         <div className="columns m-0 is-justify-content-center">
           <div className="column is-10 m-4 p-1">
-            <div className="title is-3 has-text-primary"> {featuredTitle} </div>
+            <div className="title is-5 has-text-primary"> {featuredTitle} </div>
             <hr style={{backgroundColor:'#faa014'}} />
             <BlogSwiper featuredBlogsData={featuredBlogsData} />
           </div>
@@ -73,7 +73,7 @@ export default function Blog() {
         <section>
           <div className="columns m-0 is-justify-content-center">
             <div className="column is-10 m-4 p-1">
-              <div className="title is-3 has-text-primary"> {microBlogsTitle} </div>
+              <div className="title is-5 has-text-primary"> {microBlogsTitle} </div>
                 <hr style={{backgroundColor:'#faa014'}} />
                 <div className="tile is-ancestor">
                   {miniBlogs}
