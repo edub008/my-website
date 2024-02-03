@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import BlogSwiper from './blogSwiper'
-// import NavBarBlog from '../../components/NavBarBlog.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import styles from "../../styles/Blog.module.scss"
