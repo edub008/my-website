@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Navbar from '/components/Navbar'
 import Hero from '/components/Hero'
+import BlogBanner from '/components/BlogBanner'
 import Interests from '/components/Interests'
 import System from '/components/System'
 import Footer from '/components/Footer'
@@ -32,6 +33,7 @@ export default function Home() {
         <title>Ergin Dervisoglu | Home </title>
         <meta name="description" content="Ergin Dervisoglu is a Product & Engineering Director located in the San Francisco Bay Area. Learn more about my interests, system, and communities through this website I built using Next.js and React.js." key="title" />
         <link rel="icon" href="/favicon.ico" />
+
         <meta property="og:title" content="Ergin's Cool Website" />
         <meta
           property="og:description"
@@ -46,11 +48,13 @@ export default function Home() {
       <Navbar/>
 
       <Hero/>
+      <BlogBanner/>
       <Interests id={sectionTitles[0].id} wSize={wSize}/>
       <System id={sectionTitles[1].id} />
 
       <Footer 
         id={sectionTitles[2].id}
+        wSize={wSize}
         title={sectionTitles[2].title}
         sites={communitySites}
         desc={communityDesc}

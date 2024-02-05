@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { Fade } from "react-awesome-reveal"
 import styles from "../styles/Footer.module.scss"
+const STRINGS = require('/public/strings.json')
+
+const mobileBreakPointInPx = 1024
 
 const IMAGE_URL1 = "/img/github.webp"
 const IMAGE_URL2 = "/img/stack-overflow.webp"
@@ -19,6 +20,8 @@ export default function Footer(props) {
       behavior: 'smooth' // smooth scroll
     })
   }
+
+  const iconClass = props.wSize.width > mobileBreakPointInPx ? "icon-list__item" : "m-4"
 
   return (
       <div className="columns m-0 section-bg is-justify-content-center">
@@ -39,7 +42,7 @@ export default function Footer(props) {
             <div className="column m-1 p-2">
               <Fade direction="up" triggerOnce>
                 <ul className="icon-list">
-                  <li className="icon-list__item">
+                  <li className={iconClass}>
                     <a href="https://www.linkedin.com/in/ergindervisoglu/" target="_blank">
                       <div className="icon-box">
                         <div className="box__face box__face--front">
@@ -53,7 +56,7 @@ export default function Footer(props) {
                       </div>
                     </a>
                   </li>
-                  <li className="icon-list__item">
+                  <li className={iconClass}>
                     <a href="https://github.com/edub008" target="_blank">
                       <div className="icon-box">
                         <div className="box__face box__face--front">
@@ -67,7 +70,7 @@ export default function Footer(props) {
                       </div>
                     </a>
                   </li>
-                  <li className="icon-list__item">
+                  <li className={iconClass}>
                     <a href="https://stackoverflow.com/users/1968395/ergin" target="_blank">
                       <div className="icon-box">
                         <div className="box__face box__face--front">
@@ -81,7 +84,7 @@ export default function Footer(props) {
                       </div>
                     </a>
                   </li>
-                  <li className="icon-list__item">
+                  <li className={iconClass}>
                     <a href="https://discordapp.com/users/905896345401954355" target="_blank">
                       <div className="icon-box">
                         <div className="box__face box__face--front">
@@ -98,8 +101,16 @@ export default function Footer(props) {
                 </ul>
               </Fade>
             </div>
-
           </div>
+
+          <div className="columns m-0">
+            <div className="column m-3 p-3 has-text-centered">
+              <Fade direction="up" triggerOnce>
+                <div className="button is-primary"> {STRINGS.blogTitle} </div>
+              </Fade>
+            </div>
+          </div>
+
           <div className="columns m-0">
             <div className="column" style={{paddingTop:'4rem'}}>
               <Fade triggerOnce>

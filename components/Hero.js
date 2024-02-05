@@ -3,25 +3,25 @@ import Image from "next/image"
 import styles from "../styles/Hero.module.scss"
 const STRINGS = require('/public/strings.json')
 
-const { heroContent, heroWrapper, heroSubtitle, heroTitle } = styles;
-const IMAGE_URL = "/img/ergin-hero.webp"
+const { heroSubtitle, heroTitle } = styles;
+const IMAGE_URL = "/img/portrait.jpg"
 
 export default (props) => {
 
   return (
-    <div className={heroWrapper}>
+    
+    <section className={`section-bg section-mg has-text-centered ${styles.heroSpacing}`}>
       <Image
-        priority
         src={IMAGE_URL}
-        fill
-        style={{objectFit:"cover"}}
-        alt="Ergin Dervisoglu hero"
+        className={styles.borderCircle}
+        height={144}
+        width={144}
+        alt=""
       />
+      <p className={heroSubtitle}> {STRINGS.heroTitle} </p>
+      <h1 className={heroTitle}>{STRINGS.heroSubtitle}</h1>
+      <p className={heroSubtitle}>{STRINGS.heroDesc}</p>
 
-      <div className={heroContent}>
-        <h1 className={heroSubtitle}> {STRINGS.heroTitle} </h1>
-        <p className={heroTitle}>{STRINGS.heroSubtitle}</p>
-      </div>
-    </div>
+    </section>
   )
 }

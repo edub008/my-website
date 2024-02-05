@@ -29,6 +29,7 @@ export default function System(props) {
   return (
     <div className="section-bg section-mg" id={props.id}>
       <Image
+        priority
         src={IMAGE_URL}
         fill
         style={{objectFit:"cover"}}

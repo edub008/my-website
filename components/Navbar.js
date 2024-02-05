@@ -91,7 +91,7 @@ export default function Navbar(props) {
             Home
           </div>
           <Link className="navbar-item has-text-light" href="/blog">
-            Blog
+            <span> Blog <sup className="has-text-primary">New</sup> </span>
           </Link>
         </div>
 

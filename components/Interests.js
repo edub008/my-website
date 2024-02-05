@@ -6,9 +6,15 @@ export default function Interests(props) {
 
 	return (
 		<div className="section-bg section-mg" id={props.id}>
-			<div className="section-title"><span> {STRINGS.section.one} </span></div>
-			<div className="columns is-justify-content-center m-0">
-				<div className="column is-10">
+
+			<div className="columns m-0 is-justify-content-center">
+				<div className="column is-8">
+					<div className="section-title my-4"><span> {STRINGS.section.one} </span></div>
+				</div>
+    	</div>
+
+			<div className="columns m-0 is-justify-content-center">
+				<div className="column is-10 mx-1 my-4" style={{paddingBottom:'5rem'}}>
 					<Fade direction="up" triggerOnce>
 						<InterestRow id={1} wSize={props.wSize} />
 					</Fade>
@@ -18,14 +24,6 @@ export default function Interests(props) {
 					<Fade direction="up" triggerOnce>
 						<InterestRow id={3} wSize={props.wSize} />
 					</Fade>
-					<Fade direction="up" triggerOnce>
-						<InterestRow id={4} wSize={props.wSize} />
-					</Fade>
-					{/* 
-					<Fade direction="up" triggerOnce>
-						<InterestRow id={5} wSize={props.wSize} />
-					</Fade>
-					*/}
 				</div>
 	    </div>
 	  </div>
