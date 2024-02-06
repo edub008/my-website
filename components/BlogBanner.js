@@ -9,7 +9,7 @@ export default (props) => {
             <div className="subtitle is-5 has-text-info">{STRINGS.blogHighlight}</div>
           </div>
           <div className="column m-0 blogBannerTile is-flex is-justify-content-center is-align-items-center">
-            <a href="/blog" className="button is-primary">{STRINGS.blogBtn}</a>
+            <a href="/blog" className="button is-primary has-text-dark">{STRINGS.blogBtn}</a>
           </div>
         </div>
       </div>

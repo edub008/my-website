@@ -106,7 +106,7 @@ export default function Footer(props) {
           <div className="columns m-0">
             <div className="column m-3 p-3 has-text-centered">
               <Fade direction="up" triggerOnce>
-                <div className="button is-primary"> {STRINGS.blogTitle} </div>
+                <a href="/blog" className="button is-primary has-text-dark"> {STRINGS.blogTitle} </a>
               </Fade>
             </div>
           </div>

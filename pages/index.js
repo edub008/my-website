@@ -33,7 +33,6 @@ export default function Home() {
         <title>Ergin Dervisoglu | Home </title>
         <meta name="description" content="Ergin Dervisoglu is a Product & Engineering Director located in the San Francisco Bay Area. Learn more about my interests, system, and communities through this website I built using Next.js and React.js." key="title" />
         <link rel="icon" href="/favicon.ico" />
-
         <meta property="og:title" content="Ergin's Cool Website" />
         <meta
           property="og:description"
