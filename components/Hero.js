@@ -10,7 +10,7 @@ export default (props) => {
 
   return (
     
-    <section className={`section-bg section-mg has-text-centered ${styles.heroSpacing}`}>
+    <section className={`${styles.heroBg} section-mg has-text-centered ${styles.heroSpacing}`}>
       <Image
         src={IMAGE_URL}
         className={styles.borderCircle}

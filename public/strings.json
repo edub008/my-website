@@ -71,7 +71,7 @@
 	"blogSubtitle" : "Similar to the mechanical turk, but more technical.",
 	"blogBtn": "View Blog",
 	"blogBtnDisabled": "Coming Soon",
-	"blogHighlight": "I launched a new blog, you can check it out here...",
+	"blogHighlight": "Check out my new blog, the Mechanic@l Turk :)",
 	"miniBlogs" : [
 		{
 			"title": "Run a Large Language Model (LLM) locally using Node.js",

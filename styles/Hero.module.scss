@@ -9,27 +9,9 @@
   padding: 100px 0;
 }
 
-/*
-.heroWrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+.heroBg {
+  background: 'linear-gradient(270deg, rgb(20, 14, 113) 0%, rgb(39, 31, 152) 50%, rgb(100,0,0) 100%)'
 }
-
-.heroImage {
-  object-fit: cover;
-  object-position: center;
-  z-index: -1;
-}
-
-.heroContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-*/
 
 .heroSubtitle {
   font-size: 1.5rem;
