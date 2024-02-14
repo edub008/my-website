@@ -25,12 +25,12 @@ import STRINGS from '/public/strings.json'
 <div className="container">
   <Image
     alt='the-internet-computer'
-    src='/img/blog2-internet-computer.png'
+    src='/img/blog2-internet-computer.webp'
     priority
     width={0}
     height={0}
     sizes="100vw"
-    style={{ width: '100%', height: 'auto' }}
+    style={{objectFit:'cover',width:'100%',height:'250px'}}
   />
 </div>
 
@@ -458,6 +458,8 @@ If the call was successfull the response will look like:
 For help dealing with potential errors see [here](https://internetcomputer.org/docs/current/developer-docs/production/custom-domain/#step-3-register-the-domain-with-the-boundary-nodes-by-issuing-the-following-command-and-replacing-custom_domain-with-your-custom-domain).
 
 You may need to wait a few minutes for the certificates to become available across the boundary nodes but once they do you should be able to access your canister application by navigating to your custom domain!
+
+<hr />
 
 Thanks for reading!
 

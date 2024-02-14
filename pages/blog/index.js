@@ -11,9 +11,9 @@ const featuredTitle = "Featured"
 const microBlogsTitle = "Micro blogs"
 
 const featuredBlogsData = [
-  {title: STRINGS.blogs[0].title, date: STRINGS.blogs[0].date, url: STRINGS.blogs[0].url, img: '/img/blog1-convert-react-to-next.png'},
-  {title: STRINGS.blogs[1].title, date: STRINGS.blogs[1].date, url: STRINGS.blogs[1].url, img: '/img/blog2-internet-computer.png'},
-  {title: STRINGS.blogs[2].title, date: STRINGS.blogs[2].date, url: STRINGS.blogs[2].url, img: '/img/zkProof.png'}
+  {title: STRINGS.blogs[0].title, date: STRINGS.blogs[0].date, url: STRINGS.blogs[0].url, img: '/img/blog1-convert-react-to-next.webp'},
+  {title: STRINGS.blogs[1].title, date: STRINGS.blogs[1].date, url: STRINGS.blogs[1].url, img: '/img/blog2-internet-computer.webp'},
+  {title: STRINGS.blogs[2].title, date: STRINGS.blogs[2].date, url: STRINGS.blogs[2].url, img: '/img/zkProof.webp'}
 ]
 const miniBlogsData = [
   {title: STRINGS.miniBlogs[0].title, date: STRINGS.miniBlogs[0].date, url: STRINGS.miniBlogs[0].url, ready: true},

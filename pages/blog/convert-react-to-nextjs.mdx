@@ -25,12 +25,12 @@ import STRINGS from '/public/strings.json'
 <div className="container">
   <Image
     alt='react-to-nextjs'
-    src='/img/blog1-convert-react-to-next.png'
+    src='/img/blog1-convert-react-to-next.webp'
     priority
     width={0}
     height={0}
     sizes="100vw"
-    style={{ width: '100%', height: 'auto' }}
+    style={{objectFit:'cover',width:'100%',height:'250px'}}
   />
 </div>
 
@@ -252,7 +252,7 @@ You can view the running app by going to `http://localhost:3000` in a web browse
 <div className="container">
   <Image
     alt='react-to-nextjs'
-    src='/img/create-next-app.png'
+    src='/img/create-next-app.webp'
     priority
     width={0}
     height={0}
@@ -390,7 +390,7 @@ import Image from 'next/image'
 export default function Page() {
   return (
     <Image
-      src="/profile.png"
+      src="/profile.webp"
       width={500}
       height={500}
       alt="Picture of the author"
@@ -410,7 +410,7 @@ export default function FullScreenHero(props) => {
     <div style={{position:'relative',width:'100vw',height:'100vh'}}>
       <Image
         priority
-        src={`/path/to/hero.png`}
+        src={`/path/to/hero.webp`}
         fill
         style={{objectFit:"cover"}}
         alt="full-screen-hero"
@@ -450,9 +450,9 @@ module.exports = nextConfig
 
 Now when you run <span className="has-text-weight-bold">npm run build</span> a new `/out` folder will be generated at the root of your project that contains your production build's static assets.
 
------
-
 Hopefully this article has helped you convert your existing React project into a Next.js app and you are reaping some of the benefits the Next.js framework offers. Plus with Next.js you now have a foundation to start adding any backend / API routes to your app - all within the same code base.
+
+<hr />
 
 Thanks for reading!
 
