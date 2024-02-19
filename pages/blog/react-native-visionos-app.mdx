@@ -1,0 +1,220 @@
+import Head from 'next/head'
+import Image from 'next/image'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import NavBarBlog from '/components/NavBarBlog'
+import styles from "../../styles/Blog.module.scss"
+import STRINGS from '/public/strings.json'
+
+<Head>
+  <title>{`Blog | React Native for VisionOS`}</title>
+  <meta name="description" content="A short mini-blog describing how to create your first spatial app for VisionOS using React Native."/>
+</Head>
+<NavBarBlog />
+
+<div className="section section-bg">
+<div className="columns is-flex is-justify-content-center">
+<div className="column is-9" style={{overflow:'auto'}}>
+
+<h1 className="title is-3 has-text-primary"> {STRINGS.miniBlogs[1].title} </h1>
+
+<div className="title is-4 has-text-info"> 
+  {STRINGS.miniBlogs[1].date} - <span className="title is-5 has-text-info">{STRINGS.miniBlogs[1].length} read</span>
+</div>
+
+<div className="container" >
+  <Image
+    alt='react-to-nextjs'
+    src='/img/react-native-visionos.jpg'
+    priority
+    width={0}
+    height={0}
+    sizes="100vw"
+    style={{objectFit:'cover',width:'100%',height:'250px'}}
+  />
+</div>
+(*It's now possible to run React Native apps on visionOS without using the somewhat limited XCode compatibility mode, which was the prior leading solution. This mini-blog quickly describes how to create your first pure React Native app for visionOS which can utilize the full platform.*)
+
+<h2 id="react-native">Overview</h2>
+
+React Native has been [unleashed on Apple Vision Pro](https://www.callstack.com/blog/announcing-react-native-for-apple-vision-pro), presenting developers with the platform's complete capabilities. In contrast to compatibility mode, this method enables immersive experiences and XR functionalities on visionOS. 
+
+This should encourage more developers to craft spatial applications using the React Native platform and community they are already familiar with. Below we quickly describe how to create your first React Native spatial app targeted for visionOS.
+
+<h2 id="requirements">Requirements</h2>
+
+* Xcode 15.2+
+* visionOS Simulator run-time
+* CMake 3.28.0+
+* Ruby 2.6.10+
+
+> Apple Vision Pro is not required, you can run the visionOS simulator.
+
+<h3>1. Download or update XCode</h3>
+
+You will need Xcode v15.2+ installed on your development machine if you do not have it already. There are two ways to download XCode:
+
+1. Download from the App Store on your mac.
+2. Download from the [Apple developer website](https://developer.apple.com/download/more/) (let's you specify a specific version).
+
+<h3>2. Install the command line tools</h3>
+
+If you have never installed XCode before you may be able to download/update the command line tools by typing the following in a terminal:
+
+```shell
+xcode-select --install
+```
+
+However if you receive an error then you can also download from the [Apple developer website](https://developer.apple.com/download/more/).
+
+<h3>3. Download visionOS simulator</h3>
+
+If you do not already have the Vision Pro simulator installed, open XCode and follow these steps to install:
+
+1. In Xcode, from the menu bar, choose Xcode > Settings….
+2. Go to the Platforms tab.
+3. Click the Add button (+) in the lower left corner, and then select a platform to view a list of its available versions.
+
+Select the <span className="has-text-weight-bold">Apple Vision Pro</span> visionOS simulator and click <span className="has-text-weight-bold">Download & Install</span>.
+
+<h3>4. Create New Project</h3>
+
+Now you're ready to create your first React Native app targeted for visionOS. From a terminal run the following command:
+
+```shell
+npx @callstack/react-native-visionos@latest init MySpatialApp
+```
+
+This will create a folder named <span className="has-text-weight-bold">/MySpatialApp</span> in your current directory which has numerous files and folders inside it. Start by changing directory into the root project folder:
+
+```shell
+cd MySpatialApp
+```
+
+After switching into the directory you may see messages like:
+
+```shell
+RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+you can ignore these warnings with 'rvm rvmrc warning ignore /Users/user/dev/MySpatialApp/Gemfile'.
+To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+
+Unknown ruby interpreter version (do not know how to handle): >=2.6.10.
+```
+
+You should still be able to proceed with these warnings, however if you want to eliminate the latter warning you can edit the local Gemfile and change the line:
+
+```ruby
+ruby ">= 2.6.10"
+```
+
+to...
+
+```ruby
+ruby "2.6.10"
+```
+
+If you have a later version of Ruby installed or want to set to a specific version you can update the file to `ruby "3.3.0"`, for instance.
+
+<h3>5. Install Required Pods</h3>
+
+Next we want to install the cocoapods needed to run our visionOS app, making sure to run from the <span className="has-text-weight-bold">/visionos</span> sub-directory:
+
+```shell
+cd visionos
+bundle update
+bundle install && bundle exec pod install
+```
+
+If successful you should see output similar to: 
+
+```shell
+...
+Pod install took 23 [s] to run
+Integrating client project
+
+[!] Please close any current Xcode sessions and use `MySpatialApp.xcworkspace` for this project from now on.
+Pod installation complete! There are 55 dependencies from the Podfile and 53 total pods installed.
+
+[!] hermes-engine has added 2 script phases. Please inspect before executing a build. See `https://guides.cocoapods.org/syntax/podspec.html#script_phases` for more information.
+```
+
+You are now ready to run your project in XCode.
+
+<h3>6. Run Simulator</h3>
+
+From the <span className="has-text-weight-bold">visionos</span> folder, double-click the workspace file named <span className="has-text-weight-bold">MySpatialApp.xcworkspace</span> to open in XCode:
+
+<div className="container is-flex is-justify-content-center">
+  <Image
+    alt='visionos-xcode-project'
+    src='/img/visionos-folder.webp'
+    priority
+    width={0}
+    height={0}
+    sizes="50vw"
+    style={{ width: '50%', height: 'auto' }}
+  />
+</div>
+
+From XCode, select the <span className="has-text-weight-bold">Project -> Simulator</span> drop down at the top of the screen and make sure the <span className="has-text-weight-bold">Apple Vision Pro</span> simulator is selected.
+
+<div className="container is-flex is-justify-content-center">
+  <Image
+    alt='apple-pro-vision-simulator'
+    src='/img/vision-pro-simulator-xcode.webp'
+    priority
+    width={0}
+    height={0}
+    sizes="50vw"
+    style={{ width: '50%', height: 'auto' }}
+  />
+</div>
+
+Build and run the project by clicking the <span className="has-text-weight-bold">[Play]</span> button near the top left, if all goes well you should now you have your first React Native spatial app running in the Apple Pro Simulator:
+
+<div className="container is-flex is-justify-content-center">
+  <Image
+    alt='visionos-xcode-project'
+    src='/img/vision-pro-initial-screen.webp'
+    priority
+    width={0}
+    height={0}
+    sizes="50vw"
+    style={{ width: '50%', height: 'auto' }}
+  />
+</div>
+
+Use your mouse in combination with the UI controls in the bottom right to move around in 3D, zoom in and out, and see the sample React Native components:
+
+<div className="container is-flex is-justify-content-center">
+  <Image
+    alt='visionos-xcode-project'
+    src='/img/vision-pro-react-native-screen.webp'
+    priority
+    width={0}
+    height={0}
+    sizes="50vw"
+    style={{ width: '50%', height: 'auto' }}
+  />
+</div>
+
+Hope this has been helpful, happy coding!
+
+<hr />
+
+<h4>References</h4>
+
+* [https://www.callstack.com/blog/announcing-react-native-for-apple-vision-pro](https://www.callstack.com/blog/announcing-react-native-for-apple-vision-pro)
+* [https://developer.apple.com/visionos](https://developer.apple.com/visionos)
+
+<hr />
+
+Thanks for reading!
+
+<div className="title is-5 has-text-info"> 
+  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.miniBlogs[1].date})</span>
+</div>
+
+</div>
+</div>
+</div>

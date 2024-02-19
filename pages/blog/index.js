@@ -8,7 +8,7 @@ const STRINGS = require('/public/strings.json')
 const navBack = "ergin-d.com"
 const disabledTitle = "Coming Soon"
 const featuredTitle = "Featured"
-const microBlogsTitle = "Micro blogs"
+const microBlogsTitle = "Mini Blogs"
 
 const featuredBlogsData = [
   {title: STRINGS.blogs[0].title, date: STRINGS.blogs[0].date, url: STRINGS.blogs[0].url, img: '/img/blog1-convert-react-to-next.webp'},
@@ -17,7 +17,7 @@ const featuredBlogsData = [
 ]
 const miniBlogsData = [
   {title: STRINGS.miniBlogs[0].title, date: STRINGS.miniBlogs[0].date, url: STRINGS.miniBlogs[0].url, ready: true},
-  {title: STRINGS.miniBlogs[1].title, date: STRINGS.miniBlogs[1].date, url: STRINGS.miniBlogs[1].url, ready: false},
+  {title: STRINGS.miniBlogs[1].title, date: STRINGS.miniBlogs[1].date, url: STRINGS.miniBlogs[1].url, ready: true},
   {title: STRINGS.miniBlogs[2].title, date: STRINGS.miniBlogs[2].date, url: STRINGS.miniBlogs[2].url, ready: false}
 ]
 const miniBlogBkgds = [

@@ -15,7 +15,7 @@
 		"title5": "Games / Gaming",
 		"desc1": "I'm an active developer and investor in Blockchain and Web3 technologies that I believe will become new standards in the future. I've been testing some <a href='https://ethereum.org/en/' target='_blank' rel='noopener noreferrer' >ETH</a> smart contracts using the Solidity language and just recently migrated this website onto the <a href='https://internetcomputer.org/' target='_blank' rel='noopener noreferrer' >ICP</a> blockchain! To try and stay up to date sometimes I kick the tires with test/educational projects such as the following Node.js <a href='https://github.com/edub008/blockchain-nodejs-pow' target='_blank' rel='noopener noreferrer' >blockchain</a> on Github.",
 		"desc2": "In more recent years I have contributed to lots of frontend web, cloud, and mobile projects including this site (see <a href='https://github.com/edub008/my-website' target='_blank' rel='noopener noreferrer' >code</a>) using wonderful libraries such as <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' >React.js</a> and <a href='https://nextjs.org/' target='_blank' rel='noopener noreferrer' >Next.js</a>. While I have lots of experience working and managing the fullstack across my career (including REST APIs and gaming consoles) I especially enjoy coding up UIs and front-ends these days.",
-		"desc3": "I've been learning more about the underlying code and technologies used to create nerual networks and large language models and wrote a recent <a href='/blog/nodejs-run-local-llm'>micro blog</a> covering how to run an LLM on your local development machine using Node.js. I find the opportunities and possibilities with generative-AI to be almost un-imaginable and strongly believe these technologies will have a major impact on the world in many different ways.",
+		"desc3": "I've been learning more about the underlying code and technologies used to create nerual networks and large language models and wrote a recent <a href='/blog/nodejs-run-local-llm'>mini blog</a> covering how to run an LLM on your local development machine using Node.js. I find the opportunities and possibilities with generative-AI to be almost un-imaginable and strongly believe these technologies will have a major impact on the world in many different ways.",
 		"desc4": "While still in their infancy I find <a href='https://en.wikipedia.org/wiki/Zero-knowledge_proof' target='_blank' rel='noopener noreferrer' >zkProofs</a> to be quite a fascinating advancement when it comes to security and privacy. The idea that a user can verify they have certain data or know a particular truth - without revealing any info about that actual truth - is mind-boggling to me. I believe this presents great new opportunities for authentication and verification, both on- and off-chain.",
 		"desc5": "When I'm not coding up the next revolutionary product I'm still a gamer at my core. Games like FC24, Fortnite, and even StarCraft 2 (Battle.net: <span className='has-text-info'>NavyYeti</span>) are still heavy in my rotation. I also enjoy classic board games and traditionals such as chess and backgammon."
 	},
@@ -78,6 +78,12 @@
 			"date": "Feb 1, 2024",
 			"url": "/blog/nodejs-run-local-llm",
 			"length": "5 min"
+		},
+		{
+			"title": "Create a React Native App for VisionOS (device not needed)",
+			"date": "Feb 19, 2024",
+			"url": "/blog/react-native-visionos-app",
+			"length": "4 min"
 		},
 		{
 			"title": "A simple Merkle Tree Javascript implementation",
