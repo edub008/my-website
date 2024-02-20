@@ -16,16 +16,16 @@ import STRINGS from '/public/strings.json'
 <div className="columns is-flex is-justify-content-center">
 <div className="column is-9" style={{overflow:'auto'}}>
 
-<h1 className="title is-3 has-text-primary"> {STRINGS.blogs[0].title} </h1>
+<h1 className="title is-3 has-text-primary"> {STRINGS.blogs.additional[0].title} </h1>
 
 <div className="title is-4 has-text-info"> 
-  {STRINGS.blogs[0].date} - <span className="title is-5 has-text-info">14 min read</span>
+  {STRINGS.blogs.additional[0].date} - <span className="title is-5 has-text-info">14 min read</span>
 </div>
 
 <div className="container">
   <Image
     alt='react-to-nextjs'
-    src='/img/blog1-convert-react-to-next.webp'
+    src='/img/blog/blog1-convert-react-to-next.webp'
     priority
     width={0}
     height={0}
@@ -252,7 +252,7 @@ You can view the running app by going to `http://localhost:3000` in a web browse
 <div className="container">
   <Image
     alt='react-to-nextjs'
-    src='/img/create-next-app.webp'
+    src='/img/blog/create-next-app.webp'
     priority
     width={0}
     height={0}
@@ -457,7 +457,7 @@ Hopefully this article has helped you convert your existing React project into a
 Thanks for reading!
 
 <div className="title is-5 has-text-info"> 
-  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.blogs[0].date})</span>
+  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.blogs.additional[0].date})</span>
 </div>
 
 </div>

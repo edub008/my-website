@@ -8,17 +8,17 @@ const STRINGS = require('/public/strings.json')
 const navBack = "ergin-d.com"
 const disabledTitle = "Coming Soon"
 const featuredTitle = "Featured"
-const microBlogsTitle = "Mini Blogs"
+const microBlogsTitle = "Additional"
 
 const featuredBlogsData = [
-  {title: STRINGS.blogs[0].title, date: STRINGS.blogs[0].date, url: STRINGS.blogs[0].url, img: '/img/blog1-convert-react-to-next.webp'},
-  {title: STRINGS.blogs[1].title, date: STRINGS.blogs[1].date, url: STRINGS.blogs[1].url, img: '/img/blog2-internet-computer.webp'},
-  {title: STRINGS.blogs[2].title, date: STRINGS.blogs[2].date, url: STRINGS.blogs[2].url, img: '/img/zkProof.webp'}
+  {title: STRINGS.blogs.featured[0].title, date: STRINGS.blogs.featured[0].date, url: STRINGS.blogs.featured[0].url, img: '/img/blog/react-native-visionos.jpg'},
+  {title: STRINGS.blogs.featured[1].title, date: STRINGS.blogs.featured[1].date, url: STRINGS.blogs.featured[1].url, img: '/img/blog/neural-network-llm.webp'},
+  {title: STRINGS.blogs.featured[2].title, date: STRINGS.blogs.featured[2].date, url: STRINGS.blogs.featured[2].url, img: '/img/blog/merkle-tree.webp'}
 ]
-const miniBlogsData = [
-  {title: STRINGS.miniBlogs[0].title, date: STRINGS.miniBlogs[0].date, url: STRINGS.miniBlogs[0].url, ready: true},
-  {title: STRINGS.miniBlogs[1].title, date: STRINGS.miniBlogs[1].date, url: STRINGS.miniBlogs[1].url, ready: true},
-  {title: STRINGS.miniBlogs[2].title, date: STRINGS.miniBlogs[2].date, url: STRINGS.miniBlogs[2].url, ready: false}
+const additionalBlogsData = [
+  {title: STRINGS.blogs.additional[0].title, date: STRINGS.blogs.additional[0].date, url: STRINGS.blogs.additional[0].url, ready: true},
+  {title: STRINGS.blogs.additional[1].title, date: STRINGS.blogs.additional[1].date, url: STRINGS.blogs.additional[1].url, ready: true},
+  {title: STRINGS.blogs.additional[2].title, date: STRINGS.blogs.additional[2].date, url: STRINGS.blogs.additional[2].url, ready: false}
 ]
 const miniBlogBkgds = [
   styles.miniblog1Img,
@@ -28,19 +28,19 @@ const miniBlogBkgds = [
 
 export default function Blog() {
 
-  const miniBlogs = miniBlogsData.map( (blog, idx) => 
+  const miniBlogs = additionalBlogsData.map( (blog, idx) => 
     <div className="tile is-parent" key={`mini-blog-${idx+1}`}>
       <div className={`tile is-child box p-0 ${styles.blogTileBorder} ${miniBlogBkgds[idx]}` }>
         <div className={styles.blogTitleOverlay}>
           <div style={{position:'relative'}}>
-            <div className={`title is-5 has-text-white`}>{STRINGS.miniBlogs[idx].title}</div>
-            <div className={`subtitle is-6 has-text-white`}>{STRINGS.miniBlogs[idx].date}</div>
+            <div className={`title is-5 has-text-white`}>{STRINGS.blogs.additional[idx].title}</div>
+            <div className={`subtitle is-6 has-text-white`}>{STRINGS.blogs.additional[idx].date}</div>
             {
               !blog.ready 
               ?
               <div disabled className="button">{disabledTitle}</div>
               :
-              <a className="button is-primary" href={STRINGS.miniBlogs[idx].url}>{STRINGS.blogBtn}</a>
+              <a className="button is-primary" href={STRINGS.blogs.additional[idx].url}>{STRINGS.blogBtn}</a>
             }
           </div>
         </div>

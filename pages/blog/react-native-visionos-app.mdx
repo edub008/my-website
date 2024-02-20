@@ -16,16 +16,16 @@ import STRINGS from '/public/strings.json'
 <div className="columns is-flex is-justify-content-center">
 <div className="column is-9" style={{overflow:'auto'}}>
 
-<h1 className="title is-3 has-text-primary"> {STRINGS.miniBlogs[1].title} </h1>
+<h1 className="title is-3 has-text-primary"> {STRINGS.blogs.featured[0].title} </h1>
 
 <div className="title is-4 has-text-info"> 
-  {STRINGS.miniBlogs[1].date} - <span className="title is-5 has-text-info">{STRINGS.miniBlogs[1].length} read</span>
+  {STRINGS.blogs.featured[0].date} - <span className="title is-5 has-text-info">{STRINGS.blogs.featured[0].length} read</span>
 </div>
 
 <div className="container" >
   <Image
-    alt='react-to-nextjs'
-    src='/img/react-native-visionos.jpg'
+    alt='react-native-visionos'
+    src='/img/blog/react-native-visionos.jpg'
     priority
     width={0}
     height={0}
@@ -35,7 +35,16 @@ import STRINGS from '/public/strings.json'
 </div>
 (*It's now possible to run React Native apps on visionOS without using the somewhat limited XCode compatibility mode, which was the prior leading solution. This mini-blog quickly describes how to create your first pure React Native app for visionOS which can utilize the full platform.*)
 
-<h2 id="react-native">Overview</h2>
+<h2>Jump to Section:</h2>
+
+  * [Overview](#overview)
+  * [Requirements](#requirements)
+  * [Download XCode, Tools, and Simulator](#download-xcode)
+  * [Create New Project](#create-project)
+  * [Install Pods](#install-pods)
+  * [Run Simulator](#run-simulator)
+
+<h2 id="overview">Overview</h2>
 
 React Native has been [unleashed on Apple Vision Pro](https://www.callstack.com/blog/announcing-react-native-for-apple-vision-pro), presenting developers with the platform's complete capabilities. In contrast to compatibility mode, this method enables immersive experiences and XR functionalities on visionOS. 
 
@@ -50,26 +59,24 @@ This should encourage more developers to craft spatial applications using the Re
 
 > Apple Vision Pro is not required, you can run the visionOS simulator.
 
-<h3>1. Download or update XCode</h3>
+<h2 id="download-xcode">Download XCode, Tools, and Simulator</h2>
 
-You will need Xcode v15.2+ installed on your development machine if you do not have it already. There are two ways to download XCode:
+You will need Xcode v15.2+ installed on your development machine if you do not have it already, along with the Apple developer command line tools and the Apple Pro visionOS Simulator. 
+
+To download XCode there are two ways:
 
 1. Download from the App Store on your mac.
 2. Download from the [Apple developer website](https://developer.apple.com/download/more/) (let's you specify a specific version).
 
-<h3>2. Install the command line tools</h3>
-
-If you have never installed XCode before you may be able to download/update the command line tools by typing the following in a terminal:
+To download the Apple developer command line tools installed, if you just installed XCode for the first time you may be able to download/update the command line tools by typing the following command in a terminal:
 
 ```shell
 xcode-select --install
 ```
 
-However if you receive an error then you can also download from the [Apple developer website](https://developer.apple.com/download/more/).
+However if you receive an error then you can also download the tools from the [Apple developer website](https://developer.apple.com/download/more/).
 
-<h3>3. Download visionOS simulator</h3>
-
-If you do not already have the Vision Pro simulator installed, open XCode and follow these steps to install:
+Lastly, you'll need to download the Vision Pro simulator, to install:
 
 1. In Xcode, from the menu bar, choose Xcode > Settings….
 2. Go to the Platforms tab.
@@ -77,7 +84,7 @@ If you do not already have the Vision Pro simulator installed, open XCode and fo
 
 Select the <span className="has-text-weight-bold">Apple Vision Pro</span> visionOS simulator and click <span className="has-text-weight-bold">Download & Install</span>.
 
-<h3>4. Create New Project</h3>
+<h2 id="create-project">Create New Project</h2>
 
 Now you're ready to create your first React Native app targeted for visionOS. From a terminal run the following command:
 
@@ -115,7 +122,7 @@ ruby "2.6.10"
 
 If you have a later version of Ruby installed or want to set to a specific version you can update the file to `ruby "3.3.0"`, for instance.
 
-<h3>5. Install Required Pods</h3>
+<h2 id="install-pods">Install Pods</h2>
 
 Next we want to install the cocoapods needed to run our visionOS app, making sure to run from the <span className="has-text-weight-bold">/visionos</span> sub-directory:
 
@@ -140,14 +147,14 @@ Pod installation complete! There are 55 dependencies from the Podfile and 53 tot
 
 You are now ready to run your project in XCode.
 
-<h3>6. Run Simulator</h3>
+<h2 id="run-simulator">Run Simulator</h2>
 
 From the <span className="has-text-weight-bold">visionos</span> folder, double-click the workspace file named <span className="has-text-weight-bold">MySpatialApp.xcworkspace</span> to open in XCode:
 
 <div className="container is-flex is-justify-content-center">
   <Image
     alt='visionos-xcode-project'
-    src='/img/visionos-folder.webp'
+    src='/img/blog/visionos-folder.webp'
     priority
     width={0}
     height={0}
@@ -161,7 +168,7 @@ From XCode, select the <span className="has-text-weight-bold">Project -> Simulat
 <div className="container is-flex is-justify-content-center">
   <Image
     alt='apple-pro-vision-simulator'
-    src='/img/vision-pro-simulator-xcode.webp'
+    src='/img/blog/vision-pro-simulator-xcode.webp'
     priority
     width={0}
     height={0}
@@ -175,7 +182,7 @@ Build and run the project by clicking the <span className="has-text-weight-bold"
 <div className="container is-flex is-justify-content-center">
   <Image
     alt='visionos-xcode-project'
-    src='/img/vision-pro-initial-screen.webp'
+    src='/img/blog/vision-pro-initial-screen.webp'
     priority
     width={0}
     height={0}
@@ -189,7 +196,7 @@ Use your mouse in combination with the UI controls in the bottom right to move a
 <div className="container is-flex is-justify-content-center">
   <Image
     alt='visionos-xcode-project'
-    src='/img/vision-pro-react-native-screen.webp'
+    src='/img/blog/vision-pro-react-native-screen.webp'
     priority
     width={0}
     height={0}
@@ -212,7 +219,7 @@ Hope this has been helpful, happy coding!
 Thanks for reading!
 
 <div className="title is-5 has-text-info"> 
-  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.miniBlogs[1].date})</span>
+  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.blogs.featured[0].date})</span>
 </div>
 
 </div>

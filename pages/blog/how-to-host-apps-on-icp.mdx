@@ -16,16 +16,16 @@ import STRINGS from '/public/strings.json'
 <div className="columns is-flex is-justify-content-center">
 <div className="column is-9" style={{overflow:'auto'}}>
 
-<h1 className="title is-3 has-text-primary"> {STRINGS.blogs[1].title} </h1>
+<h1 className="title is-3 has-text-primary"> {STRINGS.blogs.additional[1].title} </h1>
 
 <div className="title is-4 has-text-info"> 
-  {STRINGS.blogs[1].date} - <span className="title is-5 has-text-info">12 min read</span>
+  {STRINGS.blogs.additional[1].date} - <span className="title is-5 has-text-info">12 min read</span>
 </div>
 
 <div className="container">
   <Image
     alt='the-internet-computer'
-    src='/img/blog2-internet-computer.webp'
+    src='/img/blog/blog2-internet-computer.webp'
     priority
     width={0}
     height={0}
@@ -65,7 +65,7 @@ First, ICP offers infinite scaling capabilities, meaning the Internet Computer c
 <div className="container">
   <Image
     alt='icp-scaling-data'
-    src='/img/icp-scalability.jpeg'
+    src='/img/blog/icp-scalability.jpeg'
     priority
     width={0}
     height={0}
@@ -88,7 +88,7 @@ Another noteworthy advantage of ICP lies in its cost efficiency. Storing 1GB of 
 <div className="container">
   <Image
     alt='icp-cost-efficiency'
-    src='/img/icp-cost-efficiency.jpeg'
+    src='/img/blog/icp-cost-efficiency.jpeg'
     priority
     width={0}
     height={0}
@@ -464,7 +464,7 @@ You may need to wait a few minutes for the certificates to become available acro
 Thanks for reading!
 
 <div className="title is-5 has-text-info"> 
-  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.blogs[1].date})</span>
+  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.blogs.additional[1].date})</span>
 </div>
 
 </div>
