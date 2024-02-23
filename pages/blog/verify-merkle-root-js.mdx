@@ -1,0 +1,273 @@
+import Head from 'next/head'
+import Image from 'next/image'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import NavBarBlog from '/components/NavBarBlog'
+import styles from "../../styles/Blog.module.scss"
+import STRINGS from '/public/strings.json'
+
+<Head>
+  <title>{`Blog | React Native for VisionOS`}</title>
+  <meta name="description" content="A short mini-blog describing how to create your first spatial app for VisionOS using React Native."/>
+</Head>
+<NavBarBlog />
+
+<div className="section section-bg">
+<div className="columns is-flex is-justify-content-center">
+<div className="column is-9" style={{overflow:'auto'}}>
+
+<h1 className="title is-3 has-text-primary"> {STRINGS.blogs.featured[2].title} </h1>
+
+<div className="title is-4 has-text-info"> 
+  {STRINGS.blogs.featured[2].date} - <span className="title is-5 has-text-info">{STRINGS.blogs.featured[2].length} read</span>
+</div>
+
+<div className="container" >
+  <Image
+    alt='merkle-tree-node-js'
+    src='/img/blog/merkle-tree.webp'
+    priority
+    width={0}
+    height={0}
+    sizes="100vw"
+    style={{objectFit:'cover',width:'100%',height:'250px'}}
+  />
+</div>
+(*Merkle trees are used to encrypt blockchain data more efficiently and securely. In this blog we learn how to calculate the merkle root of transactions of the latest published Bitcoin block using Javascript and compare to the stored root hash of the block to confirm they are equal and hence verify the transaction list.*)
+
+<h2>Jump to Section:</h2>
+
+  * [Merkle Trees](#merkle-trees)
+  * [Calculate Merkle Root](#calculate-merkle)
+  * [Fetch Blockchain Data](#fetch-data)
+  * [Full Source](#full-source)
+
+<h2 id="merkle-trees">Merkle Trees</h2>
+
+A Merkle tree, also known as a (binary) hash tree, is a hierarchical structure where each leaf node represents the cryptographic hash of a data block, while non-leaf nodes (branches, inner nodes, or inodes) hold the cryptographic hash derived from the concatenation of its child nodes' hashes.
+
+<div className="container is-flex is-justify-content-center" style={{backgroundColor:'white'}}>
+  <Image
+    alt='merkle-tree-data-structure'
+    src='/img/blog/merkle-hash_tree.webp'
+    priority
+    width={0}
+    height={0}
+    sizes="50vw"
+    style={{ width: '50%', height: 'auto' }}
+  />
+</div>
+
+In bitcoin and other cryptocurrencies, Merkle trees are used to encrypt blockchain data more efficiently and securely. It's a mathematical data structure made up of hashes of various data blocks that summarize all the transactions in a block. It also enables quick and secure content verification across big datasets and verifies the consistency and content of the data.
+
+A <span className="has-text-weight-bold">Merkle root</span> is the root hash of a Merkle tree and is used for confirming the facts (e.g. data) on the tree. Merkle roots are used in cryptocurrency to ensure that data blocks sent through a peer-to-peer network are whole, undamaged, and unaltered.
+
+<h2 id="calculate-merkle">Calculate Merkle Root</h2>
+
+In this article we demonstrate how to retrieve the most recently published block on the Bitcoin blockchain, obtain the merkle (hash) root of the block, then separately calculate the merkle hash of the block's transaction list ourselves and ensure they are equal.
+
+Before we use an external API to retrieve the live block data let's first create a Node/Javascript implementation of the merkle function we will use to calculate the root.
+
+```javascript
+const merkleRoot = txs =>
+  txs.length === 1 
+  ? 
+  txs[0] 
+  : 
+  merkleRoot(toPairs(txs).reduce((tree, pair) => [...tree, hashPair(...pair)], []));
+```
+
+Looks simple enough right? Let's dissect the code a little to see what's going on here. 
+
+First note this is a recursive function since it calls itself. The function is passed an array of block transactions. The idea is to hash pairs of transactions together continuously until we have widdled down to a single transaction hash which will be the merkle root. Since we have a recursive function we start with the base case, where we return the last remaining transaction hash:
+
+```javascript
+txs.length === 1 ? txs[0] 
+```
+
+Otherwise, if multiple transactions remain we hash and pair two transactions together (using the `hashPair()` and `toPairs()` functions which we implement below) then recurse on the reduced list of transactions:
+
+```javascript
+merkleRoot(toPairs(txs).reduce((tree, pair) => [...tree, hashPair(...pair)], []));
+```
+
+<h3>Hashing & Pairing Functions</h3>
+
+Next let's implement our hashing and transaction pairing functions. There are multiple hashing libraries available that you can use to implement your hashing functions. In this example, we use the popular [sha.js](https://www.npmjs.com/package/sha.js) library for our hashing needs:
+
+```javascript
+const hashPair = (a, b = a) => {
+  const bytes = toBytes(`${b}${a}`).reverse();
+  const sha256Hash = shajs('sha256').update( 
+    shajs('sha256').update( bytes ).digest() 
+  ).digest()
+  return toHex(sha256Hash.reverse())
+};
+```
+
+First, you may have been wondering what happens if the merkle tree has an odd number of leaf nodes. When that's the case, the last node is concatenated with itself then hashed. To handle this we make use of optional and default parameter values that Javascript supports and we set the second parameter of the function equal to the first when not present:
+
+```javascript
+(a, b = a)
+```
+
+Next, the Bitcoin hashing algorithm uses a <span className="has-text-weight-bold">double hash</span> of the input, hence we take the double sha256 hash of our transactions. In general, the algorithm we follow for each pair of transactions is that we concatenate them together, convert to a byte array and reverse (to store in little endian format), take the double sha256 hash, then reverse and convert back to hex format.
+
+```javascript
+ const sha256Hash = shajs('sha256').update( 
+    shajs('sha256').update( bytes ).digest() 
+  ).digest()
+``` 
+
+Regarding the `toPairs()` transactions pairing function we declared above, we have the following one liner which simply returns an array of two transactions (or one if given an odd numbered input):
+
+```javascript
+const toPairs = arr =>
+  Array.from(Array(Math.ceil(arr.length / 2)), (_, i) => arr.slice(i * 2, i * 2 + 2));
+```
+
+<h3>Helper Functions</h3>
+
+You may have noticed two functions used in our hashing function above, the `toBytes()` and `toHex()` functions. Let's quickly implement those which are pretty straight forward:
+
+```javascript
+// converts hex string to byte array
+const toBytes = hex =>
+  hex.match(/../g).reduce((acc, hex) => [...acc, parseInt(hex, 16)], []);
+
+// converts byte array to hex string
+const toHex = bytes =>
+  bytes.reduce((acc, bytes) => acc + bytes.toString(16).padStart(2, '0'), '');
+```
+
+With the our hashing and helper functions in place we are ready to perform Merkle root calculations. Let's start by retrieving some live transactions data from the Bitcoin blockchain that we can process and verify.
+
+<h2 id="fetch-data">Fetch Blockchain Data</h2>
+
+There are numerous free and paid APIs you can use to fetch blockchain data. In this example we retrieve data using two APIs from [https://blockchain.info](https://blockchain.info). The first API call we make is to retrieve the hash of the most recently published Bitcoin block: 
+
+```javascript
+const fetchLatestBlock = () =>
+  fetch(`https://blockchain.info/q/latesthash?cors=true`)
+    .then(r => r.text());
+```
+
+This will return a single hash such as:
+
+```shell
+00000000000000000001f1e0d141747910d83fb3955ea66d65c39eff9f935d5e
+```
+
+Next we pass the hash of the latest block to a second API to retrieve its merkle root and list of transactions: 
+
+```javascript
+const fetchMerkleRootAndTransactions = block =>
+  fetch(`https://blockchain.info/rawblock/${block}?cors=true`)
+    .then(r => r.json())
+    .then(d => [d.mrkl_root, d.tx.map(t => t.hash)])
+```    
+
+If you log the above output it will look similar to the following, an array of two objects with the first being the merkle root hash and the second object an array of the block's transactions:
+
+```shell
+[
+  '2a36b79fb5a9a6666df6b2b9fe652eb4fe18cfc4727a7313108df09d8e51a5c4',
+  [
+    'ff3be2fa171a23aa0e0bf73d2c8af19cb1a12595bf9eeee3a1a84d9a650c0094',
+    '2f072d9d248df4a52c3c856481a0ff52f478dccaebbac7712b73fe7ec9efc687',
+    'baf6cc2f6c857220e04190210fdc5242299489f3ea868e64ae273959691861f3',
+    ...
+```
+
+<h2 id="full-source">Full Source Code</h2>
+
+With the above functions now defined and understood, let's piece everything together into a live working sample. The [following code](https://gist.github.com/edub008/73499a746c09bdf5b291a214fb099af6) downloads the merkle root (e.g. block hash) and transactions list of the latest Bitcoin block, computes the merkle root based on the list of transactions and compares it against the retrieved root value to verify the data.
+
+```javascript
+// npm i sha.js
+var shajs = require('sha.js')
+
+// fetches latest bitcoin block
+const fetchLatestBlock = () =>
+  fetch(`https://blockchain.info/q/latesthash?cors=true`)
+    .then(r => r.text());
+
+// fetches the merkle root hash and list of block transactions
+const fetchMerkleRootAndTransactions = block =>
+  fetch(`https://blockchain.info/rawblock/${block}?cors=true`)
+    .then(r => r.json())
+    .then(d => [d.mrkl_root, d.tx.map(t => t.hash)]);
+
+// converts hex string to byte array
+const toBytes = hex =>
+  hex.match(/../g).reduce((acc, hex) => [...acc, parseInt(hex, 16)], []);
+
+// converts byte array to hex string
+const toHex = bytes =>
+  bytes.reduce((acc, bytes) => acc + bytes.toString(16).padStart(2, '0'), '');
+
+// returns array of two nodes of merkle tree that we will hash together as part
+// of the merkle root proof
+const toPairs = arr =>
+  Array.from(Array(Math.ceil(arr.length / 2)), (_, i) => arr.slice(i * 2, i * 2 + 2));
+
+// used to hash two sibling nodes of the merkle tree, if odd number of leaves in
+// the tree we make a copy of first node, hence optional second param (b = a)
+const hashPair = (a, b = a) => {
+  // pair the nodes together, convert to byte array, and reverse 
+  // to store in little endian format
+  const bytes = toBytes(`${b}${a}`).reverse();
+  // take a double sha256 hash of the input byte array
+  const sha256Hash = shajs('sha256').update( 
+    shajs('sha256').update( bytes ).digest() 
+  ).digest()
+  // reverse the byte array and convert back to hex format
+  return toHex(sha256Hash.reverse())
+};
+
+const merkleRoot = txs =>
+  txs.length === 1 
+  ? 
+  txs[0] 
+  : 
+  merkleRoot(toPairs(txs).reduce((tree, pair) => [...tree, hashPair(...pair)], []));
+
+fetchLatestBlock()
+  .then(fetchMerkleRootAndTransactions)
+  .then(([root, txs]) => {
+  const isValid = merkleRoot(txs) === root;
+	  console.log(isValid);
+	});
+```
+
+<div className="columns m-2">
+  <div className="column m-4 has-text-centered">
+    <a href="https://gist.github.com/edub008/73499a746c09bdf5b291a214fb099af6" className="button is-info m-2">Download Gist</a>
+  </div>
+</div>
+
+As you can see we've added a comparison function for checking the retrieved block hash against our computed merkle root value:
+
+```javascript
+const isValid = merkleRoot(txs) === root;
+```
+
+If all goes well, running the above code should log `true` after the comparison is made and you now hopefully have a better understanding of how merkle roots and hashes are used in blockchains!
+
+<hr />
+
+<h4>References</h4>
+
+* [Bitcoin Internals: How Blocks use Merkle Trees in JavaScript](https://www.youtube.com/watch?v=1pasjSinXDs)
+
+<hr />
+
+Thanks for reading!
+
+<div className="title is-5 has-text-info"> 
+  <span className="title is-5 has-text-info">by {STRINGS.blogAuthors[0].author} ({STRINGS.blogs.featured[2].date})</span>
+</div>
+
+</div>
+</div>
+</div>

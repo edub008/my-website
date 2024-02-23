@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>https://www.ergin-d.com/blog</loc>
-    <lastmod>2024-02-20</lastmod>
+    <lastmod>2024-02-22</lastmod>
   </url>
   <url>
     <loc>https://www.ergin-d.com/blog/convert-react-to-nextjs</loc>
@@ -23,5 +23,9 @@
   <url>
     <loc>https://www.ergin-d.com/blog/react-native-visionos-app</loc>
     <lastmod>2024-02-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ergin-d.com/blog/verify-merkle-root-js</loc>
+    <lastmod>2024-02-22</lastmod>
   </url>
 </urlset>

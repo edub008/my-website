@@ -46,13 +46,7 @@ export default function BlogSwiper(props) {
 		        <div style={{position:'relative'}}>
 	            <div className={`title is-4 has-text-white`}>{blog.title}</div>
 	            <div className={`subtitle is-6 has-text-white`}>{blog.date}</div>
-	            {
-	            	idx === props.featuredBlogsData.length-1 
-	            	? 
-	            	<div disabled className="button">{disabledTitle}</div>
-	            	:
 	            	<a className="button is-primary" href={blog.url}>{actionTitle}</a>
-	          	}
 	          </div>
 		      </div>
 		    </div>

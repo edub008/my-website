@@ -61,9 +61,9 @@
 			},
 			{
 				"title": "Learn how Bitcoin uses Merkle Trees to verify block transactions",
-				"date": "TBD",
-				"url": "/blog",
-				"length": "2 min"
+				"date": "Feb 22, 2024",
+				"url": "/blog/verify-merkle-root-js",
+				"length": "8 min"
 			}
 		],
 		"additional": [
